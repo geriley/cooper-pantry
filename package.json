@@ -8,7 +8,7 @@
   "scripts": {
     "ng": "ng",
     "nx": "nx",
-    "start:prod": "ng build --prod && ng build --prod pantry && node dist/apps/api/main",
+    "start:dist": "node dist/apps/api/main.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",

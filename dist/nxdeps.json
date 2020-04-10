@@ -1,0 +1,1300 @@
+{
+  "projectGraph": {
+    "nodes": {
+      "api-interfaces": {
+        "name": "api-interfaces",
+        "type": "lib",
+        "data": {
+          "root": "libs/api-interfaces",
+          "sourceRoot": "libs/api-interfaces/src",
+          "projectType": "library",
+          "schematics": {},
+          "architect": {
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "libs/api-interfaces/tsconfig.lib.json",
+                  "libs/api-interfaces/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!libs/api-interfaces/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "libs/api-interfaces/jest.config.js",
+                "tsConfig": "libs/api-interfaces/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "libs/api-interfaces/jest.config.js",
+              "ext": ".js",
+              "mtime": 1586475383944.9238
+            },
+            {
+              "file": "libs/api-interfaces/README.md",
+              "ext": ".md",
+              "mtime": 1586475383937.9426
+            },
+            {
+              "file": "libs/api-interfaces/src/index.ts",
+              "ext": ".ts",
+              "mtime": 1586475383941.932
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/api-interfaces.ts",
+              "ext": ".ts",
+              "mtime": 1586475383943.9268
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1586475383939.9373
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.lib.json",
+              "ext": ".json",
+              "mtime": 1586475383940.9346
+            },
+            {
+              "file": "libs/api-interfaces/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1586475383947.9165
+            },
+            {
+              "file": "libs/api-interfaces/tslint.json",
+              "ext": ".json",
+              "mtime": 1586475383936.9453
+            }
+          ]
+        }
+      },
+      "pantry-e2e": {
+        "name": "pantry-e2e",
+        "type": "e2e",
+        "data": {
+          "root": "apps/pantry-e2e",
+          "sourceRoot": "apps/pantry-e2e/src",
+          "projectType": "application",
+          "architect": {
+            "e2e": {
+              "builder": "@nrwl/cypress:cypress",
+              "options": {
+                "cypressConfig": "apps/pantry-e2e/cypress.json",
+                "tsConfig": "apps/pantry-e2e/tsconfig.e2e.json",
+                "devServerTarget": "pantry:serve"
+              },
+              "configurations": {
+                "production": {
+                  "devServerTarget": "pantry:serve:production"
+                }
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/pantry-e2e/tsconfig.e2e.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/pantry-e2e/**"
+                ]
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/pantry-e2e/cypress.json",
+              "ext": ".json",
+              "mtime": 1586475383903.0356
+            },
+            {
+              "file": "apps/pantry-e2e/src/fixtures/example.json",
+              "ext": ".json",
+              "mtime": 1586475383907.0247
+            },
+            {
+              "file": "apps/pantry-e2e/src/integration/app.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586475383908.0227
+            },
+            {
+              "file": "apps/pantry-e2e/src/plugins/index.js",
+              "ext": ".js",
+              "mtime": 1586475383910.0176
+            },
+            {
+              "file": "apps/pantry-e2e/src/support/app.po.ts",
+              "ext": ".ts",
+              "mtime": 1586475383911.0144
+            },
+            {
+              "file": "apps/pantry-e2e/src/support/commands.ts",
+              "ext": ".ts",
+              "mtime": 1586475383913.0103
+            },
+            {
+              "file": "apps/pantry-e2e/src/support/index.ts",
+              "ext": ".ts",
+              "mtime": 1586475383916.002
+            },
+            {
+              "file": "apps/pantry-e2e/tsconfig.e2e.json",
+              "ext": ".json",
+              "mtime": 1586475383904.0337
+            },
+            {
+              "file": "apps/pantry-e2e/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1586475383905.0312
+            },
+            {
+              "file": "apps/pantry-e2e/tslint.json",
+              "ext": ".json",
+              "mtime": 1586475383901.0413
+            }
+          ]
+        }
+      },
+      "pantry": {
+        "name": "pantry",
+        "type": "app",
+        "data": {
+          "projectType": "application",
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "root": "apps/pantry",
+          "sourceRoot": "apps/pantry/src",
+          "prefix": "cooper",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:browser",
+              "options": {
+                "outputPath": "dist/apps/pantry",
+                "index": "apps/pantry/src/index.html",
+                "main": "apps/pantry/src/main.ts",
+                "polyfills": "apps/pantry/src/polyfills.ts",
+                "tsConfig": "apps/pantry/tsconfig.app.json",
+                "aot": true,
+                "assets": [
+                  "apps/pantry/src/favicon.ico",
+                  "apps/pantry/src/assets"
+                ],
+                "styles": [
+                  "apps/pantry/src/styles.scss"
+                ],
+                "scripts": []
+              },
+              "configurations": {
+                "production": {
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/pantry/src/environments/environment.ts",
+                      "with": "apps/pantry/src/environments/environment.prod.ts"
+                    }
+                  ],
+                  "optimization": true,
+                  "outputHashing": "all",
+                  "sourceMap": false,
+                  "extractCss": true,
+                  "namedChunks": false,
+                  "extractLicenses": true,
+                  "vendorChunk": false,
+                  "buildOptimizer": true,
+                  "budgets": [
+                    {
+                      "type": "initial",
+                      "maximumWarning": "2mb",
+                      "maximumError": "5mb"
+                    },
+                    {
+                      "type": "anyComponentStyle",
+                      "maximumWarning": "6kb",
+                      "maximumError": "10kb"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@angular-devkit/build-angular:dev-server",
+              "options": {
+                "browserTarget": "pantry:build",
+                "proxyConfig": "apps/pantry/proxy.conf.json"
+              },
+              "configurations": {
+                "production": {
+                  "browserTarget": "pantry:build:production"
+                }
+              }
+            },
+            "extract-i18n": {
+              "builder": "@angular-devkit/build-angular:extract-i18n",
+              "options": {
+                "browserTarget": "pantry:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/pantry/tsconfig.app.json",
+                  "apps/pantry/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/pantry/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/pantry/jest.config.js",
+                "tsConfig": "apps/pantry/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "apps/pantry/src/test-setup.ts"
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/pantry/browserslist",
+              "ext": "",
+              "mtime": 1586475383871.121
+            },
+            {
+              "file": "apps/pantry/jest.config.js",
+              "ext": ".js",
+              "mtime": 1586475383897.061
+            },
+            {
+              "file": "apps/pantry/proxy.conf.json",
+              "ext": ".json",
+              "mtime": 1586475383927.9695
+            },
+            {
+              "file": "apps/pantry/src/app/app.component.html",
+              "ext": ".html",
+              "mtime": 1586475383891.0676
+            },
+            {
+              "file": "apps/pantry/src/app/app.component.scss",
+              "ext": ".scss",
+              "mtime": 1586475383895.0576
+            },
+            {
+              "file": "apps/pantry/src/app/app.component.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586475383892.0654
+            },
+            {
+              "file": "apps/pantry/src/app/app.component.ts",
+              "ext": ".ts",
+              "mtime": 1586475383893.0627
+            },
+            {
+              "file": "apps/pantry/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1586475383889.0732
+            },
+            {
+              "file": "apps/pantry/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1586475383886.0815
+            },
+            {
+              "file": "apps/pantry/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1586475383887.078
+            },
+            {
+              "file": "apps/pantry/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1586475383888.0762
+            },
+            {
+              "file": "apps/pantry/src/favicon.ico",
+              "ext": ".ico",
+              "mtime": 1586475383870.1235
+            },
+            {
+              "file": "apps/pantry/src/index.html",
+              "ext": ".html",
+              "mtime": 1586475383880.0974
+            },
+            {
+              "file": "apps/pantry/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1586475383882.0925
+            },
+            {
+              "file": "apps/pantry/src/polyfills.ts",
+              "ext": ".ts",
+              "mtime": 1586475383883.0894
+            },
+            {
+              "file": "apps/pantry/src/styles.scss",
+              "ext": ".scss",
+              "mtime": 1586475383885.0837
+            },
+            {
+              "file": "apps/pantry/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1586475383900.044
+            },
+            {
+              "file": "apps/pantry/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1586475383877.1055
+            },
+            {
+              "file": "apps/pantry/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1586475383868.1294
+            },
+            {
+              "file": "apps/pantry/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1586475383899.047
+            },
+            {
+              "file": "apps/pantry/tslint.json",
+              "ext": ".json",
+              "mtime": 1586475383878.1028
+            }
+          ]
+        }
+      },
+      "api": {
+        "name": "api",
+        "type": "app",
+        "data": {
+          "root": "apps/api",
+          "sourceRoot": "apps/api/src",
+          "projectType": "application",
+          "prefix": "api",
+          "schematics": {},
+          "architect": {
+            "build": {
+              "builder": "@nrwl/node:build",
+              "options": {
+                "outputPath": "dist/apps/api",
+                "main": "apps/api/src/main.ts",
+                "tsConfig": "apps/api/tsconfig.app.json",
+                "assets": [
+                  "apps/api/src/assets"
+                ]
+              },
+              "configurations": {
+                "production": {
+                  "optimization": true,
+                  "extractLicenses": true,
+                  "inspect": false,
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/api/src/environments/environment.ts",
+                      "with": "apps/api/src/environments/environment.prod.ts"
+                    }
+                  ]
+                }
+              }
+            },
+            "serve": {
+              "builder": "@nrwl/node:execute",
+              "options": {
+                "buildTarget": "api:build"
+              }
+            },
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "apps/api/tsconfig.app.json",
+                  "apps/api/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!apps/api/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "apps/api/jest.config.js",
+                "tsConfig": "apps/api/tsconfig.spec.json",
+                "passWithNoTests": true
+              }
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "apps/api/jest.config.js",
+              "ext": ".js",
+              "mtime": 1586475383925.975
+            },
+            {
+              "file": "apps/api/src/app/.gitkeep",
+              "ext": "",
+              "mtime": 1586475383921.9854
+            },
+            {
+              "file": "apps/api/src/app/app.controller.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586475383929.9653
+            },
+            {
+              "file": "apps/api/src/app/app.controller.ts",
+              "ext": ".ts",
+              "mtime": 1586475383931.9585
+            },
+            {
+              "file": "apps/api/src/app/app.module.ts",
+              "ext": ".ts",
+              "mtime": 1586554121986.374
+            },
+            {
+              "file": "apps/api/src/app/app.service.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586475383933.9531
+            },
+            {
+              "file": "apps/api/src/app/app.service.ts",
+              "ext": ".ts",
+              "mtime": 1586475383935.9478
+            },
+            {
+              "file": "apps/api/src/app/common/index.ts",
+              "ext": ".ts",
+              "mtime": 1586553383423.7617
+            },
+            {
+              "file": "apps/api/src/app/common/models/index.ts",
+              "ext": ".ts",
+              "mtime": 1586553383423.7617
+            },
+            {
+              "file": "apps/api/src/app/common/models/payload.model.ts",
+              "ext": ".ts",
+              "mtime": 1586553383423.7617
+            },
+            {
+              "file": "apps/api/src/app/controllers/pantry.controller.ts",
+              "ext": ".ts",
+              "mtime": 1586553383423.7617
+            },
+            {
+              "file": "apps/api/src/app/resources/pantry.model.ts",
+              "ext": ".ts",
+              "mtime": 1586553383424.7588
+            },
+            {
+              "file": "apps/api/src/assets/.gitkeep",
+              "ext": "",
+              "mtime": 1586475383922.9822
+            },
+            {
+              "file": "apps/api/src/environments/environment.prod.ts",
+              "ext": ".ts",
+              "mtime": 1586475383923.9797
+            },
+            {
+              "file": "apps/api/src/environments/environment.ts",
+              "ext": ".ts",
+              "mtime": 1586475383924.9783
+            },
+            {
+              "file": "apps/api/src/main.ts",
+              "ext": ".ts",
+              "mtime": 1586554121986.374
+            },
+            {
+              "file": "apps/api/tsconfig.app.json",
+              "ext": ".json",
+              "mtime": 1586475383917.996
+            },
+            {
+              "file": "apps/api/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1586475383919.9912
+            },
+            {
+              "file": "apps/api/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1586475383926.972
+            },
+            {
+              "file": "apps/api/tslint.json",
+              "ext": ".json",
+              "mtime": 1586475383916.998
+            }
+          ]
+        }
+      },
+      "@angular/animations": {
+        "type": "npm",
+        "name": "@angular/animations",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/common": {
+        "type": "npm",
+        "name": "@angular/common",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/compiler": {
+        "type": "npm",
+        "name": "@angular/compiler",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/core": {
+        "type": "npm",
+        "name": "@angular/core",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/forms": {
+        "type": "npm",
+        "name": "@angular/forms",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/platform-browser": {
+        "type": "npm",
+        "name": "@angular/platform-browser",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/platform-browser-dynamic": {
+        "type": "npm",
+        "name": "@angular/platform-browser-dynamic",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/router": {
+        "type": "npm",
+        "name": "@angular/router",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@nestjs/common": {
+        "type": "npm",
+        "name": "@nestjs/common",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/core": {
+        "type": "npm",
+        "name": "@nestjs/core",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/platform-express": {
+        "type": "npm",
+        "name": "@nestjs/platform-express",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      },
+      "@nestjs/serve-static": {
+        "type": "npm",
+        "name": "@nestjs/serve-static",
+        "data": {
+          "version": "^2.1.0",
+          "files": []
+        }
+      },
+      "@nrwl/angular": {
+        "type": "npm",
+        "name": "@nrwl/angular",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "core-js": {
+        "type": "npm",
+        "name": "core-js",
+        "data": {
+          "version": "^2.5.4",
+          "files": []
+        }
+      },
+      "reflect-metadata": {
+        "type": "npm",
+        "name": "reflect-metadata",
+        "data": {
+          "version": "^0.1.13",
+          "files": []
+        }
+      },
+      "rxjs": {
+        "type": "npm",
+        "name": "rxjs",
+        "data": {
+          "version": "~6.5.4",
+          "files": []
+        }
+      },
+      "zone.js": {
+        "type": "npm",
+        "name": "zone.js",
+        "data": {
+          "version": "^0.10.2",
+          "files": []
+        }
+      },
+      "@angular/cli": {
+        "type": "npm",
+        "name": "@angular/cli",
+        "data": {
+          "version": "9.1.0",
+          "files": []
+        }
+      },
+      "@nrwl/workspace": {
+        "type": "npm",
+        "name": "@nrwl/workspace",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "@types/node": {
+        "type": "npm",
+        "name": "@types/node",
+        "data": {
+          "version": "~8.9.4",
+          "files": []
+        }
+      },
+      "dotenv": {
+        "type": "npm",
+        "name": "dotenv",
+        "data": {
+          "version": "6.2.0",
+          "files": []
+        }
+      },
+      "ts-node": {
+        "type": "npm",
+        "name": "ts-node",
+        "data": {
+          "version": "~7.0.0",
+          "files": []
+        }
+      },
+      "tslint": {
+        "type": "npm",
+        "name": "tslint",
+        "data": {
+          "version": "~6.0.0",
+          "files": []
+        }
+      },
+      "eslint": {
+        "type": "npm",
+        "name": "eslint",
+        "data": {
+          "version": "6.8.0",
+          "files": []
+        }
+      },
+      "typescript": {
+        "type": "npm",
+        "name": "typescript",
+        "data": {
+          "version": "~3.8.3",
+          "files": []
+        }
+      },
+      "prettier": {
+        "type": "npm",
+        "name": "prettier",
+        "data": {
+          "version": "1.19.1",
+          "files": []
+        }
+      },
+      "@nrwl/nest": {
+        "type": "npm",
+        "name": "@nrwl/nest",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "@angular/compiler-cli": {
+        "type": "npm",
+        "name": "@angular/compiler-cli",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/language-service": {
+        "type": "npm",
+        "name": "@angular/language-service",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular-devkit/build-angular": {
+        "type": "npm",
+        "name": "@angular-devkit/build-angular",
+        "data": {
+          "version": "0.901.0",
+          "files": []
+        }
+      },
+      "codelyzer": {
+        "type": "npm",
+        "name": "codelyzer",
+        "data": {
+          "version": "~5.0.1",
+          "files": []
+        }
+      },
+      "jest-preset-angular": {
+        "type": "npm",
+        "name": "jest-preset-angular",
+        "data": {
+          "version": "8.1.2",
+          "files": []
+        }
+      },
+      "@nrwl/jest": {
+        "type": "npm",
+        "name": "@nrwl/jest",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "jest": {
+        "type": "npm",
+        "name": "jest",
+        "data": {
+          "version": "25.2.3",
+          "files": []
+        }
+      },
+      "@types/jest": {
+        "type": "npm",
+        "name": "@types/jest",
+        "data": {
+          "version": "25.1.4",
+          "files": []
+        }
+      },
+      "ts-jest": {
+        "type": "npm",
+        "name": "ts-jest",
+        "data": {
+          "version": "25.2.1",
+          "files": []
+        }
+      },
+      "cypress": {
+        "type": "npm",
+        "name": "cypress",
+        "data": {
+          "version": "^4.1.0",
+          "files": []
+        }
+      },
+      "@nrwl/cypress": {
+        "type": "npm",
+        "name": "@nrwl/cypress",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "@nrwl/node": {
+        "type": "npm",
+        "name": "@nrwl/node",
+        "data": {
+          "version": "9.2.2",
+          "files": []
+        }
+      },
+      "@nestjs/schematics": {
+        "type": "npm",
+        "name": "@nestjs/schematics",
+        "data": {
+          "version": "^6.7.0",
+          "files": []
+        }
+      },
+      "@nestjs/testing": {
+        "type": "npm",
+        "name": "@nestjs/testing",
+        "data": {
+          "version": "^6.8.3",
+          "files": []
+        }
+      }
+    },
+    "dependencies": {
+      "api-interfaces": [],
+      "pantry-e2e": [
+        {
+          "type": "implicit",
+          "source": "pantry-e2e",
+          "target": "pantry"
+        }
+      ],
+      "pantry": [
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "@angular/platform-browser"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "@angular/platform-browser-dynamic"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "zone.js"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "jest-preset-angular"
+        }
+      ],
+      "api": [
+        {
+          "type": "static",
+          "source": "api",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/testing"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/common"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/serve-static"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "@nestjs/core"
+        }
+      ],
+      "@angular/animations": [],
+      "@angular/common": [],
+      "@angular/compiler": [],
+      "@angular/core": [],
+      "@angular/forms": [],
+      "@angular/platform-browser": [],
+      "@angular/platform-browser-dynamic": [],
+      "@angular/router": [],
+      "@nestjs/common": [],
+      "@nestjs/core": [],
+      "@nestjs/platform-express": [],
+      "@nestjs/serve-static": [],
+      "@nrwl/angular": [],
+      "core-js": [],
+      "reflect-metadata": [],
+      "rxjs": [],
+      "zone.js": [],
+      "@angular/cli": [],
+      "@nrwl/workspace": [],
+      "@types/node": [],
+      "dotenv": [],
+      "ts-node": [],
+      "tslint": [],
+      "eslint": [],
+      "typescript": [],
+      "prettier": [],
+      "@nrwl/nest": [],
+      "@angular/compiler-cli": [],
+      "@angular/language-service": [],
+      "@angular-devkit/build-angular": [],
+      "codelyzer": [],
+      "jest-preset-angular": [],
+      "@nrwl/jest": [],
+      "jest": [],
+      "@types/jest": [],
+      "ts-jest": [],
+      "cypress": [],
+      "@nrwl/cypress": [],
+      "@nrwl/node": [],
+      "@nestjs/schematics": [],
+      "@nestjs/testing": []
+    }
+  },
+  "fileMap": {
+    "api-interfaces": [
+      {
+        "file": "libs/api-interfaces/jest.config.js",
+        "ext": ".js",
+        "mtime": 1586475383944.9238
+      },
+      {
+        "file": "libs/api-interfaces/README.md",
+        "ext": ".md",
+        "mtime": 1586475383937.9426
+      },
+      {
+        "file": "libs/api-interfaces/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1586475383941.932
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/api-interfaces.ts",
+        "ext": ".ts",
+        "mtime": 1586475383943.9268
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1586475383939.9373
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1586475383940.9346
+      },
+      {
+        "file": "libs/api-interfaces/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1586475383947.9165
+      },
+      {
+        "file": "libs/api-interfaces/tslint.json",
+        "ext": ".json",
+        "mtime": 1586475383936.9453
+      }
+    ],
+    "pantry-e2e": [
+      {
+        "file": "apps/pantry-e2e/cypress.json",
+        "ext": ".json",
+        "mtime": 1586475383903.0356
+      },
+      {
+        "file": "apps/pantry-e2e/src/fixtures/example.json",
+        "ext": ".json",
+        "mtime": 1586475383907.0247
+      },
+      {
+        "file": "apps/pantry-e2e/src/integration/app.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586475383908.0227
+      },
+      {
+        "file": "apps/pantry-e2e/src/plugins/index.js",
+        "ext": ".js",
+        "mtime": 1586475383910.0176
+      },
+      {
+        "file": "apps/pantry-e2e/src/support/app.po.ts",
+        "ext": ".ts",
+        "mtime": 1586475383911.0144
+      },
+      {
+        "file": "apps/pantry-e2e/src/support/commands.ts",
+        "ext": ".ts",
+        "mtime": 1586475383913.0103
+      },
+      {
+        "file": "apps/pantry-e2e/src/support/index.ts",
+        "ext": ".ts",
+        "mtime": 1586475383916.002
+      },
+      {
+        "file": "apps/pantry-e2e/tsconfig.e2e.json",
+        "ext": ".json",
+        "mtime": 1586475383904.0337
+      },
+      {
+        "file": "apps/pantry-e2e/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1586475383905.0312
+      },
+      {
+        "file": "apps/pantry-e2e/tslint.json",
+        "ext": ".json",
+        "mtime": 1586475383901.0413
+      }
+    ],
+    "pantry": [
+      {
+        "file": "apps/pantry/browserslist",
+        "ext": "",
+        "mtime": 1586475383871.121
+      },
+      {
+        "file": "apps/pantry/jest.config.js",
+        "ext": ".js",
+        "mtime": 1586475383897.061
+      },
+      {
+        "file": "apps/pantry/proxy.conf.json",
+        "ext": ".json",
+        "mtime": 1586475383927.9695
+      },
+      {
+        "file": "apps/pantry/src/app/app.component.html",
+        "ext": ".html",
+        "mtime": 1586475383891.0676
+      },
+      {
+        "file": "apps/pantry/src/app/app.component.scss",
+        "ext": ".scss",
+        "mtime": 1586475383895.0576
+      },
+      {
+        "file": "apps/pantry/src/app/app.component.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586475383892.0654
+      },
+      {
+        "file": "apps/pantry/src/app/app.component.ts",
+        "ext": ".ts",
+        "mtime": 1586475383893.0627
+      },
+      {
+        "file": "apps/pantry/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1586475383889.0732
+      },
+      {
+        "file": "apps/pantry/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1586475383886.0815
+      },
+      {
+        "file": "apps/pantry/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1586475383887.078
+      },
+      {
+        "file": "apps/pantry/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1586475383888.0762
+      },
+      {
+        "file": "apps/pantry/src/favicon.ico",
+        "ext": ".ico",
+        "mtime": 1586475383870.1235
+      },
+      {
+        "file": "apps/pantry/src/index.html",
+        "ext": ".html",
+        "mtime": 1586475383880.0974
+      },
+      {
+        "file": "apps/pantry/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1586475383882.0925
+      },
+      {
+        "file": "apps/pantry/src/polyfills.ts",
+        "ext": ".ts",
+        "mtime": 1586475383883.0894
+      },
+      {
+        "file": "apps/pantry/src/styles.scss",
+        "ext": ".scss",
+        "mtime": 1586475383885.0837
+      },
+      {
+        "file": "apps/pantry/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1586475383900.044
+      },
+      {
+        "file": "apps/pantry/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1586475383877.1055
+      },
+      {
+        "file": "apps/pantry/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1586475383868.1294
+      },
+      {
+        "file": "apps/pantry/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1586475383899.047
+      },
+      {
+        "file": "apps/pantry/tslint.json",
+        "ext": ".json",
+        "mtime": 1586475383878.1028
+      }
+    ],
+    "api": [
+      {
+        "file": "apps/api/jest.config.js",
+        "ext": ".js",
+        "mtime": 1586475383925.975
+      },
+      {
+        "file": "apps/api/src/app/.gitkeep",
+        "ext": "",
+        "mtime": 1586475383921.9854
+      },
+      {
+        "file": "apps/api/src/app/app.controller.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586475383929.9653
+      },
+      {
+        "file": "apps/api/src/app/app.controller.ts",
+        "ext": ".ts",
+        "mtime": 1586475383931.9585
+      },
+      {
+        "file": "apps/api/src/app/app.module.ts",
+        "ext": ".ts",
+        "mtime": 1586554121986.374
+      },
+      {
+        "file": "apps/api/src/app/app.service.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586475383933.9531
+      },
+      {
+        "file": "apps/api/src/app/app.service.ts",
+        "ext": ".ts",
+        "mtime": 1586475383935.9478
+      },
+      {
+        "file": "apps/api/src/app/common/index.ts",
+        "ext": ".ts",
+        "mtime": 1586553383423.7617
+      },
+      {
+        "file": "apps/api/src/app/common/models/index.ts",
+        "ext": ".ts",
+        "mtime": 1586553383423.7617
+      },
+      {
+        "file": "apps/api/src/app/common/models/payload.model.ts",
+        "ext": ".ts",
+        "mtime": 1586553383423.7617
+      },
+      {
+        "file": "apps/api/src/app/controllers/pantry.controller.ts",
+        "ext": ".ts",
+        "mtime": 1586553383423.7617
+      },
+      {
+        "file": "apps/api/src/app/resources/pantry.model.ts",
+        "ext": ".ts",
+        "mtime": 1586553383424.7588
+      },
+      {
+        "file": "apps/api/src/assets/.gitkeep",
+        "ext": "",
+        "mtime": 1586475383922.9822
+      },
+      {
+        "file": "apps/api/src/environments/environment.prod.ts",
+        "ext": ".ts",
+        "mtime": 1586475383923.9797
+      },
+      {
+        "file": "apps/api/src/environments/environment.ts",
+        "ext": ".ts",
+        "mtime": 1586475383924.9783
+      },
+      {
+        "file": "apps/api/src/main.ts",
+        "ext": ".ts",
+        "mtime": 1586554121986.374
+      },
+      {
+        "file": "apps/api/tsconfig.app.json",
+        "ext": ".json",
+        "mtime": 1586475383917.996
+      },
+      {
+        "file": "apps/api/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1586475383919.9912
+      },
+      {
+        "file": "apps/api/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1586475383926.972
+      },
+      {
+        "file": "apps/api/tslint.json",
+        "ext": ".json",
+        "mtime": 1586475383916.998
+      }
+    ]
+  }
+}
