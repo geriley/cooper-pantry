@@ -1,8 +1,7 @@
-<div style="text-align:center">
-  <h1>Welcome to pantry!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-  />
+<mat-toolbar color="primary">
+  <span>Cooper Pantry</span>
+</mat-toolbar>
+<div class="centered-view">
+  <kendo-chat [messages]="feed | async" [user]="user" (sendMessage)="sendMessage($event)">
+  </kendo-chat>
 </div>
-<div>Message: {{ hello$ | async | json }}</div>

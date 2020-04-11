@@ -194,6 +194,9 @@
                   "apps/pantry/src/assets"
                 ],
                 "styles": [
+                  {
+                    "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+                  },
                   "apps/pantry/src/styles.scss"
                 ],
                 "scripts": []
@@ -266,7 +269,12 @@
                 "jestConfig": "apps/pantry/jest.config.js",
                 "tsConfig": "apps/pantry/tsconfig.spec.json",
                 "passWithNoTests": true,
-                "setupFile": "apps/pantry/src/test-setup.ts"
+                "setupFile": "apps/pantry/src/test-setup.ts",
+                "styles": [
+                  {
+                    "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+                  }
+                ]
               }
             }
           },
@@ -290,7 +298,7 @@
             {
               "file": "apps/pantry/src/app/app.component.html",
               "ext": ".html",
-              "mtime": 1586475383891.0676
+              "mtime": 1586639752830.353
             },
             {
               "file": "apps/pantry/src/app/app.component.scss",
@@ -305,12 +313,12 @@
             {
               "file": "apps/pantry/src/app/app.component.ts",
               "ext": ".ts",
-              "mtime": 1586475383893.0627
+              "mtime": 1586639795224.0117
             },
             {
               "file": "apps/pantry/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1586475383889.0732
+              "mtime": 1586639189744.559
             },
             {
               "file": "apps/pantry/src/assets/.gitkeep",
@@ -345,7 +353,7 @@
             {
               "file": "apps/pantry/src/polyfills.ts",
               "ext": ".ts",
-              "mtime": 1586475383883.0894
+              "mtime": 1586639418703.4717
             },
             {
               "file": "apps/pantry/src/styles.scss",
@@ -411,6 +419,14 @@
                       "with": "apps/api/src/environments/environment.prod.ts"
                     }
                   ]
+                },
+                "dev": {
+                  "fileReplacements": [
+                    {
+                      "replace": "apps/api/src/environments/environment.ts",
+                      "with": "apps/api/src/environments/environment.dev.ts"
+                    }
+                  ]
                 }
               }
             },
@@ -418,6 +434,9 @@
               "builder": "@nrwl/node:execute",
               "options": {
                 "buildTarget": "api:build"
+              },
+              "configurations": {
+                "dev": {}
               }
             },
             "lint": {
@@ -497,12 +516,17 @@
             {
               "file": "apps/api/src/app/controllers/communication.controller.ts",
               "ext": ".ts",
-              "mtime": 1586629346419.7336
+              "mtime": 1586636675304.8623
+            },
+            {
+              "file": "apps/api/src/app/controllers/modules/communication-http.module.ts",
+              "ext": ".ts",
+              "mtime": 1586636675304.8623
             },
             {
               "file": "apps/api/src/app/controllers/modules/index.ts",
               "ext": ".ts",
-              "mtime": 1586630088800.3896
+              "mtime": 1586636948851.3286
             },
             {
               "file": "apps/api/src/app/controllers/modules/pantry-http.module.ts",
@@ -590,6 +614,11 @@
               "mtime": 1586630559537.635
             },
             {
+              "file": "apps/api/src/app/services/twilio/twilio.service.ts",
+              "ext": ".ts",
+              "mtime": 1586636562953.543
+            },
+            {
               "file": "apps/api/src/assets/.gitkeep",
               "ext": "",
               "mtime": 1586475383922.9822
@@ -602,7 +631,7 @@
             {
               "file": "apps/api/src/environments/environment.ts",
               "ext": ".ts",
-              "mtime": 1586571616761.4373
+              "mtime": 1586635124965.3813
             },
             {
               "file": "apps/api/src/main.ts",
@@ -669,6 +698,14 @@
         "name": "@angular/forms",
         "data": {
           "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@angular/localize": {
+        "type": "npm",
+        "name": "@angular/localize",
+        "data": {
+          "version": "^9.1.1",
           "files": []
         }
       },
@@ -744,6 +781,70 @@
           "files": []
         }
       },
+      "@progress/kendo-angular-buttons": {
+        "type": "npm",
+        "name": "@progress/kendo-angular-buttons",
+        "data": {
+          "version": "^5.0.0",
+          "files": []
+        }
+      },
+      "@progress/kendo-angular-common": {
+        "type": "npm",
+        "name": "@progress/kendo-angular-common",
+        "data": {
+          "version": "^1.0.0",
+          "files": []
+        }
+      },
+      "@progress/kendo-angular-conversational-ui": {
+        "type": "npm",
+        "name": "@progress/kendo-angular-conversational-ui",
+        "data": {
+          "version": "^2.0.1",
+          "files": []
+        }
+      },
+      "@progress/kendo-angular-intl": {
+        "type": "npm",
+        "name": "@progress/kendo-angular-intl",
+        "data": {
+          "version": "^2.0.0",
+          "files": []
+        }
+      },
+      "@progress/kendo-angular-l10n": {
+        "type": "npm",
+        "name": "@progress/kendo-angular-l10n",
+        "data": {
+          "version": "^2.0.0",
+          "files": []
+        }
+      },
+      "@progress/kendo-angular-popup": {
+        "type": "npm",
+        "name": "@progress/kendo-angular-popup",
+        "data": {
+          "version": "^3.0.0",
+          "files": []
+        }
+      },
+      "@progress/kendo-theme-default": {
+        "type": "npm",
+        "name": "@progress/kendo-theme-default",
+        "data": {
+          "version": "latest",
+          "files": []
+        }
+      },
+      "@types/twilio": {
+        "type": "npm",
+        "name": "@types/twilio",
+        "data": {
+          "version": "^2.11.0",
+          "files": []
+        }
+      },
       "core-js": {
         "type": "npm",
         "name": "core-js",
@@ -781,6 +882,14 @@
         "name": "rxjs",
         "data": {
           "version": "~6.5.4",
+          "files": []
+        }
+      },
+      "twilio": {
+        "type": "npm",
+        "name": "twilio",
+        "data": {
+          "version": "^3.42.1",
           "files": []
         }
       },
@@ -1021,12 +1130,27 @@
         {
           "type": "static",
           "source": "pantry",
+          "target": "@progress/kendo-angular-conversational-ui"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "rxjs"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
           "target": "@angular/platform-browser"
         },
         {
           "type": "static",
           "source": "pantry",
           "target": "@angular/platform-browser-dynamic"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "@angular/localize"
         },
         {
           "type": "static",
@@ -1078,6 +1202,11 @@
         {
           "type": "static",
           "source": "api",
+          "target": "twilio"
+        },
+        {
+          "type": "static",
+          "source": "api",
           "target": "@nestjs/core"
         }
       ],
@@ -1086,6 +1215,7 @@
       "@angular/compiler": [],
       "@angular/core": [],
       "@angular/forms": [],
+      "@angular/localize": [],
       "@angular/platform-browser": [],
       "@angular/platform-browser-dynamic": [],
       "@angular/router": [],
@@ -1095,11 +1225,20 @@
       "@nestjs/serve-static": [],
       "@nestjs/typeorm": [],
       "@nrwl/angular": [],
+      "@progress/kendo-angular-buttons": [],
+      "@progress/kendo-angular-common": [],
+      "@progress/kendo-angular-conversational-ui": [],
+      "@progress/kendo-angular-intl": [],
+      "@progress/kendo-angular-l10n": [],
+      "@progress/kendo-angular-popup": [],
+      "@progress/kendo-theme-default": [],
+      "@types/twilio": [],
       "core-js": [],
       "pg": [],
       "pg-connection-string": [],
       "reflect-metadata": [],
       "rxjs": [],
+      "twilio": [],
       "typeorm": [],
       "zone.js": [],
       "@angular/cli": [],
@@ -1242,7 +1381,7 @@
       {
         "file": "apps/pantry/src/app/app.component.html",
         "ext": ".html",
-        "mtime": 1586475383891.0676
+        "mtime": 1586639752830.353
       },
       {
         "file": "apps/pantry/src/app/app.component.scss",
@@ -1257,12 +1396,12 @@
       {
         "file": "apps/pantry/src/app/app.component.ts",
         "ext": ".ts",
-        "mtime": 1586475383893.0627
+        "mtime": 1586639795224.0117
       },
       {
         "file": "apps/pantry/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1586475383889.0732
+        "mtime": 1586639189744.559
       },
       {
         "file": "apps/pantry/src/assets/.gitkeep",
@@ -1297,7 +1436,7 @@
       {
         "file": "apps/pantry/src/polyfills.ts",
         "ext": ".ts",
-        "mtime": 1586475383883.0894
+        "mtime": 1586639418703.4717
       },
       {
         "file": "apps/pantry/src/styles.scss",
@@ -1384,12 +1523,17 @@
       {
         "file": "apps/api/src/app/controllers/communication.controller.ts",
         "ext": ".ts",
-        "mtime": 1586629346419.7336
+        "mtime": 1586636675304.8623
+      },
+      {
+        "file": "apps/api/src/app/controllers/modules/communication-http.module.ts",
+        "ext": ".ts",
+        "mtime": 1586636675304.8623
       },
       {
         "file": "apps/api/src/app/controllers/modules/index.ts",
         "ext": ".ts",
-        "mtime": 1586630088800.3896
+        "mtime": 1586636948851.3286
       },
       {
         "file": "apps/api/src/app/controllers/modules/pantry-http.module.ts",
@@ -1477,6 +1621,11 @@
         "mtime": 1586630559537.635
       },
       {
+        "file": "apps/api/src/app/services/twilio/twilio.service.ts",
+        "ext": ".ts",
+        "mtime": 1586636562953.543
+      },
+      {
         "file": "apps/api/src/assets/.gitkeep",
         "ext": "",
         "mtime": 1586475383922.9822
@@ -1489,7 +1638,7 @@
       {
         "file": "apps/api/src/environments/environment.ts",
         "ext": ".ts",
-        "mtime": 1586571616761.4373
+        "mtime": 1586635124965.3813
       },
       {
         "file": "apps/api/src/main.ts",
