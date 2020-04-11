@@ -467,7 +467,7 @@
             {
               "file": "apps/api/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1586554121986.374
+              "mtime": 1586616404247.0964
             },
             {
               "file": "apps/api/src/app/app.service.spec.ts",
@@ -495,14 +495,64 @@
               "mtime": 1586553383423.7617
             },
             {
+              "file": "apps/api/src/app/controllers/modules/index.ts",
+              "ext": ".ts",
+              "mtime": 1586616404247.0964
+            },
+            {
+              "file": "apps/api/src/app/controllers/modules/pantry-http.module.ts",
+              "ext": ".ts",
+              "mtime": 1586616479940.3623
+            },
+            {
               "file": "apps/api/src/app/controllers/pantry.controller.ts",
               "ext": ".ts",
-              "mtime": 1586553383423.7617
+              "mtime": 1586617920195.918
+            },
+            {
+              "file": "apps/api/src/app/entities/index.ts",
+              "ext": ".ts",
+              "mtime": 1586615798539.9268
+            },
+            {
+              "file": "apps/api/src/app/entities/modules/index.ts",
+              "ext": ".ts",
+              "mtime": 1586615798539.9268
+            },
+            {
+              "file": "apps/api/src/app/entities/modules/pantry.module.ts",
+              "ext": ".ts",
+              "mtime": 1586615798539.9268
+            },
+            {
+              "file": "apps/api/src/app/entities/pantry.entity.ts",
+              "ext": ".ts",
+              "mtime": 1586617920193.9229
             },
             {
               "file": "apps/api/src/app/resources/pantry.model.ts",
               "ext": ".ts",
-              "mtime": 1586553383424.7588
+              "mtime": 1586615230321.4226
+            },
+            {
+              "file": "apps/api/src/app/services/repository/index.ts",
+              "ext": ".ts",
+              "mtime": 1586615522859.9634
+            },
+            {
+              "file": "apps/api/src/app/services/repository/pantry-repo.service.ts",
+              "ext": ".ts",
+              "mtime": 1586615522859.9634
+            },
+            {
+              "file": "apps/api/src/app/services/resource/index.ts",
+              "ext": ".ts",
+              "mtime": 1586615522859.9634
+            },
+            {
+              "file": "apps/api/src/app/services/resource/pantry-resource.service.ts",
+              "ext": ".ts",
+              "mtime": 1586617920195.918
             },
             {
               "file": "apps/api/src/assets/.gitkeep",
@@ -517,7 +567,7 @@
             {
               "file": "apps/api/src/environments/environment.ts",
               "ext": ".ts",
-              "mtime": 1586475383924.9783
+              "mtime": 1586571616761.4373
             },
             {
               "file": "apps/api/src/main.ts",
@@ -643,6 +693,14 @@
           "files": []
         }
       },
+      "@nestjs/typeorm": {
+        "type": "npm",
+        "name": "@nestjs/typeorm",
+        "data": {
+          "version": "^7.0.0",
+          "files": []
+        }
+      },
       "@nrwl/angular": {
         "type": "npm",
         "name": "@nrwl/angular",
@@ -659,6 +717,22 @@
           "files": []
         }
       },
+      "pg": {
+        "type": "npm",
+        "name": "pg",
+        "data": {
+          "version": "^8.0.2",
+          "files": []
+        }
+      },
+      "pg-connection-string": {
+        "type": "npm",
+        "name": "pg-connection-string",
+        "data": {
+          "version": "^2.2.0",
+          "files": []
+        }
+      },
       "reflect-metadata": {
         "type": "npm",
         "name": "reflect-metadata",
@@ -672,6 +746,14 @@
         "name": "rxjs",
         "data": {
           "version": "~6.5.4",
+          "files": []
+        }
+      },
+      "typeorm": {
+        "type": "npm",
+        "name": "typeorm",
+        "data": {
+          "version": "^0.2.24",
           "files": []
         }
       },
@@ -946,6 +1028,21 @@
         {
           "type": "static",
           "source": "api",
+          "target": "@nestjs/typeorm"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "pg-connection-string"
+        },
+        {
+          "type": "static",
+          "source": "api",
+          "target": "typeorm"
+        },
+        {
+          "type": "static",
+          "source": "api",
           "target": "@nestjs/core"
         }
       ],
@@ -961,10 +1058,14 @@
       "@nestjs/core": [],
       "@nestjs/platform-express": [],
       "@nestjs/serve-static": [],
+      "@nestjs/typeorm": [],
       "@nrwl/angular": [],
       "core-js": [],
+      "pg": [],
+      "pg-connection-string": [],
       "reflect-metadata": [],
       "rxjs": [],
+      "typeorm": [],
       "zone.js": [],
       "@angular/cli": [],
       "@nrwl/workspace": [],
@@ -1218,7 +1319,7 @@
       {
         "file": "apps/api/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1586554121986.374
+        "mtime": 1586616404247.0964
       },
       {
         "file": "apps/api/src/app/app.service.spec.ts",
@@ -1246,14 +1347,64 @@
         "mtime": 1586553383423.7617
       },
       {
+        "file": "apps/api/src/app/controllers/modules/index.ts",
+        "ext": ".ts",
+        "mtime": 1586616404247.0964
+      },
+      {
+        "file": "apps/api/src/app/controllers/modules/pantry-http.module.ts",
+        "ext": ".ts",
+        "mtime": 1586616479940.3623
+      },
+      {
         "file": "apps/api/src/app/controllers/pantry.controller.ts",
         "ext": ".ts",
-        "mtime": 1586553383423.7617
+        "mtime": 1586617920195.918
+      },
+      {
+        "file": "apps/api/src/app/entities/index.ts",
+        "ext": ".ts",
+        "mtime": 1586615798539.9268
+      },
+      {
+        "file": "apps/api/src/app/entities/modules/index.ts",
+        "ext": ".ts",
+        "mtime": 1586615798539.9268
+      },
+      {
+        "file": "apps/api/src/app/entities/modules/pantry.module.ts",
+        "ext": ".ts",
+        "mtime": 1586615798539.9268
+      },
+      {
+        "file": "apps/api/src/app/entities/pantry.entity.ts",
+        "ext": ".ts",
+        "mtime": 1586617920193.9229
       },
       {
         "file": "apps/api/src/app/resources/pantry.model.ts",
         "ext": ".ts",
-        "mtime": 1586553383424.7588
+        "mtime": 1586615230321.4226
+      },
+      {
+        "file": "apps/api/src/app/services/repository/index.ts",
+        "ext": ".ts",
+        "mtime": 1586615522859.9634
+      },
+      {
+        "file": "apps/api/src/app/services/repository/pantry-repo.service.ts",
+        "ext": ".ts",
+        "mtime": 1586615522859.9634
+      },
+      {
+        "file": "apps/api/src/app/services/resource/index.ts",
+        "ext": ".ts",
+        "mtime": 1586615522859.9634
+      },
+      {
+        "file": "apps/api/src/app/services/resource/pantry-resource.service.ts",
+        "ext": ".ts",
+        "mtime": 1586617920195.918
       },
       {
         "file": "apps/api/src/assets/.gitkeep",
@@ -1268,7 +1419,7 @@
       {
         "file": "apps/api/src/environments/environment.ts",
         "ext": ".ts",
-        "mtime": 1586475383924.9783
+        "mtime": 1586571616761.4373
       },
       {
         "file": "apps/api/src/main.ts",

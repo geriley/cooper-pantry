@@ -1,3 +1,3 @@
-export interface IPantry {
-    id: string;    
+export interface IPantryDTO {
+    name: string;   
 }

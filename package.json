@@ -8,7 +8,9 @@
   "scripts": {
     "ng": "ng",
     "nx": "nx",
+    "start": "ng serve api",
     "start:dist": "node dist/apps/api/main.js",
+    "build:prod": "ng build api --prod && ng build pantry --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
@@ -44,10 +46,14 @@
     "@nestjs/core": "^6.8.3",
     "@nestjs/platform-express": "^6.8.3",
     "@nestjs/serve-static": "^2.1.0",
+    "@nestjs/typeorm": "^7.0.0",
     "@nrwl/angular": "9.2.2",
     "core-js": "^2.5.4",
+    "pg": "^8.0.2",
+    "pg-connection-string": "^2.2.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.4",
+    "typeorm": "^0.2.24",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
