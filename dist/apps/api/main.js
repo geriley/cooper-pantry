@@ -852,7 +852,7 @@ SurveyResponseHttpModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-var _a, _b;
+var _a, _b, _c;
 
 
 
@@ -861,7 +861,18 @@ let SurveyResponsesController = class SurveyResponsesController {
         this.service = service;
     }
     post(response) {
-        return this.service.addBotSurveyResponse(response);
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.service.addBotSurveyResponse(response);
+            return Promise.resolve({
+                actions: [
+                    {
+                        redirect: {
+                            uri: "task://complete_survey"
+                        }
+                    }
+                ]
+            });
+        });
     }
     get() {
         return this.service.get();
@@ -872,17 +883,17 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Object]),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_a = typeof Promise !== "undefined" && Promise) === "function" ? _a : Object)
 ], SurveyResponsesController.prototype, "post", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])(),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", []),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_a = typeof Promise !== "undefined" && Promise) === "function" ? _a : Object)
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_b = typeof Promise !== "undefined" && Promise) === "function" ? _b : Object)
 ], SurveyResponsesController.prototype, "get", null);
 SurveyResponsesController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('survey-responses'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_b = typeof _services_resource__WEBPACK_IMPORTED_MODULE_2__[/* SurveyResponseResourceService */ "b"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_2__[/* SurveyResponseResourceService */ "b"]) === "function" ? _b : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _services_resource__WEBPACK_IMPORTED_MODULE_2__[/* SurveyResponseResourceService */ "b"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_2__[/* SurveyResponseResourceService */ "b"]) === "function" ? _c : Object])
 ], SurveyResponsesController);
 
 

@@ -6,8 +6,17 @@ import { IPayload } from '../common';
 export class SurveyResponsesController {
     constructor(private service: SurveyResponseResourceService) { }
     @Post()
-    public post(@Body() response: any) {
-        return this.service.addBotSurveyResponse(response);
+    public async post(@Body() response: any): Promise<{ actions: any[] }> {
+        this.service.addBotSurveyResponse(response);
+        return Promise.resolve({
+            actions: [
+                {
+                    redirect: {
+                        uri: "task://complete_survey"
+                    }
+                }
+            ]
+        });
     }
 
     @Get()
