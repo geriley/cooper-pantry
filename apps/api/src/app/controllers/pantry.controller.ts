@@ -1,7 +1,6 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
-import { IPayload } from '../common';
 import { PantryResourceService } from '../services/resource/pantry-resource.service';
-import { IPantryDTO } from '../resources/pantry.model';
+import { IPantryDTO, IPayload } from '@cooper/api-interfaces';
 
 @Controller('pantries')
 export class PantriesController {

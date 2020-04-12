@@ -67,6 +67,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.4",
     "twilio": "^3.42.1",
+    "twilio-chat": "^3.3.4",
     "typeorm": "^0.2.24",
     "zone.js": "^0.10.2"
   },

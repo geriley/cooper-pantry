@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { SurveyResponseRepoService } from '../repository';
-import { IPayload } from '../../common';
+import { IPayload } from '@cooper/api-interfaces';
 
 @Injectable()
 export class SurveyResponseResourceService {

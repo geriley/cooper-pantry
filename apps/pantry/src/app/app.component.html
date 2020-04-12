@@ -1,7 +1,10 @@
 <mat-toolbar color="primary">
-  <span>Cooper Pantry</span>
+  <button class="menu-btn" mat-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="icon"></span>
+  <span class="logo">Cooper Pantry</span>
 </mat-toolbar>
-<div class="centered-view">
-  <kendo-chat [messages]="feed | async" [user]="user" (sendMessage)="sendMessage($event)">
-  </kendo-chat>
+<div style="height: 100%; width: 100%">
+  <router-outlet></router-outlet>
 </div>

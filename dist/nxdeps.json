@@ -1,6 +1,113 @@
 {
   "projectGraph": {
     "nodes": {
+      "assistant-feature": {
+        "name": "assistant-feature",
+        "type": "lib",
+        "data": {
+          "projectType": "library",
+          "root": "libs/assistant/feature",
+          "sourceRoot": "libs/assistant/feature/src",
+          "prefix": "cooper",
+          "architect": {
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "libs/assistant/feature/tsconfig.lib.json",
+                  "libs/assistant/feature/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!libs/assistant/feature/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "libs/assistant/feature/jest.config.js",
+                "tsConfig": "libs/assistant/feature/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/assistant/feature/src/test-setup.ts"
+              }
+            }
+          },
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "libs/assistant/feature/jest.config.js",
+              "ext": ".js",
+              "mtime": 1586644893472.9397
+            },
+            {
+              "file": "libs/assistant/feature/README.md",
+              "ext": ".md",
+              "mtime": 1586644893446.016
+            },
+            {
+              "file": "libs/assistant/feature/src/index.ts",
+              "ext": ".ts",
+              "mtime": 1586644893464.962
+            },
+            {
+              "file": "libs/assistant/feature/src/lib/assistant-feature.module.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586644893469.9492
+            },
+            {
+              "file": "libs/assistant/feature/src/lib/assistant-feature.module.ts",
+              "ext": ".ts",
+              "mtime": 1586711883094.347
+            },
+            {
+              "file": "libs/assistant/feature/src/lib/components/bot-chat.component.html",
+              "ext": ".html",
+              "mtime": 1586648417538.8916
+            },
+            {
+              "file": "libs/assistant/feature/src/lib/components/bot-chat.component.ts",
+              "ext": ".ts",
+              "mtime": 1586648669152.014
+            },
+            {
+              "file": "libs/assistant/feature/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1586644893477.9275
+            },
+            {
+              "file": "libs/assistant/feature/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1586644893471.9426
+            },
+            {
+              "file": "libs/assistant/feature/tsconfig.lib.json",
+              "ext": ".json",
+              "mtime": 1586644893456.9836
+            },
+            {
+              "file": "libs/assistant/feature/tsconfig.lib.prod.json",
+              "ext": ".json",
+              "mtime": 1586644893460.9724
+            },
+            {
+              "file": "libs/assistant/feature/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1586644893476.9292
+            },
+            {
+              "file": "libs/assistant/feature/tslint.json",
+              "ext": ".json",
+              "mtime": 1586644893462.9668
+            }
+          ]
+        }
+      },
       "api-interfaces": {
         "name": "api-interfaces",
         "type": "lib",
@@ -52,7 +159,32 @@
             {
               "file": "libs/api-interfaces/src/lib/api-interfaces.ts",
               "ext": ".ts",
-              "mtime": 1586475383943.9268
+              "mtime": 1586711871755.1897
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/dto/index.ts",
+              "ext": ".ts",
+              "mtime": 1586713078153.405
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/dto/pantry.model.ts",
+              "ext": ".ts",
+              "mtime": 1586711701259
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/dto/payload.model.ts",
+              "ext": ".ts",
+              "mtime": 1586712910191.9998
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/dto/user.model.ts",
+              "ext": ".ts",
+              "mtime": 1586713078152.4082
+            },
+            {
+              "file": "libs/api-interfaces/src/lib/resource-types.enum.ts",
+              "ext": ".ts",
+              "mtime": 1586713078152.4082
             },
             {
               "file": "libs/api-interfaces/tsconfig.json",
@@ -194,6 +326,7 @@
                   "apps/pantry/src/assets"
                 ],
                 "styles": [
+                  "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
                   {
                     "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
                   },
@@ -296,14 +429,19 @@
               "mtime": 1586475383927.9695
             },
             {
+              "file": "apps/pantry/src/app/app-routing.module.ts",
+              "ext": ".ts",
+              "mtime": 1586648244699.9084
+            },
+            {
               "file": "apps/pantry/src/app/app.component.html",
               "ext": ".html",
-              "mtime": 1586639752830.353
+              "mtime": 1586654993565.3157
             },
             {
               "file": "apps/pantry/src/app/app.component.scss",
               "ext": ".scss",
-              "mtime": 1586475383895.0576
+              "mtime": 1586654537523.202
             },
             {
               "file": "apps/pantry/src/app/app.component.spec.ts",
@@ -313,17 +451,47 @@
             {
               "file": "apps/pantry/src/app/app.component.ts",
               "ext": ".ts",
-              "mtime": 1586639795224.0117
+              "mtime": 1586645145174.0088
             },
             {
               "file": "apps/pantry/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1586639189744.559
+              "mtime": 1586648203251.2
+            },
+            {
+              "file": "apps/pantry/src/app/pages/home/home.component.html",
+              "ext": ".html",
+              "mtime": 1586650687166.9453
+            },
+            {
+              "file": "apps/pantry/src/app/pages/home/home.component.ts",
+              "ext": ".ts",
+              "mtime": 1586713078223.3738
+            },
+            {
+              "file": "apps/pantry/src/app/pages/home/home.module.ts",
+              "ext": ".ts",
+              "mtime": 1586648187712.7344
+            },
+            {
+              "file": "apps/pantry/src/app/pages/home/index.ts",
+              "ext": ".ts",
+              "mtime": 1586647826936.6345
+            },
+            {
+              "file": "apps/pantry/src/app/pages/unfound-page/unfound-page.component.ts",
+              "ext": ".ts",
+              "mtime": 1586647826937.6316
             },
             {
               "file": "apps/pantry/src/assets/.gitkeep",
               "ext": "",
               "mtime": 1586475383886.0815
+            },
+            {
+              "file": "apps/pantry/src/assets/carrot.svg",
+              "ext": ".svg",
+              "mtime": 1586651776945.506
             },
             {
               "file": "apps/pantry/src/environments/environment.prod.ts",
@@ -338,12 +506,12 @@
             {
               "file": "apps/pantry/src/favicon.ico",
               "ext": ".ico",
-              "mtime": 1586475383870.1235
+              "mtime": 1586654759820.5479
             },
             {
               "file": "apps/pantry/src/index.html",
               "ext": ".html",
-              "mtime": 1586475383880.0974
+              "mtime": 1586654988706.336
             },
             {
               "file": "apps/pantry/src/main.ts",
@@ -358,7 +526,7 @@
             {
               "file": "apps/pantry/src/styles.scss",
               "ext": ".scss",
-              "mtime": 1586475383885.0837
+              "mtime": 1586650297992.3337
             },
             {
               "file": "apps/pantry/src/test-setup.ts",
@@ -481,12 +649,12 @@
             {
               "file": "apps/api/src/app/app.controller.ts",
               "ext": ".ts",
-              "mtime": 1586475383931.9585
+              "mtime": 1586715789446.52
             },
             {
               "file": "apps/api/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1586616404247.0964
+              "mtime": 1586715962985.819
             },
             {
               "file": "apps/api/src/app/app.service.spec.ts",
@@ -494,24 +662,14 @@
               "mtime": 1586475383933.9531
             },
             {
-              "file": "apps/api/src/app/app.service.ts",
+              "file": "apps/api/src/app/common/base-resource.service.ts",
               "ext": ".ts",
-              "mtime": 1586475383935.9478
+              "mtime": 1586715524940.4673
             },
             {
               "file": "apps/api/src/app/common/index.ts",
               "ext": ".ts",
-              "mtime": 1586553383423.7617
-            },
-            {
-              "file": "apps/api/src/app/common/models/index.ts",
-              "ext": ".ts",
-              "mtime": 1586553383423.7617
-            },
-            {
-              "file": "apps/api/src/app/common/models/payload.model.ts",
-              "ext": ".ts",
-              "mtime": 1586553383423.7617
+              "mtime": 1586715524940.4673
             },
             {
               "file": "apps/api/src/app/controllers/communication.controller.ts",
@@ -526,7 +684,7 @@
             {
               "file": "apps/api/src/app/controllers/modules/index.ts",
               "ext": ".ts",
-              "mtime": 1586636948851.3286
+              "mtime": 1586715936092.607
             },
             {
               "file": "apps/api/src/app/controllers/modules/pantry-http.module.ts",
@@ -539,24 +697,34 @@
               "mtime": 1586630084572.039
             },
             {
+              "file": "apps/api/src/app/controllers/modules/user-http.module.ts",
+              "ext": ".ts",
+              "mtime": 1586715989252.3918
+            },
+            {
               "file": "apps/api/src/app/controllers/pantry.controller.ts",
               "ext": ".ts",
-              "mtime": 1586617920195.918
+              "mtime": 1586713078152.4082
             },
             {
               "file": "apps/api/src/app/controllers/survey.controller.ts",
               "ext": ".ts",
-              "mtime": 1586632641977.432
+              "mtime": 1586713078153.405
+            },
+            {
+              "file": "apps/api/src/app/controllers/user.controller.ts",
+              "ext": ".ts",
+              "mtime": 1586715659206.073
             },
             {
               "file": "apps/api/src/app/entities/index.ts",
               "ext": ".ts",
-              "mtime": 1586630004615.1428
+              "mtime": 1586713078152.4082
             },
             {
               "file": "apps/api/src/app/entities/modules/index.ts",
               "ext": ".ts",
-              "mtime": 1586630004615.1428
+              "mtime": 1586713078153.405
             },
             {
               "file": "apps/api/src/app/entities/modules/pantry.module.ts",
@@ -569,6 +737,11 @@
               "mtime": 1586630004571.1328
             },
             {
+              "file": "apps/api/src/app/entities/modules/user.module.ts",
+              "ext": ".ts",
+              "mtime": 1586713078152.4082
+            },
+            {
               "file": "apps/api/src/app/entities/pantry.entity.ts",
               "ext": ".ts",
               "mtime": 1586617920193.9229
@@ -579,14 +752,14 @@
               "mtime": 1586630004615.1428
             },
             {
-              "file": "apps/api/src/app/resources/pantry.model.ts",
+              "file": "apps/api/src/app/entities/user.entity.ts",
               "ext": ".ts",
-              "mtime": 1586615230321.4226
+              "mtime": 1586716098785.0942
             },
             {
               "file": "apps/api/src/app/services/repository/index.ts",
               "ext": ".ts",
-              "mtime": 1586630004615.1428
+              "mtime": 1586713078153.405
             },
             {
               "file": "apps/api/src/app/services/repository/pantry-repo.service.ts",
@@ -599,19 +772,29 @@
               "mtime": 1586630004571.1328
             },
             {
+              "file": "apps/api/src/app/services/repository/user-repo.service.ts",
+              "ext": ".ts",
+              "mtime": 1586713078152.4082
+            },
+            {
               "file": "apps/api/src/app/services/resource/index.ts",
               "ext": ".ts",
-              "mtime": 1586630004571.1328
+              "mtime": 1586715659206.073
             },
             {
               "file": "apps/api/src/app/services/resource/pantry-resource.service.ts",
               "ext": ".ts",
-              "mtime": 1586617920195.918
+              "mtime": 1586713078153.405
             },
             {
               "file": "apps/api/src/app/services/resource/survey-responses.service.ts",
               "ext": ".ts",
-              "mtime": 1586630559537.635
+              "mtime": 1586713078153.405
+            },
+            {
+              "file": "apps/api/src/app/services/resource/user-resource.service.ts",
+              "ext": ".ts",
+              "mtime": 1586716060542.8882
             },
             {
               "file": "apps/api/src/app/services/twilio/twilio.service.ts",
@@ -669,6 +852,14 @@
           "files": []
         }
       },
+      "@angular/cdk": {
+        "type": "npm",
+        "name": "@angular/cdk",
+        "data": {
+          "version": "^9.2.0",
+          "files": []
+        }
+      },
       "@angular/common": {
         "type": "npm",
         "name": "@angular/common",
@@ -706,6 +897,14 @@
         "name": "@angular/localize",
         "data": {
           "version": "^9.1.1",
+          "files": []
+        }
+      },
+      "@angular/material": {
+        "type": "npm",
+        "name": "@angular/material",
+        "data": {
+          "version": "^9.2.0",
           "files": []
         }
       },
@@ -890,6 +1089,14 @@
         "name": "twilio",
         "data": {
           "version": "^3.42.1",
+          "files": []
+        }
+      },
+      "twilio-chat": {
+        "type": "npm",
+        "name": "twilio-chat",
+        "data": {
+          "version": "^3.3.4",
           "files": []
         }
       },
@@ -1103,6 +1310,33 @@
       }
     },
     "dependencies": {
+      "assistant-feature": [
+        {
+          "type": "static",
+          "source": "assistant-feature",
+          "target": "@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "assistant-feature",
+          "target": "@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "assistant-feature",
+          "target": "@progress/kendo-angular-conversational-ui"
+        },
+        {
+          "type": "static",
+          "source": "assistant-feature",
+          "target": "rxjs"
+        },
+        {
+          "type": "static",
+          "source": "assistant-feature",
+          "target": "jest-preset-angular"
+        }
+      ],
       "api-interfaces": [],
       "pantry-e2e": [
         {
@@ -1115,7 +1349,7 @@
         {
           "type": "static",
           "source": "pantry",
-          "target": "api-interfaces"
+          "target": "assistant-feature"
         },
         {
           "type": "static",
@@ -1125,7 +1359,17 @@
         {
           "type": "static",
           "source": "pantry",
+          "target": "@angular/router"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
           "target": "@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "@angular/platform-browser"
         },
         {
           "type": "static",
@@ -1135,12 +1379,12 @@
         {
           "type": "static",
           "source": "pantry",
-          "target": "rxjs"
+          "target": "@angular/material"
         },
         {
           "type": "static",
           "source": "pantry",
-          "target": "@angular/platform-browser"
+          "target": "twilio-chat"
         },
         {
           "type": "static",
@@ -1211,11 +1455,13 @@
         }
       ],
       "@angular/animations": [],
+      "@angular/cdk": [],
       "@angular/common": [],
       "@angular/compiler": [],
       "@angular/core": [],
       "@angular/forms": [],
       "@angular/localize": [],
+      "@angular/material": [],
       "@angular/platform-browser": [],
       "@angular/platform-browser-dynamic": [],
       "@angular/router": [],
@@ -1239,6 +1485,7 @@
       "reflect-metadata": [],
       "rxjs": [],
       "twilio": [],
+      "twilio-chat": [],
       "typeorm": [],
       "zone.js": [],
       "@angular/cli": [],
@@ -1268,6 +1515,73 @@
     }
   },
   "fileMap": {
+    "assistant-feature": [
+      {
+        "file": "libs/assistant/feature/jest.config.js",
+        "ext": ".js",
+        "mtime": 1586644893472.9397
+      },
+      {
+        "file": "libs/assistant/feature/README.md",
+        "ext": ".md",
+        "mtime": 1586644893446.016
+      },
+      {
+        "file": "libs/assistant/feature/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1586644893464.962
+      },
+      {
+        "file": "libs/assistant/feature/src/lib/assistant-feature.module.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586644893469.9492
+      },
+      {
+        "file": "libs/assistant/feature/src/lib/assistant-feature.module.ts",
+        "ext": ".ts",
+        "mtime": 1586711883094.347
+      },
+      {
+        "file": "libs/assistant/feature/src/lib/components/bot-chat.component.html",
+        "ext": ".html",
+        "mtime": 1586648417538.8916
+      },
+      {
+        "file": "libs/assistant/feature/src/lib/components/bot-chat.component.ts",
+        "ext": ".ts",
+        "mtime": 1586648669152.014
+      },
+      {
+        "file": "libs/assistant/feature/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1586644893477.9275
+      },
+      {
+        "file": "libs/assistant/feature/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1586644893471.9426
+      },
+      {
+        "file": "libs/assistant/feature/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1586644893456.9836
+      },
+      {
+        "file": "libs/assistant/feature/tsconfig.lib.prod.json",
+        "ext": ".json",
+        "mtime": 1586644893460.9724
+      },
+      {
+        "file": "libs/assistant/feature/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1586644893476.9292
+      },
+      {
+        "file": "libs/assistant/feature/tslint.json",
+        "ext": ".json",
+        "mtime": 1586644893462.9668
+      }
+    ],
     "api-interfaces": [
       {
         "file": "libs/api-interfaces/jest.config.js",
@@ -1287,7 +1601,32 @@
       {
         "file": "libs/api-interfaces/src/lib/api-interfaces.ts",
         "ext": ".ts",
-        "mtime": 1586475383943.9268
+        "mtime": 1586711871755.1897
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/dto/index.ts",
+        "ext": ".ts",
+        "mtime": 1586713078153.405
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/dto/pantry.model.ts",
+        "ext": ".ts",
+        "mtime": 1586711701259
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/dto/payload.model.ts",
+        "ext": ".ts",
+        "mtime": 1586712910191.9998
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/dto/user.model.ts",
+        "ext": ".ts",
+        "mtime": 1586713078152.4082
+      },
+      {
+        "file": "libs/api-interfaces/src/lib/resource-types.enum.ts",
+        "ext": ".ts",
+        "mtime": 1586713078152.4082
       },
       {
         "file": "libs/api-interfaces/tsconfig.json",
@@ -1379,14 +1718,19 @@
         "mtime": 1586475383927.9695
       },
       {
+        "file": "apps/pantry/src/app/app-routing.module.ts",
+        "ext": ".ts",
+        "mtime": 1586648244699.9084
+      },
+      {
         "file": "apps/pantry/src/app/app.component.html",
         "ext": ".html",
-        "mtime": 1586639752830.353
+        "mtime": 1586654993565.3157
       },
       {
         "file": "apps/pantry/src/app/app.component.scss",
         "ext": ".scss",
-        "mtime": 1586475383895.0576
+        "mtime": 1586654537523.202
       },
       {
         "file": "apps/pantry/src/app/app.component.spec.ts",
@@ -1396,17 +1740,47 @@
       {
         "file": "apps/pantry/src/app/app.component.ts",
         "ext": ".ts",
-        "mtime": 1586639795224.0117
+        "mtime": 1586645145174.0088
       },
       {
         "file": "apps/pantry/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1586639189744.559
+        "mtime": 1586648203251.2
+      },
+      {
+        "file": "apps/pantry/src/app/pages/home/home.component.html",
+        "ext": ".html",
+        "mtime": 1586650687166.9453
+      },
+      {
+        "file": "apps/pantry/src/app/pages/home/home.component.ts",
+        "ext": ".ts",
+        "mtime": 1586713078223.3738
+      },
+      {
+        "file": "apps/pantry/src/app/pages/home/home.module.ts",
+        "ext": ".ts",
+        "mtime": 1586648187712.7344
+      },
+      {
+        "file": "apps/pantry/src/app/pages/home/index.ts",
+        "ext": ".ts",
+        "mtime": 1586647826936.6345
+      },
+      {
+        "file": "apps/pantry/src/app/pages/unfound-page/unfound-page.component.ts",
+        "ext": ".ts",
+        "mtime": 1586647826937.6316
       },
       {
         "file": "apps/pantry/src/assets/.gitkeep",
         "ext": "",
         "mtime": 1586475383886.0815
+      },
+      {
+        "file": "apps/pantry/src/assets/carrot.svg",
+        "ext": ".svg",
+        "mtime": 1586651776945.506
       },
       {
         "file": "apps/pantry/src/environments/environment.prod.ts",
@@ -1421,12 +1795,12 @@
       {
         "file": "apps/pantry/src/favicon.ico",
         "ext": ".ico",
-        "mtime": 1586475383870.1235
+        "mtime": 1586654759820.5479
       },
       {
         "file": "apps/pantry/src/index.html",
         "ext": ".html",
-        "mtime": 1586475383880.0974
+        "mtime": 1586654988706.336
       },
       {
         "file": "apps/pantry/src/main.ts",
@@ -1441,7 +1815,7 @@
       {
         "file": "apps/pantry/src/styles.scss",
         "ext": ".scss",
-        "mtime": 1586475383885.0837
+        "mtime": 1586650297992.3337
       },
       {
         "file": "apps/pantry/src/test-setup.ts",
@@ -1488,12 +1862,12 @@
       {
         "file": "apps/api/src/app/app.controller.ts",
         "ext": ".ts",
-        "mtime": 1586475383931.9585
+        "mtime": 1586715789446.52
       },
       {
         "file": "apps/api/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1586616404247.0964
+        "mtime": 1586715962985.819
       },
       {
         "file": "apps/api/src/app/app.service.spec.ts",
@@ -1501,24 +1875,14 @@
         "mtime": 1586475383933.9531
       },
       {
-        "file": "apps/api/src/app/app.service.ts",
+        "file": "apps/api/src/app/common/base-resource.service.ts",
         "ext": ".ts",
-        "mtime": 1586475383935.9478
+        "mtime": 1586715524940.4673
       },
       {
         "file": "apps/api/src/app/common/index.ts",
         "ext": ".ts",
-        "mtime": 1586553383423.7617
-      },
-      {
-        "file": "apps/api/src/app/common/models/index.ts",
-        "ext": ".ts",
-        "mtime": 1586553383423.7617
-      },
-      {
-        "file": "apps/api/src/app/common/models/payload.model.ts",
-        "ext": ".ts",
-        "mtime": 1586553383423.7617
+        "mtime": 1586715524940.4673
       },
       {
         "file": "apps/api/src/app/controllers/communication.controller.ts",
@@ -1533,7 +1897,7 @@
       {
         "file": "apps/api/src/app/controllers/modules/index.ts",
         "ext": ".ts",
-        "mtime": 1586636948851.3286
+        "mtime": 1586715936092.607
       },
       {
         "file": "apps/api/src/app/controllers/modules/pantry-http.module.ts",
@@ -1546,24 +1910,34 @@
         "mtime": 1586630084572.039
       },
       {
+        "file": "apps/api/src/app/controllers/modules/user-http.module.ts",
+        "ext": ".ts",
+        "mtime": 1586715989252.3918
+      },
+      {
         "file": "apps/api/src/app/controllers/pantry.controller.ts",
         "ext": ".ts",
-        "mtime": 1586617920195.918
+        "mtime": 1586713078152.4082
       },
       {
         "file": "apps/api/src/app/controllers/survey.controller.ts",
         "ext": ".ts",
-        "mtime": 1586632641977.432
+        "mtime": 1586713078153.405
+      },
+      {
+        "file": "apps/api/src/app/controllers/user.controller.ts",
+        "ext": ".ts",
+        "mtime": 1586715659206.073
       },
       {
         "file": "apps/api/src/app/entities/index.ts",
         "ext": ".ts",
-        "mtime": 1586630004615.1428
+        "mtime": 1586713078152.4082
       },
       {
         "file": "apps/api/src/app/entities/modules/index.ts",
         "ext": ".ts",
-        "mtime": 1586630004615.1428
+        "mtime": 1586713078153.405
       },
       {
         "file": "apps/api/src/app/entities/modules/pantry.module.ts",
@@ -1576,6 +1950,11 @@
         "mtime": 1586630004571.1328
       },
       {
+        "file": "apps/api/src/app/entities/modules/user.module.ts",
+        "ext": ".ts",
+        "mtime": 1586713078152.4082
+      },
+      {
         "file": "apps/api/src/app/entities/pantry.entity.ts",
         "ext": ".ts",
         "mtime": 1586617920193.9229
@@ -1586,14 +1965,14 @@
         "mtime": 1586630004615.1428
       },
       {
-        "file": "apps/api/src/app/resources/pantry.model.ts",
+        "file": "apps/api/src/app/entities/user.entity.ts",
         "ext": ".ts",
-        "mtime": 1586615230321.4226
+        "mtime": 1586716098785.0942
       },
       {
         "file": "apps/api/src/app/services/repository/index.ts",
         "ext": ".ts",
-        "mtime": 1586630004615.1428
+        "mtime": 1586713078153.405
       },
       {
         "file": "apps/api/src/app/services/repository/pantry-repo.service.ts",
@@ -1606,19 +1985,29 @@
         "mtime": 1586630004571.1328
       },
       {
+        "file": "apps/api/src/app/services/repository/user-repo.service.ts",
+        "ext": ".ts",
+        "mtime": 1586713078152.4082
+      },
+      {
         "file": "apps/api/src/app/services/resource/index.ts",
         "ext": ".ts",
-        "mtime": 1586630004571.1328
+        "mtime": 1586715659206.073
       },
       {
         "file": "apps/api/src/app/services/resource/pantry-resource.service.ts",
         "ext": ".ts",
-        "mtime": 1586617920195.918
+        "mtime": 1586713078153.405
       },
       {
         "file": "apps/api/src/app/services/resource/survey-responses.service.ts",
         "ext": ".ts",
-        "mtime": 1586630559537.635
+        "mtime": 1586713078153.405
+      },
+      {
+        "file": "apps/api/src/app/services/resource/user-resource.service.ts",
+        "ext": ".ts",
+        "mtime": 1586716060542.8882
       },
       {
         "file": "apps/api/src/app/services/twilio/twilio.service.ts",

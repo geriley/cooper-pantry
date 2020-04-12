@@ -6,11 +6,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChatModule } from '@progress/kendo-angular-conversational-ui';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, ChatModule, BrowserAnimationsModule, MatToolbarModule],
+  imports: [
+    BrowserModule, 
+    HttpClientModule, 
+    AppRoutingModule,
+    ChatModule, 
+    BrowserAnimationsModule, 
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

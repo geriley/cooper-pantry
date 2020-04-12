@@ -21,10 +21,7 @@
             "polyfills": "apps/pantry/src/polyfills.ts",
             "tsConfig": "apps/pantry/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/pantry/src/favicon.ico",
-              "apps/pantry/src/assets"
-            ],
+            "assets": ["apps/pantry/src/favicon.ico", "apps/pantry/src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               {
@@ -90,10 +87,7 @@
               "apps/pantry/tsconfig.app.json",
               "apps/pantry/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/pantry/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/pantry/**"]
           }
         },
         "test": {
@@ -133,13 +127,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/pantry-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/pantry-e2e/**"
-            ]
+            "tsConfig": ["apps/pantry-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/pantry-e2e/**"]
           }
         }
       }
@@ -157,9 +146,7 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -199,10 +186,7 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/api/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/api/**"]
           }
         },
         "test": {
@@ -228,10 +212,7 @@
               "libs/api-interfaces/tsconfig.lib.json",
               "libs/api-interfaces/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api-interfaces/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**"]
           }
         },
         "test": {
@@ -241,6 +222,38 @@
             "tsConfig": "libs/api-interfaces/tsconfig.spec.json",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "assistant-feature": {
+      "projectType": "library",
+      "root": "libs/assistant/feature",
+      "sourceRoot": "libs/assistant/feature/src",
+      "prefix": "cooper",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/assistant/feature/tsconfig.lib.json",
+              "libs/assistant/feature/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/assistant/feature/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/assistant/feature/jest.config.js",
+            "tsConfig": "libs/assistant/feature/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/assistant/feature/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }

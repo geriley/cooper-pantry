@@ -1,1 +1,1 @@
-export * from './models';
+export * from './base-resource.service';

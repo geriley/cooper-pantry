@@ -1,6 +1,6 @@
 import { Controller, Post, Body, Get } from '@nestjs/common';
 import { SurveyResponseResourceService } from '../services/resource';
-import { IPayload } from '../common';
+import { IPayload } from '@cooper/api-interfaces';
 
 @Controller('survey-responses')
 export class SurveyResponsesController {

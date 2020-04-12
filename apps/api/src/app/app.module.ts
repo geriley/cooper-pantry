@@ -3,10 +3,10 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import * as PostgressConnectionStringParser from "pg-connection-string";
 import { entities } from './entities';
 import { controllerModules } from './controllers/modules';
+import { ResourceServiceHelper } from './common/base-resource.service';
 
 const databaseUrl: string = process.env.DATABASE_URL;
 const connectionOptions = databaseUrl ? PostgressConnectionStringParser.parse(databaseUrl) : undefined;
@@ -31,7 +31,7 @@ const connectionOptions = databaseUrl ? PostgressConnectionStringParser.parse(da
     }),
     ...controllerModules
   ],
+  providers: [ResourceServiceHelper],
   controllers: [AppController],
-  providers: [AppService]
 })
 export class AppModule { }

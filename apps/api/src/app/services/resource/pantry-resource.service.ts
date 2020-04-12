@@ -1,8 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { IPayload, IPayloadData } from '../../common';
-import { IPantryDTO } from '../../resources/pantry.model';
 import { PantryRepoService } from '../repository';
 import { Pantry } from '../../entities';
+import { IPantryDTO, IPayload, IPayloadData } from '@cooper/api-interfaces';
 
 @Injectable()
 export class PantryResourceService {
