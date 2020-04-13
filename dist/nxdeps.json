@@ -63,7 +63,7 @@
             {
               "file": "libs/assistant/feature/src/lib/assistant-feature.module.ts",
               "ext": ".ts",
-              "mtime": 1586711883094.347
+              "mtime": 1586718781056.9055
             },
             {
               "file": "libs/assistant/feature/src/lib/components/bot-chat.component.html",
@@ -73,7 +73,12 @@
             {
               "file": "libs/assistant/feature/src/lib/components/bot-chat.component.ts",
               "ext": ".ts",
-              "mtime": 1586648669152.014
+              "mtime": 1586718407226.919
+            },
+            {
+              "file": "libs/assistant/feature/src/lib/services/twilio-chat-bot.service.ts",
+              "ext": ".ts",
+              "mtime": 1586722656777.1323
             },
             {
               "file": "libs/assistant/feature/src/test-setup.ts",
@@ -205,6 +210,133 @@
               "file": "libs/api-interfaces/tslint.json",
               "ext": ".json",
               "mtime": 1586475383936.9453
+            }
+          ]
+        }
+      },
+      "api-services": {
+        "name": "api-services",
+        "type": "lib",
+        "data": {
+          "projectType": "library",
+          "root": "libs/api-services",
+          "sourceRoot": "libs/api-services/src",
+          "prefix": "cooper",
+          "architect": {
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "libs/api-services/tsconfig.lib.json",
+                  "libs/api-services/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!libs/api-services/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "libs/api-services/jest.config.js",
+                "tsConfig": "libs/api-services/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/api-services/src/test-setup.ts"
+              }
+            }
+          },
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "libs/api-services/jest.config.js",
+              "ext": ".js",
+              "mtime": 1586717503290.7666
+            },
+            {
+              "file": "libs/api-services/README.md",
+              "ext": ".md",
+              "mtime": 1586717503263.6948
+            },
+            {
+              "file": "libs/api-services/src/index.ts",
+              "ext": ".ts",
+              "mtime": 1586722623887.579
+            },
+            {
+              "file": "libs/api-services/src/lib/access-services/index.ts",
+              "ext": ".ts",
+              "mtime": 1586721503218.4277
+            },
+            {
+              "file": "libs/api-services/src/lib/access-services/user-access.service.ts",
+              "ext": ".ts",
+              "mtime": 1586722623887.579
+            },
+            {
+              "file": "libs/api-services/src/lib/api-services.module.spec.ts",
+              "ext": ".ts",
+              "mtime": 1586717503287.6538
+            },
+            {
+              "file": "libs/api-services/src/lib/api-services.module.ts",
+              "ext": ".ts",
+              "mtime": 1586722675139.354
+            },
+            {
+              "file": "libs/api-services/src/lib/base-url-token.ts",
+              "ext": ".ts",
+              "mtime": 1586717759891.2383
+            },
+            {
+              "file": "libs/api-services/src/lib/http-services/communications-data.service.ts",
+              "ext": ".ts",
+              "mtime": 1586718937061.959
+            },
+            {
+              "file": "libs/api-services/src/lib/http-services/index.ts",
+              "ext": ".ts",
+              "mtime": 1586717942069.9856
+            },
+            {
+              "file": "libs/api-services/src/lib/http-services/user-data.service.ts",
+              "ext": ".ts",
+              "mtime": 1586722623887.579
+            },
+            {
+              "file": "libs/api-services/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1586717503294.6116
+            },
+            {
+              "file": "libs/api-services/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1586717503288.6558
+            },
+            {
+              "file": "libs/api-services/tsconfig.lib.json",
+              "ext": ".json",
+              "mtime": 1586717503265.6895
+            },
+            {
+              "file": "libs/api-services/tsconfig.lib.prod.json",
+              "ext": ".json",
+              "mtime": 1586717503267.6838
+            },
+            {
+              "file": "libs/api-services/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1586717503292.6172
+            },
+            {
+              "file": "libs/api-services/tslint.json",
+              "ext": ".json",
+              "mtime": 1586717503281.651
             }
           ]
         }
@@ -456,7 +588,7 @@
             {
               "file": "apps/pantry/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1586648203251.2
+              "mtime": 1586717745272.0881
             },
             {
               "file": "apps/pantry/src/app/pages/home/home.component.html",
@@ -466,7 +598,7 @@
             {
               "file": "apps/pantry/src/app/pages/home/home.component.ts",
               "ext": ".ts",
-              "mtime": 1586713078223.3738
+              "mtime": 1586717759891.2383
             },
             {
               "file": "apps/pantry/src/app/pages/home/home.module.ts",
@@ -521,7 +653,7 @@
             {
               "file": "apps/pantry/src/polyfills.ts",
               "ext": ".ts",
-              "mtime": 1586639418703.4717
+              "mtime": 1586718698833.2976
             },
             {
               "file": "apps/pantry/src/styles.scss",
@@ -589,6 +721,9 @@
                   ]
                 },
                 "dev": {
+                  "optimization": true,
+                  "extractLicenses": true,
+                  "inspect": false,
                   "fileReplacements": [
                     {
                       "replace": "apps/api/src/environments/environment.ts",
@@ -654,7 +789,7 @@
             {
               "file": "apps/api/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1586715962985.819
+              "mtime": 1586720155393.5378
             },
             {
               "file": "apps/api/src/app/app.service.spec.ts",
@@ -674,7 +809,7 @@
             {
               "file": "apps/api/src/app/controllers/communication.controller.ts",
               "ext": ".ts",
-              "mtime": 1586636675304.8623
+              "mtime": 1586718937061.959
             },
             {
               "file": "apps/api/src/app/controllers/modules/communication-http.module.ts",
@@ -714,7 +849,7 @@
             {
               "file": "apps/api/src/app/controllers/user.controller.ts",
               "ext": ".ts",
-              "mtime": 1586715659206.073
+              "mtime": 1586721943951.9946
             },
             {
               "file": "apps/api/src/app/entities/index.ts",
@@ -754,7 +889,7 @@
             {
               "file": "apps/api/src/app/entities/user.entity.ts",
               "ext": ".ts",
-              "mtime": 1586716098785.0942
+              "mtime": 1586716136019.4746
             },
             {
               "file": "apps/api/src/app/services/repository/index.ts",
@@ -774,7 +909,7 @@
             {
               "file": "apps/api/src/app/services/repository/user-repo.service.ts",
               "ext": ".ts",
-              "mtime": 1586713078152.4082
+              "mtime": 1586720668931.1313
             },
             {
               "file": "apps/api/src/app/services/resource/index.ts",
@@ -794,12 +929,12 @@
             {
               "file": "apps/api/src/app/services/resource/user-resource.service.ts",
               "ext": ".ts",
-              "mtime": 1586716060542.8882
+              "mtime": 1586722623907.5322
             },
             {
               "file": "apps/api/src/app/services/twilio/twilio.service.ts",
               "ext": ".ts",
-              "mtime": 1586636562953.543
+              "mtime": 1586720198467.308
             },
             {
               "file": "apps/api/src/assets/.gitkeep",
@@ -814,7 +949,7 @@
             {
               "file": "apps/api/src/environments/environment.ts",
               "ext": ".ts",
-              "mtime": 1586635124965.3813
+              "mtime": 1586720155392.5403
             },
             {
               "file": "apps/api/src/main.ts",
@@ -830,6 +965,11 @@
               "file": "apps/api/tsconfig.json",
               "ext": ".json",
               "mtime": 1586475383919.9912
+            },
+            {
+              "file": "apps/api/tsconfig.nx-tmp",
+              "ext": ".nx-tmp",
+              "mtime": 1586720166249.4324
             },
             {
               "file": "apps/api/tsconfig.spec.json",
@@ -940,6 +1080,14 @@
           "files": []
         }
       },
+      "@nestjs/config": {
+        "type": "npm",
+        "name": "@nestjs/config",
+        "data": {
+          "version": "^0.4.0",
+          "files": []
+        }
+      },
       "@nestjs/core": {
         "type": "npm",
         "name": "@nestjs/core",
@@ -1041,6 +1189,14 @@
         "name": "@types/twilio",
         "data": {
           "version": "^2.11.0",
+          "files": []
+        }
+      },
+      "babel-runtime": {
+        "type": "npm",
+        "name": "babel-runtime",
+        "data": {
+          "version": "^6.26.0",
           "files": []
         }
       },
@@ -1314,6 +1470,16 @@
         {
           "type": "static",
           "source": "assistant-feature",
+          "target": "api-services"
+        },
+        {
+          "type": "static",
+          "source": "assistant-feature",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "assistant-feature",
           "target": "@angular/core"
         },
         {
@@ -1334,10 +1500,42 @@
         {
           "type": "static",
           "source": "assistant-feature",
+          "target": "twilio-chat"
+        },
+        {
+          "type": "static",
+          "source": "assistant-feature",
           "target": "jest-preset-angular"
         }
       ],
       "api-interfaces": [],
+      "api-services": [
+        {
+          "type": "static",
+          "source": "api-services",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "api-services",
+          "target": "@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "api-services",
+          "target": "rxjs"
+        },
+        {
+          "type": "static",
+          "source": "api-services",
+          "target": "@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "api-services",
+          "target": "jest-preset-angular"
+        }
+      ],
       "pantry-e2e": [
         {
           "type": "implicit",
@@ -1346,6 +1544,11 @@
         }
       ],
       "pantry": [
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "api-services"
+        },
         {
           "type": "static",
           "source": "pantry",
@@ -1380,11 +1583,6 @@
           "type": "static",
           "source": "pantry",
           "target": "@angular/material"
-        },
-        {
-          "type": "static",
-          "source": "pantry",
-          "target": "twilio-chat"
         },
         {
           "type": "static",
@@ -1441,6 +1639,11 @@
         {
           "type": "static",
           "source": "api",
+          "target": "@nestjs/config"
+        },
+        {
+          "type": "static",
+          "source": "api",
           "target": "typeorm"
         },
         {
@@ -1466,6 +1669,7 @@
       "@angular/platform-browser-dynamic": [],
       "@angular/router": [],
       "@nestjs/common": [],
+      "@nestjs/config": [],
       "@nestjs/core": [],
       "@nestjs/platform-express": [],
       "@nestjs/serve-static": [],
@@ -1479,6 +1683,7 @@
       "@progress/kendo-angular-popup": [],
       "@progress/kendo-theme-default": [],
       "@types/twilio": [],
+      "babel-runtime": [],
       "core-js": [],
       "pg": [],
       "pg-connection-string": [],
@@ -1539,7 +1744,7 @@
       {
         "file": "libs/assistant/feature/src/lib/assistant-feature.module.ts",
         "ext": ".ts",
-        "mtime": 1586711883094.347
+        "mtime": 1586718781056.9055
       },
       {
         "file": "libs/assistant/feature/src/lib/components/bot-chat.component.html",
@@ -1549,7 +1754,12 @@
       {
         "file": "libs/assistant/feature/src/lib/components/bot-chat.component.ts",
         "ext": ".ts",
-        "mtime": 1586648669152.014
+        "mtime": 1586718407226.919
+      },
+      {
+        "file": "libs/assistant/feature/src/lib/services/twilio-chat-bot.service.ts",
+        "ext": ".ts",
+        "mtime": 1586722656777.1323
       },
       {
         "file": "libs/assistant/feature/src/test-setup.ts",
@@ -1649,6 +1859,93 @@
         "mtime": 1586475383936.9453
       }
     ],
+    "api-services": [
+      {
+        "file": "libs/api-services/jest.config.js",
+        "ext": ".js",
+        "mtime": 1586717503290.7666
+      },
+      {
+        "file": "libs/api-services/README.md",
+        "ext": ".md",
+        "mtime": 1586717503263.6948
+      },
+      {
+        "file": "libs/api-services/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1586722623887.579
+      },
+      {
+        "file": "libs/api-services/src/lib/access-services/index.ts",
+        "ext": ".ts",
+        "mtime": 1586721503218.4277
+      },
+      {
+        "file": "libs/api-services/src/lib/access-services/user-access.service.ts",
+        "ext": ".ts",
+        "mtime": 1586722623887.579
+      },
+      {
+        "file": "libs/api-services/src/lib/api-services.module.spec.ts",
+        "ext": ".ts",
+        "mtime": 1586717503287.6538
+      },
+      {
+        "file": "libs/api-services/src/lib/api-services.module.ts",
+        "ext": ".ts",
+        "mtime": 1586722675139.354
+      },
+      {
+        "file": "libs/api-services/src/lib/base-url-token.ts",
+        "ext": ".ts",
+        "mtime": 1586717759891.2383
+      },
+      {
+        "file": "libs/api-services/src/lib/http-services/communications-data.service.ts",
+        "ext": ".ts",
+        "mtime": 1586718937061.959
+      },
+      {
+        "file": "libs/api-services/src/lib/http-services/index.ts",
+        "ext": ".ts",
+        "mtime": 1586717942069.9856
+      },
+      {
+        "file": "libs/api-services/src/lib/http-services/user-data.service.ts",
+        "ext": ".ts",
+        "mtime": 1586722623887.579
+      },
+      {
+        "file": "libs/api-services/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1586717503294.6116
+      },
+      {
+        "file": "libs/api-services/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1586717503288.6558
+      },
+      {
+        "file": "libs/api-services/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1586717503265.6895
+      },
+      {
+        "file": "libs/api-services/tsconfig.lib.prod.json",
+        "ext": ".json",
+        "mtime": 1586717503267.6838
+      },
+      {
+        "file": "libs/api-services/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1586717503292.6172
+      },
+      {
+        "file": "libs/api-services/tslint.json",
+        "ext": ".json",
+        "mtime": 1586717503281.651
+      }
+    ],
     "pantry-e2e": [
       {
         "file": "apps/pantry-e2e/cypress.json",
@@ -1745,7 +2042,7 @@
       {
         "file": "apps/pantry/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1586648203251.2
+        "mtime": 1586717745272.0881
       },
       {
         "file": "apps/pantry/src/app/pages/home/home.component.html",
@@ -1755,7 +2052,7 @@
       {
         "file": "apps/pantry/src/app/pages/home/home.component.ts",
         "ext": ".ts",
-        "mtime": 1586713078223.3738
+        "mtime": 1586717759891.2383
       },
       {
         "file": "apps/pantry/src/app/pages/home/home.module.ts",
@@ -1810,7 +2107,7 @@
       {
         "file": "apps/pantry/src/polyfills.ts",
         "ext": ".ts",
-        "mtime": 1586639418703.4717
+        "mtime": 1586718698833.2976
       },
       {
         "file": "apps/pantry/src/styles.scss",
@@ -1867,7 +2164,7 @@
       {
         "file": "apps/api/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1586715962985.819
+        "mtime": 1586720155393.5378
       },
       {
         "file": "apps/api/src/app/app.service.spec.ts",
@@ -1887,7 +2184,7 @@
       {
         "file": "apps/api/src/app/controllers/communication.controller.ts",
         "ext": ".ts",
-        "mtime": 1586636675304.8623
+        "mtime": 1586718937061.959
       },
       {
         "file": "apps/api/src/app/controllers/modules/communication-http.module.ts",
@@ -1927,7 +2224,7 @@
       {
         "file": "apps/api/src/app/controllers/user.controller.ts",
         "ext": ".ts",
-        "mtime": 1586715659206.073
+        "mtime": 1586721943951.9946
       },
       {
         "file": "apps/api/src/app/entities/index.ts",
@@ -1967,7 +2264,7 @@
       {
         "file": "apps/api/src/app/entities/user.entity.ts",
         "ext": ".ts",
-        "mtime": 1586716098785.0942
+        "mtime": 1586716136019.4746
       },
       {
         "file": "apps/api/src/app/services/repository/index.ts",
@@ -1987,7 +2284,7 @@
       {
         "file": "apps/api/src/app/services/repository/user-repo.service.ts",
         "ext": ".ts",
-        "mtime": 1586713078152.4082
+        "mtime": 1586720668931.1313
       },
       {
         "file": "apps/api/src/app/services/resource/index.ts",
@@ -2007,12 +2304,12 @@
       {
         "file": "apps/api/src/app/services/resource/user-resource.service.ts",
         "ext": ".ts",
-        "mtime": 1586716060542.8882
+        "mtime": 1586722623907.5322
       },
       {
         "file": "apps/api/src/app/services/twilio/twilio.service.ts",
         "ext": ".ts",
-        "mtime": 1586636562953.543
+        "mtime": 1586720198467.308
       },
       {
         "file": "apps/api/src/assets/.gitkeep",
@@ -2027,7 +2324,7 @@
       {
         "file": "apps/api/src/environments/environment.ts",
         "ext": ".ts",
-        "mtime": 1586635124965.3813
+        "mtime": 1586720155392.5403
       },
       {
         "file": "apps/api/src/main.ts",
@@ -2043,6 +2340,11 @@
         "file": "apps/api/tsconfig.json",
         "ext": ".json",
         "mtime": 1586475383919.9912
+      },
+      {
+        "file": "apps/api/tsconfig.nx-tmp",
+        "ext": ".nx-tmp",
+        "mtime": 1586720166249.4324
       },
       {
         "file": "apps/api/tsconfig.spec.json",

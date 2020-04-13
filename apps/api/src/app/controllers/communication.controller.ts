@@ -5,8 +5,10 @@ import { TwilioService } from '../services/twilio/twilio.service';
 export class CommunicationsController {
     constructor(private twilioService: TwilioService) { }
     @Post('chatAccessToken')
-    public getChatAccessToken(@Body() req: { identity: string }): string {
-        return this.twilioService.generateChatAccessToken(req);
+    public getChatAccessToken(@Body() req: { identity: string }): { jwt: string } {
+        return {
+            jwt: this.twilioService.generateChatAccessToken(req)
+        };
     }
 
     @Post('addBot')

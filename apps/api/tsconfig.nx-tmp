@@ -11,6 +11,9 @@
       ],
       "@cooper/assistant/feature": [
         "libs/assistant/feature/src/index.ts"
+      ],
+      "@cooper/api-services": [
+        "libs/api-services/src/index.ts"
       ]
     }
   },

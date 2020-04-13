@@ -6,7 +6,7 @@ import { AppController } from './app.controller';
 import * as PostgressConnectionStringParser from "pg-connection-string";
 import { entities } from './entities';
 import { controllerModules } from './controllers/modules';
-import { ResourceServiceHelper } from './common/base-resource.service';
+import { ConfigModule } from '@nestjs/config';
 
 const databaseUrl: string = process.env.DATABASE_URL;
 const connectionOptions = databaseUrl ? PostgressConnectionStringParser.parse(databaseUrl) : undefined;
@@ -29,9 +29,8 @@ const connectionOptions = databaseUrl ? PostgressConnectionStringParser.parse(da
       ],
       synchronize: true,
     }),
-    ...controllerModules
+    ...controllerModules,
   ],
-  providers: [ResourceServiceHelper],
   controllers: [AppController],
 })
 export class AppModule { }

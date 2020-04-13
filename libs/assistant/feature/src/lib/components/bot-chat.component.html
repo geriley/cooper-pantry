@@ -1,2 +1,7 @@
-<kendo-chat [messages]="feed | async" [user]="user" (sendMessage)="sendMessage($event)">
-</kendo-chat>
+<nb-chat title="Cooper" size="large">
+    <nb-chat-message *ngFor="let msg of messages | async" [message]="msg.text" [reply]="msg.reply" [sender]="msg.user.name"
+        [date]="msg.date" [avatar]="msg.user.avatar">
+    </nb-chat-message>
+    <nb-chat-form (send)="sendMessage($event)">
+    </nb-chat-form>
+</nb-chat>

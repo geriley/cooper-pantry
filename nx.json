@@ -34,6 +34,9 @@
     },
     "assistant-feature": {
       "tags": []
+    },
+    "api-services": {
+      "tags": []
     }
   }
 }

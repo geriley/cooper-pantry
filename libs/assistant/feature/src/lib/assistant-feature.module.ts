@@ -1,10 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { ApiServicesModule } from '@cooper/api-services';
+import { NbChatModule } from '@nebular/theme';
 import { BotChatComponent } from './components/bot-chat.component';
-import { ChatModule } from '@progress/kendo-angular-conversational-ui';
 
 @NgModule({
-    imports: [CommonModule, ChatModule],
+    imports: [
+        CommonModule, 
+        ApiServicesModule,
+        NbChatModule
+    ],
     declarations: [
         BotChatComponent,
     ],

@@ -11,8 +11,16 @@ export class UserResourceService {
         private userRepo: UserRepoService,
         private helper: ResourceServiceHelper
     ) { }
-    
+
     private readonly resourceType = CooperResourceType.User;
+
+    public async getById(id: number): Promise<IPayload<IUserDTO>> {
+        const user = await this.userRepo.getById(id);
+        return this.helper.mapToDTOPayload<User, IUserDTO>(
+            this.resourceType,
+            { entity: user, attributeMapper: (e) => this.mapEntityToResource(e) }
+        );
+    }
 
     public async get(): Promise<IPayload<IUserDTO>> {
         const users = await this.userRepo.findAll();
@@ -35,6 +43,7 @@ export class UserResourceService {
             { entity: addedEntities[0], attributeMapper: (e) => this.mapEntityToResource(e) }
         );
     }
+
 
     private mapPayloadToEntity(data: IPayloadData<IUserDTO>): User {
         return {

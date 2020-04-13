@@ -146,8 +146,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var pg_connection_string__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(pg_connection_string__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./entities */ "./apps/api/src/app/entities/index.ts");
 /* harmony import */ var _controllers_modules__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/modules */ "./apps/api/src/app/controllers/modules/index.ts");
-/* harmony import */ var _common_base_resource_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./common/base-resource.service */ "./apps/api/src/app/common/base-resource.service.ts");
-
 
 
 
@@ -180,9 +178,8 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
                 ],
                 synchronize: true,
             }),
-            ..._controllers_modules__WEBPACK_IMPORTED_MODULE_8__["controllerModules"]
+            ..._controllers_modules__WEBPACK_IMPORTED_MODULE_8__["controllerModules"],
         ],
-        providers: [_common_base_resource_service__WEBPACK_IMPORTED_MODULE_9__["ResourceServiceHelper"]],
         controllers: [_app_controller__WEBPACK_IMPORTED_MODULE_5__["AppController"]],
     })
 ], AppModule);
@@ -289,7 +286,9 @@ let CommunicationsController = class CommunicationsController {
         this.twilioService = twilioService;
     }
     getChatAccessToken(req) {
-        return this.twilioService.generateChatAccessToken(req);
+        return {
+            jwt: this.twilioService.generateChatAccessToken(req)
+        };
     }
     addChatBot() {
     }
@@ -299,7 +298,7 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Object]),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", String)
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", Object)
 ], CommunicationsController.prototype, "getChatAccessToken", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])('addBot'),
@@ -650,7 +649,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/resource */ "./apps/api/src/app/services/resource/index.ts");
 /* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
-var _a, _b, _c, _d, _e, _f;
+var _a, _b, _c, _d, _e, _f, _g;
 
 
 
@@ -658,6 +657,37 @@ var _a, _b, _c, _d, _e, _f;
 let UserController = class UserController {
     constructor(service) {
         this.service = service;
+    }
+    getById(params) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            try {
+                const user = yield this.service.getById(parseInt(params.id, 10));
+                if (!user.data) {
+                    throw new _nestjs_common__WEBPACK_IMPORTED_MODULE_1__["NotFoundException"]({
+                        errors: [
+                            {
+                                status: '404',
+                                title: 'Not Found'
+                            }
+                        ]
+                    });
+                }
+                else {
+                    return user;
+                }
+            }
+            catch (err) {
+                if (err && err.message && err.message.errors) {
+                    return err.message;
+                }
+                return {
+                    errors: [{
+                            status: '500',
+                            title: 'Failed to fetch user.'
+                        }]
+                };
+            }
+        });
     }
     get() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -706,28 +736,35 @@ let UserController = class UserController {
     }
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])(':id'),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Param"])()),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_a = typeof Promise !== "undefined" && Promise) === "function" ? _a : Object)
+], UserController.prototype, "getById", null);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])(),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", []),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_a = typeof Promise !== "undefined" && Promise) === "function" ? _a : Object)
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_b = typeof Promise !== "undefined" && Promise) === "function" ? _b : Object)
 ], UserController.prototype, "get", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])(),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_b = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"]) === "function" ? _b : Object]),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_c = typeof Promise !== "undefined" && Promise) === "function" ? _c : Object)
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"]) === "function" ? _c : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_d = typeof Promise !== "undefined" && Promise) === "function" ? _d : Object)
 ], UserController.prototype, "post", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Put"])(),
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Put"])(':id'),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_d = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"]) === "function" ? _d : Object]),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_e = typeof Promise !== "undefined" && Promise) === "function" ? _e : Object)
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_e = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"]) === "function" ? _e : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_f = typeof Promise !== "undefined" && Promise) === "function" ? _f : Object)
 ], UserController.prototype, "put", null);
 UserController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('users'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_f = typeof _services_resource__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"]) === "function" ? _f : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_g = typeof _services_resource__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"]) === "function" ? _g : Object])
 ], UserController);
 
 
@@ -1159,6 +1196,11 @@ let UserRepoService = class UserRepoService {
     constructor(userRepo) {
         this.userRepo = userRepo;
     }
+    getById(id) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.userRepo.findOne(id);
+        });
+    }
     findAll() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             return this.userRepo.find();
@@ -1358,6 +1400,12 @@ let UserResourceService = class UserResourceService {
         this.helper = helper;
         this.resourceType = _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].User;
     }
+    getById(id) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const user = yield this.userRepo.getById(id);
+            return this.helper.mapToDTOPayload(this.resourceType, { entity: user, attributeMapper: (e) => this.mapEntityToResource(e) });
+        });
+    }
     get() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             const users = yield this.userRepo.findAll();
@@ -1436,6 +1484,27 @@ TwilioService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
+/***/ "./apps/api/src/environments/enviornment.dev.ts":
+/*!******************************************************!*\
+  !*** ./apps/api/src/environments/enviornment.dev.ts ***!
+  \******************************************************/
+/*! exports provided: environment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+const environment = {
+    production: false,
+    twilioAccount: 'AC0fc66dbfb5ee5ba9712500f82845c0f7',
+    twilioChatSid: 'IS83bcbe672cbe47f3baae43897155f782',
+    twilioChatApiKey: 'SKaf6201047e5c624370653b99fbbe793e',
+    twilioChatApiSecret: 'wEqVs8o2YUi6CNdhoW7wTNqJNp0euA30',
+};
+
+
+/***/ }),
+
 /***/ "./apps/api/src/environments/environment.ts":
 /*!**************************************************!*\
   !*** ./apps/api/src/environments/environment.ts ***!
@@ -1446,12 +1515,14 @@ TwilioService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+/* harmony import */ var _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./enviornment.dev */ "./apps/api/src/environments/enviornment.dev.ts");
+
 const environment = {
     production: false,
-    twilioAccount: 'AC##',
-    twilioChatSid: 'IS##',
-    twilioChatApiKey: 'SK##',
-    twilioChatApiSecret: '##',
+    twilioAccount: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioAccount : 'AC##',
+    twilioChatSid: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatSid : 'IS##',
+    twilioChatApiKey: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatApiKey : 'SK##',
+    twilioChatApiSecret: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatApiSecret : '##',
 };
 
 
