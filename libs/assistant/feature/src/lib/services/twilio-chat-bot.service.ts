@@ -4,7 +4,7 @@ import { Client } from 'twilio-chat';
 import { CooperResourceType } from '@cooper/api-interfaces';
 import { Message } from 'twilio-chat/lib/message';
 import { Subject } from 'rxjs';
-import { scan, takeUntil } from 'rxjs/operators';
+import { scan, takeUntil, filter } from 'rxjs/operators';
 
 interface IChatMessage {
     text: string,
@@ -29,33 +29,41 @@ export class TwilioChatBotService implements OnDestroy {
 
     public async connect() {
         const user = await this.user.getById(this.currentId).toPromise();
-        const userChannel = user.attributes ? user.attributes.chatBotChannelSid : undefined;
         const token = await this.httpService.getChatToken({ identity: this.currentId }).toPromise();
         const client = await Client.create(token);
-        if (userChannel) {
-            const channel = (await client.getChannelBySid(userChannel));
-            channel.on('messageAdded', (msg: Message) => {
-                const isCurrentUser = msg.author === user.id;
-                this.newMsg.next({
-                    text: msg.body,
-                    date: new Date(),
-                    reply: isCurrentUser,
-                    user: {
-                        name: isCurrentUser ? 'You' : 'Cooper Bot',
-                        avatar: isCurrentUser ? undefined : 'https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/robot-face.png'
-                    }
-                });
-            });
-
-            this.send.pipe(
-                takeUntil(this.destroyed)
-            ).subscribe((msg) => channel.sendMessage(msg));
-
-        } else {
-            const channel = await client.createChannel();
-            channel.join();
-            this.updateUserChannel(channel.sid);
+        const channels = (await client.getSubscribedChannels())
+        for(const c of channels.items) {
+            if (c.createdBy === user.id) {
+                await c.delete();
+            } else {
+                await c.leave();
+            }
         }
+
+        const channel = await client.createChannel();
+        await channel.join();
+        channel.on('messageAdded', (msg: Message) => {
+            const isCurrentUser = msg.author === user.id;
+            this.newMsg.next({
+                text: msg.body,
+                date: msg.dateUpdated,
+                reply: isCurrentUser,
+                user: {
+                    name: isCurrentUser ? 'You' : 'Cooper Bot',
+                    avatar: isCurrentUser ? undefined : 'https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/robot-face.png'
+                }
+            });
+        });
+
+
+        this.send.pipe(
+            takeUntil(this.destroyed)
+        ).subscribe((msg) => {
+            channel.sendMessage(msg)
+        });
+        this.updateUserChannel(channel.sid);
+        this.httpService.addChatBot({ channelSid: channel.sid }).toPromise();
+
     }
 
     public sendMessage(msg: { message: string }) {

@@ -22,9 +22,9 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    NbThemeModule.forRoot(),
     NbLayoutModule,
     NbEvaIconsModule,
+    NbThemeModule.forRoot({ name: 'default' }),
   ],
   providers: [
     { provide: baseApiUrlToken, useValue: 'http://localhost:3333/api' }

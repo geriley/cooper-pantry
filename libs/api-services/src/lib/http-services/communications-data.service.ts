@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { baseApiUrlToken } from '../base-url-token';
 import { map } from 'rxjs/operators';
+import { IAddBotRequestDTO } from '@cooper/api-interfaces';
 
 @Injectable()
 export class CommunicationsDataService {
@@ -16,7 +17,8 @@ export class CommunicationsDataService {
         return this.http.post<{ jwt: string }>(url, req).pipe(map((r) => r.jwt));
     }
 
-    public addChatBot() {
-
+    public addChatBot(req: IAddBotRequestDTO): Observable<void> {
+        const url =  `${this.baseUrl}/communications/addBot`;
+        return this.http.post<void>(url, req);
     }
 }

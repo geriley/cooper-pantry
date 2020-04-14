@@ -47,14 +47,11 @@ export class UserResourceService {
 
     private mapPayloadToEntity(data: IPayloadData<IUserDTO>): User {
         return {
-            chatBotChannelSid: data.attributes ? data.attributes.chatBotChannelSid : undefined,
             id: data.id ? parseInt(data.id, 10) : undefined,
         };
     }
 
     private mapEntityToResource(e: User): IUserDTO {
-        return {
-            chatBotChannelSid: e.chatBotChannelSid
-        };
+        return { };
     }
 }

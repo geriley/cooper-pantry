@@ -17,3 +17,26 @@
 mat-toolbar {
     padding-left: 0px;
 }
+
+::ng-deep nb-layout {
+    height: 100% !important;
+    width: 100% !important;
+}
+::ng-deep .layout {
+    min-height: 0px !important;
+    background-color: inherit !important;
+
+}
+
+::ng-deep nb-layout-column {
+    padding: 0px !important;
+}
+
+::ng-deep .scrollable-container,
+::ng-deep .content,
+::ng-deep .columns,
+::ng-deep .layout,
+::ng-deep nb-layout-column {
+    height: inherit !important;
+    width: inherit !important;
+}

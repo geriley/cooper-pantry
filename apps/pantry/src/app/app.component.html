@@ -5,6 +5,11 @@
   <span class="icon"></span>
   <span class="logo">Cooper Pantry</span>
 </mat-toolbar>
-<div style="height: 100%; width: 100%">
-  <router-outlet></router-outlet>
-</div>
+
+<nb-layout>
+  <nb-layout-column>
+    <div style="height: 100%; width: 100%;">
+      <router-outlet></router-outlet>
+    </div>
+  </nb-layout-column>
+</nb-layout>

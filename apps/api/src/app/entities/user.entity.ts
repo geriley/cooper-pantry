@@ -4,7 +4,4 @@ import { PrimaryGeneratedColumn, Entity, Column } from 'typeorm';
 export class User {
     @PrimaryGeneratedColumn()
     public id: number;
-
-    @Column({ nullable: true })
-    public chatBotChannelSid?: string;
 }

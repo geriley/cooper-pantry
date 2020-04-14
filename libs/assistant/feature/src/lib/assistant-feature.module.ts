@@ -8,7 +8,7 @@ import { BotChatComponent } from './components/bot-chat.component';
     imports: [
         CommonModule, 
         ApiServicesModule,
-        NbChatModule
+        NbChatModule,
     ],
     declarations: [
         BotChatComponent,

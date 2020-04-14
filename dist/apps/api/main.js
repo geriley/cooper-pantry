@@ -277,7 +277,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/twilio/twilio.service */ "./apps/api/src/app/services/twilio/twilio.service.ts");
-var _a;
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
+var _a, _b, _c;
+
 
 
 
@@ -290,7 +292,10 @@ let CommunicationsController = class CommunicationsController {
             jwt: this.twilioService.generateChatAccessToken(req)
         };
     }
-    addChatBot() {
+    addChatBot(req) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            yield this.twilioService.addBotToChannel(req);
+        });
     }
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -302,13 +307,14 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 ], CommunicationsController.prototype, "getChatAccessToken", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])('addBot'),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", []),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IAddBotRequestDTO"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IAddBotRequestDTO"]) === "function" ? _a : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_b = typeof Promise !== "undefined" && Promise) === "function" ? _b : Object)
 ], CommunicationsController.prototype, "addChatBot", null);
 CommunicationsController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('communications'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__["TwilioService"] !== "undefined" && _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__["TwilioService"]) === "function" ? _a : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__["TwilioService"] !== "undefined" && _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__["TwilioService"]) === "function" ? _c : Object])
 ], CommunicationsController);
 
 
@@ -1030,10 +1036,6 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryGeneratedColumn"])(),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
 ], User.prototype, "id", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], User.prototype, "chatBotChannelSid", void 0);
 User = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
 ], User);
@@ -1422,14 +1424,11 @@ let UserResourceService = class UserResourceService {
     }
     mapPayloadToEntity(data) {
         return {
-            chatBotChannelSid: data.attributes ? data.attributes.chatBotChannelSid : undefined,
             id: data.id ? parseInt(data.id, 10) : undefined,
         };
     }
     mapEntityToResource(e) {
-        return {
-            chatBotChannelSid: e.chatBotChannelSid
-        };
+        return {};
     }
 };
 UserResourceService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -1475,6 +1474,31 @@ let TwilioService = class TwilioService {
         token.addGrant(chatGrant);
         return token.toJwt();
     }
+    addBotToChannel(req) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const twilioAccountSid = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_ACCOUNT_SID : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioAccount;
+            const twilioAuthToken = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_AUTH_TOKEN : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioAuthToken;
+            const serviceSid = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_CHAT_SERVICE_SID : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioChatSid;
+            const url = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_CHAT_AUTOPILOT_URL : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioChatAutopilotUrl;
+            const client = new twilio__WEBPACK_IMPORTED_MODULE_3__["Twilio"](twilioAccountSid, twilioAuthToken);
+            const channel = yield client.chat.services(serviceSid)
+                .channels(req.channelSid);
+            const list = yield channel
+                .webhooks.list();
+            const hasWebhookAlready = list.some((i) => i.url === url);
+            client.chat.services(serviceSid)
+                .channels(req.channelSid)
+                .webhooks
+                .create({
+                configuration: {
+                    url: url,
+                    method: 'POST',
+                    filters: ['onMessageSent'],
+                },
+                type: 'webhook'
+            });
+        });
+    }
 };
 TwilioService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
@@ -1497,9 +1521,11 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     twilioAccount: 'AC0fc66dbfb5ee5ba9712500f82845c0f7',
+    twilioAuthToken: '6bd5e3407d81cd1771e5da6453d266d8',
     twilioChatSid: 'IS83bcbe672cbe47f3baae43897155f782',
     twilioChatApiKey: 'SKaf6201047e5c624370653b99fbbe793e',
     twilioChatApiSecret: 'wEqVs8o2YUi6CNdhoW7wTNqJNp0euA30',
+    twilioChatAutopilotUrl: 'https://channels.autopilot.twilio.com/v1/AC0fc66dbfb5ee5ba9712500f82845c0f7/UAc78b3ffb4ed74a094563c315b43e5c68/twilio-chat',
 };
 
 
@@ -1520,9 +1546,11 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     twilioAccount: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioAccount : 'AC##',
+    twilioAuthToken: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioAuthToken : 'auth_token',
     twilioChatSid: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatSid : 'IS##',
     twilioChatApiKey: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatApiKey : 'SK##',
     twilioChatApiSecret: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatApiSecret : '##',
+    twilioChatAutopilotUrl: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatAutopilotUrl : 'https://channels.autopilot.twilio.com/v1/##',
 };
 
 
@@ -1596,6 +1624,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _dto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dto */ "./libs/api-interfaces/src/lib/dto/index.ts");
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _dto__WEBPACK_IMPORTED_MODULE_1__) if(["CooperResourceType","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _dto__WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _request_dto__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./request-dto */ "./libs/api-interfaces/src/lib/request-dto/index.ts");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _request_dto__WEBPACK_IMPORTED_MODULE_2__) if(["CooperResourceType","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _request_dto__WEBPACK_IMPORTED_MODULE_2__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 
 
@@ -1655,6 +1686,34 @@ __webpack_require__.r(__webpack_exports__);
   \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./libs/api-interfaces/src/lib/request-dto/add-bot-dto.interface.ts":
+/*!**************************************************************************!*\
+  !*** ./libs/api-interfaces/src/lib/request-dto/add-bot-dto.interface.ts ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./libs/api-interfaces/src/lib/request-dto/index.ts":
+/*!**********************************************************!*\
+  !*** ./libs/api-interfaces/src/lib/request-dto/index.ts ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add-bot-dto.interface */ "./libs/api-interfaces/src/lib/request-dto/add-bot-dto.interface.ts");
+/* harmony import */ var _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 

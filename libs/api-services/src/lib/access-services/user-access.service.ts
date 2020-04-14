@@ -16,7 +16,7 @@ export class UserAccessService {
 
     public updateUser(data: IPayloadData<IUserDTO>): Observable<IPayload<IUserDTO>> {
         return this.http.updateUser({
-            data
+            data: [data]
         });
     }
 }
