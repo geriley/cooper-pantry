@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Put, Param, NotFoundException } from '@nestjs/common';
 import { UserResourceService } from '../services/resource';
-import { IPayload, IUserDTO } from '@cooper/api-interfaces';
+import { IPayload, IUserDTO, ISurveyScoreDTO } from '@cooper/api-interfaces';
 
 @Controller('users')
 export class UserController {
@@ -75,6 +75,11 @@ export class UserController {
                 }]
             };
         }
+    }
+
+    @Get()
+    public async getUserSurveys(): Promise<IPayload<ISurveyScoreDTO>> {
+        throw Error();
     }
 
 }

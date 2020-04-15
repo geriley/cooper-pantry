@@ -5,6 +5,7 @@ import { UnfoundPageComponent } from './pages/unfound-page/unfound-page.componen
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', loadChildren: () => import('./pages/home').then(m => m.HomeModule) },
+    { path: 'customer', loadChildren: () => import('./pages/customer/customer.module').then((m) => m.CustomerModule) },
     { path: '**', component: UnfoundPageComponent }
 ];
 

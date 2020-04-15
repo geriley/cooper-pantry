@@ -1,0 +1,47 @@
+.page {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+}
+
+.banner {
+  background-repeat: no-repeat;
+  object-fit: fill;
+  height: 50vh;
+  width: 100vw;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://images.pexels.com/photos/165228/pexels-photo-165228.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+}
+
+.header-text {
+  color: white;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 4rem;
+  width: 30vw;
+  text-align: center;
+}
+
+.sub-header-text {
+  color: white;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 30vw;
+}

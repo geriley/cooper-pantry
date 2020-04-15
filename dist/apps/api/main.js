@@ -438,6 +438,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_repository__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/repository */ "./apps/api/src/app/services/repository/index.ts");
 /* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/resource */ "./apps/api/src/app/services/resource/index.ts");
 /* harmony import */ var _survey_controller__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../survey.controller */ "./apps/api/src/app/controllers/survey.controller.ts");
+/* harmony import */ var _services_helper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/helper */ "./apps/api/src/app/services/helper/index.ts");
+
 
 
 
@@ -449,7 +451,7 @@ let SurveyResponseHttpModule = class SurveyResponseHttpModule {
 SurveyResponseHttpModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
         imports: [_entities__WEBPACK_IMPORTED_MODULE_2__["SurveyResponseModule"]],
-        providers: [_services_repository__WEBPACK_IMPORTED_MODULE_3__["SurveyResponseRepoService"], _services_resource__WEBPACK_IMPORTED_MODULE_4__["SurveyResponseResourceService"]],
+        providers: [_services_repository__WEBPACK_IMPORTED_MODULE_3__["SurveyResponseRepoService"], _services_resource__WEBPACK_IMPORTED_MODULE_4__["SurveyResponseResourceService"], _services_helper__WEBPACK_IMPORTED_MODULE_6__["SurveyScoreService"]],
         controllers: [_survey_controller__WEBPACK_IMPORTED_MODULE_5__["SurveyResponsesController"]]
     })
 ], SurveyResponseHttpModule);
@@ -601,7 +603,8 @@ let SurveyResponsesController = class SurveyResponsesController {
     }
     post(response) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            this.service.addBotSurveyResponse(response);
+            console.log(response);
+            this.service.addBotSurveyResponse(response.Memory);
             return Promise.resolve({
                 actions: [
                     {
@@ -614,7 +617,7 @@ let SurveyResponsesController = class SurveyResponsesController {
         });
     }
     get() {
-        return this.service.get();
+        return this.service.getScores();
     }
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -655,7 +658,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/resource */ "./apps/api/src/app/services/resource/index.ts");
 /* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
-var _a, _b, _c, _d, _e, _f, _g;
+var _a, _b, _c, _d, _e, _f, _g, _h;
 
 
 
@@ -740,6 +743,11 @@ let UserController = class UserController {
             }
         });
     }
+    getUserSurveys() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            throw Error();
+        });
+    }
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])(':id'),
@@ -768,9 +776,15 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_e = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"]) === "function" ? _e : Object]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_f = typeof Promise !== "undefined" && Promise) === "function" ? _f : Object)
 ], UserController.prototype, "put", null);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", []),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_g = typeof Promise !== "undefined" && Promise) === "function" ? _g : Object)
+], UserController.prototype, "getUserSurveys", null);
 UserController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('users'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_g = typeof _services_resource__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"]) === "function" ? _g : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_h = typeof _services_resource__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"]) === "function" ? _h : Object])
 ], UserController);
 
 
@@ -994,6 +1008,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typeorm */ "typeorm");
 /* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _user_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user.entity */ "./apps/api/src/app/entities/user.entity.ts");
+var _a;
+
 
 
 let SurveyResponse = class SurveyResponse {
@@ -1002,6 +1019,15 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryGeneratedColumn"])(),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
 ], SurveyResponse.prototype, "id", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
+], SurveyResponse.prototype, "userId", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["ManyToOne"])(type => _user_entity__WEBPACK_IMPORTED_MODULE_2__["User"]),
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["JoinColumn"])({ name: 'userId', referencedColumnName: 'id' }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", typeof (_a = typeof _user_entity__WEBPACK_IMPORTED_MODULE_2__["User"] !== "undefined" && _user_entity__WEBPACK_IMPORTED_MODULE_2__["User"]) === "function" ? _a : Object)
+], SurveyResponse.prototype, "user", void 0);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])('jsonb'),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Object)
@@ -1039,6 +1065,85 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 User = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
 ], User);
+
+
+
+/***/ }),
+
+/***/ "./apps/api/src/app/services/helper/index.ts":
+/*!***************************************************!*\
+  !*** ./apps/api/src/app/services/helper/index.ts ***!
+  \***************************************************/
+/*! exports provided: SurveyTask, SurveyScoreService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _survey_score_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./survey-score.service */ "./apps/api/src/app/services/helper/survey-score.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyTask", function() { return _survey_score_service__WEBPACK_IMPORTED_MODULE_0__["SurveyTask"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyScoreService", function() { return _survey_score_service__WEBPACK_IMPORTED_MODULE_0__["SurveyScoreService"]; });
+
+
+
+
+/***/ }),
+
+/***/ "./apps/api/src/app/services/helper/survey-score.service.ts":
+/*!******************************************************************!*\
+  !*** ./apps/api/src/app/services/helper/survey-score.service.ts ***!
+  \******************************************************************/
+/*! exports provided: SurveyTask, SurveyScoreService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyTask", function() { return SurveyTask; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyScoreService", function() { return SurveyScoreService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
+
+
+
+var SurveyTask;
+(function (SurveyTask) {
+    SurveyTask["ShortFoodSecurityTask"] = "short_fss_answers";
+})(SurveyTask || (SurveyTask = {}));
+let SurveyScoreService = class SurveyScoreService {
+    calculate(task, answers) {
+        switch (task) {
+            case SurveyTask.ShortFoodSecurityTask: {
+                return this.calcShortFormFSS(answers);
+            }
+            default: {
+                return {
+                    score: 0,
+                    surveyResultLevel: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Info,
+                    surveyType: undefined,
+                };
+            }
+        }
+    }
+    calcShortFormFSS(answers) {
+        const affirmativeAnswers = ['yes', 'often', 'sometimes'];
+        const shortFoodSecurityScore = [...Object.values(answers)].filter((a) => affirmativeAnswers.some((aa) => a.answer.toLowerCase())).length;
+        const taskAttributes = {
+            surveyType: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyTypeDTO"].ShortFoodSecurity,
+            score: shortFoodSecurityScore,
+            surveyResultLevel: (shortFoodSecurityScore >= 5)
+                ? _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Critical
+                : (shortFoodSecurityScore >= 2 ? _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Warning
+                    : _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Info)
+        };
+        return taskAttributes;
+    }
+};
+SurveyScoreService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], SurveyScoreService);
 
 
 
@@ -1339,34 +1444,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../repository */ "./apps/api/src/app/services/repository/index.ts");
-var _a;
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helper */ "./apps/api/src/app/services/helper/index.ts");
+var _a, _b;
+
+
 
 
 
 let SurveyResponseResourceService = class SurveyResponseResourceService {
-    constructor(repo) {
+    constructor(repo, helper) {
         this.repo = repo;
+        this.helper = helper;
     }
     addBotSurveyResponse(response) {
-        const entity = { id: undefined, response: response };
+        console.log(response);
+        const response2 = JSON.parse(response);
+        console.log(response2);
+        const entity = { id: undefined, userId: parseInt(response2.twilio.chat.From, 10), response: response };
         return this.repo.add(entity);
     }
-    get() {
+    getScores() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             const entities = yield this.repo.findAll();
             return {
-                data: entities.map((e) => ({
-                    type: 'survey-response',
-                    id: e.id.toString(),
-                    attributes: Object.assign({}, e.response)
-                }))
+                data: entities.map((e) => {
+                    const response = JSON.parse(e.response);
+                    const task = Object.keys(response.twilio.collected_data)[0];
+                    const answers = response.twilio.collected_data[task].answers;
+                    const score = this.helper.calculate(task, answers);
+                    return {
+                        type: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].SurveyResponse,
+                        id: e.id.toString(),
+                        attributes: Object.assign({}, score),
+                        relationships: {
+                            'user': {
+                                type: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].User, id: e.userId ? e.userId.toString() : undefined,
+                            }
+                        }
+                    };
+                })
             };
         });
     }
 };
 SurveyResponseResourceService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _repository__WEBPACK_IMPORTED_MODULE_2__["SurveyResponseRepoService"] !== "undefined" && _repository__WEBPACK_IMPORTED_MODULE_2__["SurveyResponseRepoService"]) === "function" ? _a : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _repository__WEBPACK_IMPORTED_MODULE_2__["SurveyResponseRepoService"] !== "undefined" && _repository__WEBPACK_IMPORTED_MODULE_2__["SurveyResponseRepoService"]) === "function" ? _a : Object, typeof (_b = typeof _helper__WEBPACK_IMPORTED_MODULE_4__["SurveyScoreService"] !== "undefined" && _helper__WEBPACK_IMPORTED_MODULE_4__["SurveyScoreService"]) === "function" ? _b : Object])
 ], SurveyResponseResourceService);
 
 
@@ -1651,6 +1775,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user.model */ "./libs/api-interfaces/src/lib/dto/user.model.ts");
 /* harmony import */ var _user_model__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_user_model__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _user_model__WEBPACK_IMPORTED_MODULE_2__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _user_model__WEBPACK_IMPORTED_MODULE_2__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _survey_score_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./survey-score.model */ "./libs/api-interfaces/src/lib/dto/survey-score.model.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return _survey_score_model__WEBPACK_IMPORTED_MODULE_3__["SurveyTypeDTO"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return _survey_score_model__WEBPACK_IMPORTED_MODULE_3__["SurveyResultLevel"]; });
+
+
 
 
 
@@ -1676,6 +1806,31 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+
+
+/***/ }),
+
+/***/ "./libs/api-interfaces/src/lib/dto/survey-score.model.ts":
+/*!***************************************************************!*\
+  !*** ./libs/api-interfaces/src/lib/dto/survey-score.model.ts ***!
+  \***************************************************************/
+/*! exports provided: SurveyTypeDTO, SurveyResultLevel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return SurveyTypeDTO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return SurveyResultLevel; });
+var SurveyTypeDTO;
+(function (SurveyTypeDTO) {
+    SurveyTypeDTO[SurveyTypeDTO["ShortFoodSecurity"] = 0] = "ShortFoodSecurity";
+})(SurveyTypeDTO || (SurveyTypeDTO = {}));
+var SurveyResultLevel;
+(function (SurveyResultLevel) {
+    SurveyResultLevel[SurveyResultLevel["Info"] = 0] = "Info";
+    SurveyResultLevel[SurveyResultLevel["Warning"] = 1] = "Warning";
+    SurveyResultLevel[SurveyResultLevel["Critical"] = 2] = "Critical";
+})(SurveyResultLevel || (SurveyResultLevel = {}));
 
 
 /***/ }),
