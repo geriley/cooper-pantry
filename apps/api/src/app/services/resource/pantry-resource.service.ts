@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { PantryRepoService } from '../repository';
 import { Pantry } from '../../entities';
-import { IPantryDTO, IPayload, IPayloadData } from '@cooper/api-interfaces';
+import { IPantryDTO, IPayload, IPayloadData, CooperResourceType } from '@cooper/api-interfaces';
 
 @Injectable()
 export class PantryResourceService {
@@ -9,7 +9,7 @@ export class PantryResourceService {
         private pantryRepo: PantryRepoService
     ) { }
     
-    private readonly resourceType = 'pantry';
+    private readonly resourceType = CooperResourceType.Pantry;
 
     public async get(): Promise<IPayload<IPantryDTO>> {
         const pantries = await this.pantryRepo.findAll();

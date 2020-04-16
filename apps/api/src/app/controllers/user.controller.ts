@@ -1,12 +1,15 @@
-import { Controller, Get, Post, Body, Put, Param, NotFoundException } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, NotFoundException, Query } from '@nestjs/common';
 import { UserResourceService } from '../services/resource';
 import { IPayload, IUserDTO, ISurveyScoreDTO } from '@cooper/api-interfaces';
+import { ApiParam, ApiBody, ApiBodyOptions, ApiQuery } from '@nestjs/swagger';
+import { CooperResourceType } from '../../../../../libs/api-interfaces/src/lib/resource-types.enum';
 
 @Controller('users')
 export class UserController {
     constructor(private service: UserResourceService) { }
 
     @Get(':id')
+    @ApiParam({ name: 'id' })
     public async getById(@Param() params: { id: string }): Promise<IPayload<IUserDTO>> {
         try {
             const user = await this.service.getById(parseInt(params.id, 10));
@@ -36,9 +39,12 @@ export class UserController {
     }
 
     @Get()
-    public async get(): Promise<IPayload<IUserDTO>> {
+    @ApiQuery({ name: 'include' })
+    public async get(@Query() params: { include: string }): Promise<IPayload<IUserDTO>> {
         try {
-            return this.service.get();
+            return this.service.get({
+                include: params && params.include ? params.include.split(',') as any : []
+            });
         } catch (err) {
             return {
                 errors: [{
@@ -50,6 +56,7 @@ export class UserController {
     }
 
     @Post()
+    @ApiBody({})
     public async post(@Body() pantry: IPayload<IUserDTO>): Promise<IPayload<IUserDTO>> {
         try {
             return this.service.upsert(pantry);
@@ -64,6 +71,8 @@ export class UserController {
     }
 
     @Put(':id')
+    @ApiParam({ name: 'id' })
+    @ApiBody({})
     public async put(@Body() pantry: IPayload<IUserDTO>): Promise<IPayload<IUserDTO>> {
         try {
             return this.service.upsert(pantry);
@@ -77,7 +86,7 @@ export class UserController {
         }
     }
 
-    @Get()
+    @Get('survey-scores')
     public async getUserSurveys(): Promise<IPayload<ISurveyScoreDTO>> {
         throw Error();
     }

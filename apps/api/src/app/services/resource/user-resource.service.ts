@@ -1,14 +1,17 @@
 import { Injectable } from "@nestjs/common";
 import { UserRepoService } from '../repository';
-import { IPayload, IPayloadData, IUserDTO, CooperResourceType } from '@cooper/api-interfaces';
+import { IPayload, IPayloadData, IUserDTO, CooperResourceType, ISurveyScoreDTO, IPayloadDataRelationship } from '@cooper/api-interfaces';
 import { ResourceServiceHelper } from '../../common';
 import { User } from '../../entities';
+import { IUserSearchCriteria } from '../interfaces';
+import { SurveyResponseResourceService } from './survey-responses.service';
 
 
 @Injectable()
 export class UserResourceService {
     constructor(
         private userRepo: UserRepoService,
+        private scoresService: SurveyResponseResourceService,
         private helper: ResourceServiceHelper
     ) { }
 
@@ -22,12 +25,40 @@ export class UserResourceService {
         );
     }
 
-    public async get(): Promise<IPayload<IUserDTO>> {
+    public async get(criteria: IUserSearchCriteria): Promise<IPayload<IUserDTO>> {
+        console.log(criteria);
         const users = await this.userRepo.findAll();
-        return this.helper.mapToDTOListPayload<User, IUserDTO>(
+        const userIds = users.map((u) => u.id);
+        const scoreRelationships = await this.scoresService.getScores({ userIds });
+        const score: { [userId: number]: number[] } = (scoreRelationships.data as IPayloadData<ISurveyScoreDTO>[]).map((s) => ({
+            id: s.id,
+            userId: (s.relationships['user'] as IPayloadDataRelationship).id
+        })).reduce((acc, next) => {
+            const userId = parseInt(next.userId, 10);
+            const curr = acc[userId];
+            return (curr)
+                ? { ...acc, [userId]: [...curr, next.id] }
+                : { ...acc, [userId]: [next.id] }
+        }, {});
+        const userData = this.helper.mapToDTOListPayload<User, IUserDTO>(
             this.resourceType,
             { entities: users, attributeMapper: (e) => this.mapEntityToResource(e) }
         );
+
+        const dto = {
+            data: (userData.data as IPayloadData<IUserDTO>[]).map((ud) => this.helper.addRelationships(ud, {
+                ids: score[ud.id],
+                relationshipName: CooperResourceType.SurveyResponse,
+                relationshipType: CooperResourceType.SurveyResponse,
+            }))
+        };
+        if (criteria && criteria.include && criteria.include.some((i) => i === CooperResourceType.SurveyResponse)) {
+            return {
+                ...dto,
+                included: scoreRelationships.data as IPayloadData<ISurveyScoreDTO>[]
+            };
+        }
+        else return dto;
     }
 
     public async upsert(request: IPayload<IUserDTO>): Promise<IPayload<IUserDTO>> {
@@ -52,6 +83,6 @@ export class UserResourceService {
     }
 
     private mapEntityToResource(e: User): IUserDTO {
-        return { };
+        return {};
     }
 }

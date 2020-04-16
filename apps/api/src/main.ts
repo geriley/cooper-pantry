@@ -4,7 +4,7 @@
  */
 
 import { NestFactory } from '@nestjs/core';
-
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app/app.module';
 
 async function bootstrap() {
@@ -13,6 +13,13 @@ async function bootstrap() {
   app.enableCors();
   app.setGlobalPrefix(globalPrefix);
   const port = process.env.PORT || 3333;
+  const options = new DocumentBuilder()
+    .setTitle('Cooper Pantry')
+    .setDescription('Cooper Pantry API Documentation')
+    .setVersion('1.0')
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('api', app, document);
   await app.listen(port, () => {
     console.log('Listening at http://localhost:' + port + '/' + globalPrefix);
   });

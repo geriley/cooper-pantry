@@ -22,5 +22,6 @@ export interface IPayloadError {
 
 export interface IPayload<T> {
     data?: IPayloadData<T> | IPayloadData<T>[];
+    included?: IPayloadData<any>[]; 
     errors?: IPayloadError[];
 }

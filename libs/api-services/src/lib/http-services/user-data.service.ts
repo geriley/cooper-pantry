@@ -13,6 +13,11 @@ export class UserDataService {
         return this.http.get<IPayload<IUserDTO>>(url);
     }
 
+    public getUserList(): Observable<IPayload<IUserDTO>> {
+        const url = `${this.url}/users`;
+        return this.http.get<IPayload<IUserDTO>>(url, { params: { ['include']: 'survey-response' }});
+    }
+
     public updateUser(payload: IPayload<IUserDTO>): Observable<IPayload<IUserDTO>> {
         const id = payload.data[0].id;
         const url = `${this.url}/users/${id}`;

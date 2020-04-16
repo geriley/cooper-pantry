@@ -174,12 +174,12 @@
             {
               "file": "libs/api-interfaces/src/lib/dto/pantry.model.ts",
               "ext": ".ts",
-              "mtime": 1586711701259
+              "mtime": 1586915925467.8877
             },
             {
               "file": "libs/api-interfaces/src/lib/dto/payload.model.ts",
               "ext": ".ts",
-              "mtime": 1586712910191.9998
+              "mtime": 1586907108698.342
             },
             {
               "file": "libs/api-interfaces/src/lib/dto/survey-score.model.ts",
@@ -660,11 +660,6 @@
               "mtime": 1586831513268.0034
             },
             {
-              "file": "apps/pantry/src/assets/banner.jpg",
-              "ext": ".jpg",
-              "mtime": 1586830890306.3108
-            },
-            {
               "file": "apps/pantry/src/assets/carrot.svg",
               "ext": ".svg",
               "mtime": 1586651776945.506
@@ -848,7 +843,7 @@
             {
               "file": "apps/api/src/app/common/base-resource.service.ts",
               "ext": ".ts",
-              "mtime": 1586715524940.4673
+              "mtime": 1586992478835.9863
             },
             {
               "file": "apps/api/src/app/common/index.ts",
@@ -858,7 +853,7 @@
             {
               "file": "apps/api/src/app/controllers/communication.controller.ts",
               "ext": ".ts",
-              "mtime": 1586823997010.3599
+              "mtime": 1586916387121.3423
             },
             {
               "file": "apps/api/src/app/controllers/modules/communication-http.module.ts",
@@ -878,7 +873,7 @@
             {
               "file": "apps/api/src/app/controllers/modules/survey-response-http.module.ts",
               "ext": ".ts",
-              "mtime": 1586630084572.039
+              "mtime": 1586909033617.219
             },
             {
               "file": "apps/api/src/app/controllers/modules/user-http.module.ts",
@@ -888,17 +883,17 @@
             {
               "file": "apps/api/src/app/controllers/pantry.controller.ts",
               "ext": ".ts",
-              "mtime": 1586713078152.4082
+              "mtime": 1586916387121.3423
             },
             {
               "file": "apps/api/src/app/controllers/survey.controller.ts",
               "ext": ".ts",
-              "mtime": 1586713078153.405
+              "mtime": 1586990734944.4485
             },
             {
               "file": "apps/api/src/app/controllers/user.controller.ts",
               "ext": ".ts",
-              "mtime": 1586902195549.5996
+              "mtime": 1586992494047.5962
             },
             {
               "file": "apps/api/src/app/entities/index.ts",
@@ -928,12 +923,12 @@
             {
               "file": "apps/api/src/app/entities/pantry.entity.ts",
               "ext": ".ts",
-              "mtime": 1586617920193.9229
+              "mtime": 1586915790040.495
             },
             {
               "file": "apps/api/src/app/entities/survey-response.entity.ts",
               "ext": ".ts",
-              "mtime": 1586902253836.9363
+              "mtime": 1586915925467.8877
             },
             {
               "file": "apps/api/src/app/entities/user.entity.ts",
@@ -943,12 +938,37 @@
             {
               "file": "apps/api/src/app/models/autopilot.model.ts",
               "ext": ".ts",
-              "mtime": 1586902195428.209
+              "mtime": 1586909033552.0857
             },
             {
               "file": "apps/api/src/app/models/index.ts",
               "ext": ".ts",
               "mtime": 1586902195429.207
+            },
+            {
+              "file": "apps/api/src/app/services/helper/index.ts",
+              "ext": ".ts",
+              "mtime": 1586909033552.0857
+            },
+            {
+              "file": "apps/api/src/app/services/helper/survey-score.service.ts",
+              "ext": ".ts",
+              "mtime": 1586909033552.0857
+            },
+            {
+              "file": "apps/api/src/app/services/interfaces/index.ts",
+              "ext": ".ts",
+              "mtime": 1586990734578.1172
+            },
+            {
+              "file": "apps/api/src/app/services/interfaces/survey-responses.interface.ts",
+              "ext": ".ts",
+              "mtime": 1586990734578.1172
+            },
+            {
+              "file": "apps/api/src/app/services/interfaces/user.interface.ts",
+              "ext": ".ts",
+              "mtime": 1586990734578.1172
             },
             {
               "file": "apps/api/src/app/services/repository/index.ts",
@@ -963,7 +983,7 @@
             {
               "file": "apps/api/src/app/services/repository/survey-responses-repo.service.ts",
               "ext": ".ts",
-              "mtime": 1586630004571.1328
+              "mtime": 1586990734730.0293
             },
             {
               "file": "apps/api/src/app/services/repository/user-repo.service.ts",
@@ -978,17 +998,17 @@
             {
               "file": "apps/api/src/app/services/resource/pantry-resource.service.ts",
               "ext": ".ts",
-              "mtime": 1586713078153.405
+              "mtime": 1586990734578.1172
             },
             {
               "file": "apps/api/src/app/services/resource/survey-responses.service.ts",
               "ext": ".ts",
-              "mtime": 1586902195549.5996
+              "mtime": 1586992478835.9863
             },
             {
               "file": "apps/api/src/app/services/resource/user-resource.service.ts",
               "ext": ".ts",
-              "mtime": 1586826611962.713
+              "mtime": 1586992478835.9863
             },
             {
               "file": "apps/api/src/app/services/twilio/twilio.service.ts",
@@ -1013,7 +1033,7 @@
             {
               "file": "apps/api/src/main.ts",
               "ext": ".ts",
-              "mtime": 1586554121986.374
+              "mtime": 1586915745954.4646
             },
             {
               "file": "apps/api/tsconfig.app.json",
@@ -1024,6 +1044,11 @@
               "file": "apps/api/tsconfig.json",
               "ext": ".json",
               "mtime": 1586475383919.9912
+            },
+            {
+              "file": "apps/api/tsconfig.nx-tmp",
+              "ext": ".nx-tmp",
+              "mtime": 1586915707473.761
             },
             {
               "file": "apps/api/tsconfig.spec.json",
@@ -1182,6 +1207,14 @@
           "files": []
         }
       },
+      "@nestjs/swagger": {
+        "type": "npm",
+        "name": "@nestjs/swagger",
+        "data": {
+          "version": "^4.5.1",
+          "files": []
+        }
+      },
       "@nestjs/typeorm": {
         "type": "npm",
         "name": "@nestjs/typeorm",
@@ -1259,6 +1292,14 @@
         "name": "rxjs",
         "data": {
           "version": "~6.5.4",
+          "files": []
+        }
+      },
+      "swagger-ui-express": {
+        "type": "npm",
+        "name": "swagger-ui-express",
+        "data": {
+          "version": "^4.1.4",
           "files": []
         }
       },
@@ -1679,6 +1720,11 @@
         {
           "type": "static",
           "source": "api",
+          "target": "@nestjs/swagger"
+        },
+        {
+          "type": "static",
+          "source": "api",
           "target": "typeorm"
         },
         {
@@ -1715,6 +1761,7 @@
       "@nestjs/core": [],
       "@nestjs/platform-express": [],
       "@nestjs/serve-static": [],
+      "@nestjs/swagger": [],
       "@nestjs/typeorm": [],
       "@nrwl/angular": [],
       "@types/twilio": [],
@@ -1725,6 +1772,7 @@
       "pg-connection-string": [],
       "reflect-metadata": [],
       "rxjs": [],
+      "swagger-ui-express": [],
       "twilio": [],
       "twilio-chat": [],
       "typeorm": [],
@@ -1858,12 +1906,12 @@
       {
         "file": "libs/api-interfaces/src/lib/dto/pantry.model.ts",
         "ext": ".ts",
-        "mtime": 1586711701259
+        "mtime": 1586915925467.8877
       },
       {
         "file": "libs/api-interfaces/src/lib/dto/payload.model.ts",
         "ext": ".ts",
-        "mtime": 1586712910191.9998
+        "mtime": 1586907108698.342
       },
       {
         "file": "libs/api-interfaces/src/lib/dto/survey-score.model.ts",
@@ -2157,11 +2205,6 @@
         "mtime": 1586831513268.0034
       },
       {
-        "file": "apps/pantry/src/assets/banner.jpg",
-        "ext": ".jpg",
-        "mtime": 1586830890306.3108
-      },
-      {
         "file": "apps/pantry/src/assets/carrot.svg",
         "ext": ".svg",
         "mtime": 1586651776945.506
@@ -2266,7 +2309,7 @@
       {
         "file": "apps/api/src/app/common/base-resource.service.ts",
         "ext": ".ts",
-        "mtime": 1586715524940.4673
+        "mtime": 1586992478835.9863
       },
       {
         "file": "apps/api/src/app/common/index.ts",
@@ -2276,7 +2319,7 @@
       {
         "file": "apps/api/src/app/controllers/communication.controller.ts",
         "ext": ".ts",
-        "mtime": 1586823997010.3599
+        "mtime": 1586916387121.3423
       },
       {
         "file": "apps/api/src/app/controllers/modules/communication-http.module.ts",
@@ -2296,7 +2339,7 @@
       {
         "file": "apps/api/src/app/controllers/modules/survey-response-http.module.ts",
         "ext": ".ts",
-        "mtime": 1586630084572.039
+        "mtime": 1586909033617.219
       },
       {
         "file": "apps/api/src/app/controllers/modules/user-http.module.ts",
@@ -2306,17 +2349,17 @@
       {
         "file": "apps/api/src/app/controllers/pantry.controller.ts",
         "ext": ".ts",
-        "mtime": 1586713078152.4082
+        "mtime": 1586916387121.3423
       },
       {
         "file": "apps/api/src/app/controllers/survey.controller.ts",
         "ext": ".ts",
-        "mtime": 1586713078153.405
+        "mtime": 1586990734944.4485
       },
       {
         "file": "apps/api/src/app/controllers/user.controller.ts",
         "ext": ".ts",
-        "mtime": 1586902195549.5996
+        "mtime": 1586992494047.5962
       },
       {
         "file": "apps/api/src/app/entities/index.ts",
@@ -2346,12 +2389,12 @@
       {
         "file": "apps/api/src/app/entities/pantry.entity.ts",
         "ext": ".ts",
-        "mtime": 1586617920193.9229
+        "mtime": 1586915790040.495
       },
       {
         "file": "apps/api/src/app/entities/survey-response.entity.ts",
         "ext": ".ts",
-        "mtime": 1586902253836.9363
+        "mtime": 1586915925467.8877
       },
       {
         "file": "apps/api/src/app/entities/user.entity.ts",
@@ -2361,12 +2404,37 @@
       {
         "file": "apps/api/src/app/models/autopilot.model.ts",
         "ext": ".ts",
-        "mtime": 1586902195428.209
+        "mtime": 1586909033552.0857
       },
       {
         "file": "apps/api/src/app/models/index.ts",
         "ext": ".ts",
         "mtime": 1586902195429.207
+      },
+      {
+        "file": "apps/api/src/app/services/helper/index.ts",
+        "ext": ".ts",
+        "mtime": 1586909033552.0857
+      },
+      {
+        "file": "apps/api/src/app/services/helper/survey-score.service.ts",
+        "ext": ".ts",
+        "mtime": 1586909033552.0857
+      },
+      {
+        "file": "apps/api/src/app/services/interfaces/index.ts",
+        "ext": ".ts",
+        "mtime": 1586990734578.1172
+      },
+      {
+        "file": "apps/api/src/app/services/interfaces/survey-responses.interface.ts",
+        "ext": ".ts",
+        "mtime": 1586990734578.1172
+      },
+      {
+        "file": "apps/api/src/app/services/interfaces/user.interface.ts",
+        "ext": ".ts",
+        "mtime": 1586990734578.1172
       },
       {
         "file": "apps/api/src/app/services/repository/index.ts",
@@ -2381,7 +2449,7 @@
       {
         "file": "apps/api/src/app/services/repository/survey-responses-repo.service.ts",
         "ext": ".ts",
-        "mtime": 1586630004571.1328
+        "mtime": 1586990734730.0293
       },
       {
         "file": "apps/api/src/app/services/repository/user-repo.service.ts",
@@ -2396,17 +2464,17 @@
       {
         "file": "apps/api/src/app/services/resource/pantry-resource.service.ts",
         "ext": ".ts",
-        "mtime": 1586713078153.405
+        "mtime": 1586990734578.1172
       },
       {
         "file": "apps/api/src/app/services/resource/survey-responses.service.ts",
         "ext": ".ts",
-        "mtime": 1586902195549.5996
+        "mtime": 1586992478835.9863
       },
       {
         "file": "apps/api/src/app/services/resource/user-resource.service.ts",
         "ext": ".ts",
-        "mtime": 1586826611962.713
+        "mtime": 1586992478835.9863
       },
       {
         "file": "apps/api/src/app/services/twilio/twilio.service.ts",
@@ -2431,7 +2499,7 @@
       {
         "file": "apps/api/src/main.ts",
         "ext": ".ts",
-        "mtime": 1586554121986.374
+        "mtime": 1586915745954.4646
       },
       {
         "file": "apps/api/tsconfig.app.json",
@@ -2442,6 +2510,11 @@
         "file": "apps/api/tsconfig.json",
         "ext": ".json",
         "mtime": 1586475383919.9912
+      },
+      {
+        "file": "apps/api/tsconfig.nx-tmp",
+        "ext": ".nx-tmp",
+        "mtime": 1586915707473.761
       },
       {
         "file": "apps/api/tsconfig.spec.json",

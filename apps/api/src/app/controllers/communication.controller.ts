@@ -1,6 +1,7 @@
 import { Controller, Post, Body } from '@nestjs/common';
 import { TwilioService } from '../services/twilio/twilio.service';
 import { IAddBotRequestDTO } from '@cooper/api-interfaces';
+import { ApiBody } from '@nestjs/swagger';
 
 @Controller('communications')
 export class CommunicationsController {
@@ -13,6 +14,7 @@ export class CommunicationsController {
     }
 
     @Post('addBot')
+    @ApiBody({})
     public async addChatBot(@Body() req: IAddBotRequestDTO): Promise<void> {
         await this.twilioService.addBotToChannel(req);
     }

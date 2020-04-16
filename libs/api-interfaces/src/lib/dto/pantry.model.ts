@@ -1,3 +1,3 @@
 export interface IPantryDTO {
-    name: string;   
+    name: string;
 }

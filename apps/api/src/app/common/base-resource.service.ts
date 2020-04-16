@@ -1,5 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { IPayload } from '@cooper/api-interfaces';
+import { IPayload, IPayloadData, CooperResourceType } from '@cooper/api-interfaces';
+import { IPayloadDataRelationship } from '../../../../../libs/api-interfaces/src/lib/dto/payload.model';
+
+export interface IRelationships {
+    relationshipName: string;
+    relationshipType: CooperResourceType;
+    ids: number[];
+}
 
 @Injectable()
 export class ResourceServiceHelper {
@@ -36,6 +43,21 @@ export class ResourceServiceHelper {
                 attributes: attributeMapper(entity)
             } : undefined,
         };
+    }
+
+    public addRelationships<R>(resource: IPayloadData<R>, relationships: IRelationships): IPayloadData<R> {
+        if (relationships && relationships.ids && relationships.ids.length > 0) {
+            return {
+                ...resource,
+                relationships: {
+                    ...resource.relationships,
+                    [relationships.relationshipName]: relationships.ids.length > 0 ? { id: relationships.ids[0].toString(), type: relationships.relationshipType } : [
+                        ...relationships.ids.map((id) => ({ id: id.toString(), type: relationships.relationshipType }))
+                    ]
+                }
+
+            }
+        } else return { ...resource };
     }
 
     public async addRequestedResources<T extends { id: number }>(request: T | T[], addMethod: (e: T) => Promise<T>) {

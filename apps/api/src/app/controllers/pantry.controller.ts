@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { PantryResourceService } from '../services/resource/pantry-resource.service';
 import { IPantryDTO, IPayload } from '@cooper/api-interfaces';
+import { ApiBody } from '@nestjs/swagger';
 
 @Controller('pantries')
 export class PantriesController {
@@ -21,6 +22,7 @@ export class PantriesController {
     }
 
     @Post()
+    @ApiBody({})
     public async post(@Body() pantry: IPayload<IPantryDTO>): Promise<IPayload<IPantryDTO>> {
         try {
             return this.service.upsert(pantry);
