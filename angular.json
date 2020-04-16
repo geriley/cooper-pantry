@@ -21,10 +21,7 @@
             "polyfills": "apps/pantry/src/polyfills.ts",
             "tsConfig": "apps/pantry/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/pantry/src/favicon.ico",
-              "apps/pantry/src/assets"
-            ],
+            "assets": ["apps/pantry/src/favicon.ico", "apps/pantry/src/assets"],
             "styles": [
               "./node_modules/@nebular/theme/styles/prebuilt/default.css",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
@@ -88,10 +85,7 @@
               "apps/pantry/tsconfig.app.json",
               "apps/pantry/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/pantry/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/pantry/**"]
           }
         },
         "test": {
@@ -127,13 +121,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/pantry-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/pantry-e2e/**"
-            ]
+            "tsConfig": ["apps/pantry-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/pantry-e2e/**"]
           }
         }
       }
@@ -151,9 +140,7 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -196,10 +183,7 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/api/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/api/**"]
           }
         },
         "test": {
@@ -225,10 +209,7 @@
               "libs/api-interfaces/tsconfig.lib.json",
               "libs/api-interfaces/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api-interfaces/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**"]
           }
         },
         "test": {
@@ -254,10 +235,7 @@
               "libs/assistant/feature/tsconfig.lib.json",
               "libs/assistant/feature/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/assistant/feature/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/assistant/feature/**"]
           }
         },
         "test": {
@@ -289,10 +267,7 @@
               "libs/api-services/tsconfig.lib.json",
               "libs/api-services/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api-services/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/api-services/**"]
           }
         },
         "test": {
@@ -302,6 +277,38 @@
             "tsConfig": "libs/api-services/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/api-services/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "statistics-risk": {
+      "projectType": "library",
+      "root": "libs/statistics/risk",
+      "sourceRoot": "libs/statistics/risk/src",
+      "prefix": "cooper",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/statistics/risk/tsconfig.lib.json",
+              "libs/statistics/risk/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/statistics/risk/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/statistics/risk/jest.config.js",
+            "tsConfig": "libs/statistics/risk/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/statistics/risk/src/test-setup.ts"
           }
         }
       },

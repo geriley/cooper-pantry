@@ -1,8 +1,8 @@
 export enum FoodSecurityLevel {
-    Low,
-    Medium,
-    High,
-    Unknown
+    Low = 'Very Low Food Security',
+    Medium = 'Low Food Security',
+    High = 'High Food Security',
+    Unknown = 'Unknown Food Security'
 }
 
 export interface ICustomerDomain {

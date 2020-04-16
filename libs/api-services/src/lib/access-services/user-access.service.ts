@@ -29,7 +29,8 @@ export class UserAccessService {
             map((payload) => {
                 const data = payload.data as IPayloadData<IUserDTO>[];
                 return data.map((d) => {
-                    const mostRecentFoodSecuritySurvey = d.relationships[CooperResourceType.SurveyResponse][0] as IPayloadDataRelationship;
+                    const foodSecuritySurveys = d.relationships[CooperResourceType.SurveyResponse];
+                    const mostRecentFoodSecuritySurvey = Array.isArray(foodSecuritySurveys) ? foodSecuritySurveys[0] : foodSecuritySurveys;
                     const surveyId = mostRecentFoodSecuritySurvey.id;
                     const survey: IPayloadData<ISurveyScoreDTO> = payload.included.find((i) => i.id === surveyId);                    
                     return { 

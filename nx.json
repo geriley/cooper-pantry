@@ -37,6 +37,9 @@
     },
     "api-services": {
       "tags": []
+    },
+    "statistics-risk": {
+      "tags": []
     }
   }
 }
