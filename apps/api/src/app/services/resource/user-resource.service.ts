@@ -78,9 +78,10 @@ export class UserResourceService {
 
     private mapPayloadToEntity(data: IPayloadData<IUserDTO>): User {
         return {
-            id: data.id ? parseInt(data.id, 10) : undefined,
+            id: data.id ? data.id : undefined,
             givenName: data.attributes.firstName,
             familyName: data.attributes.lastName,
+            userRole: data.attributes.userRole,
         };
     }
 
@@ -89,6 +90,7 @@ export class UserResourceService {
             firstName: e.givenName,
             lastName: e.familyName,
             address: e.residentialAddress,
+            userRole: e.userRole
         };
     }
 }

@@ -1,3 +1,3 @@
 export interface ISurveyResponseCriteria {
-    userIds?: number[];
+    userIds?: string[];
 }

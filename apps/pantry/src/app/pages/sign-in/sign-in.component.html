@@ -1,0 +1,32 @@
+<form [formGroup]="formGroup" class="centered-view">
+    <h1>Sign In/Sign Up</h1>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="user@emailprovider.com" formControlName="email" required>
+        <mat-error *ngIf="formGroup.get('email').hasError('email') && !formGroup.get('email').hasError('required')">
+            Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="formGroup.get('email').hasError('required')">
+            Email is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" required>
+        <mat-error
+            *ngIf="formGroup.get('password').hasError('required') || formGroup.get('password').hasError('minlength')">
+            Password must be at least 8 characters long.
+        </mat-error>
+        <mat-error *ngIf="error | async">
+            {{ error | async }}
+        </mat-error>
+    </mat-form-field>
+    <div>
+        <button mat-flat-button (click)="signIn()">
+            Sign In
+        </button>
+        <button mat-flat-button (click)="signUp()">
+            Sign Up
+        </button>
+    </div>
+</form>

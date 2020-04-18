@@ -1,10 +1,11 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, OneToOne } from 'typeorm';
 import { Address } from './address.entity';
 
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn()
-    public id: number;
+    // ID from Firebase
+    @Column()
+    public id: string;
 
     @Column()
     public givenName: string;
@@ -18,4 +19,7 @@ export class User {
     @OneToOne(type => Address)
     @JoinColumn({ name: 'residentialAddressId', referencedColumnName: 'id'})
     public residentialAddress?: Address;  
+
+    @Column()
+    public userRole: string;
 }

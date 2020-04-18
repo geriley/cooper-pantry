@@ -10,7 +10,7 @@ export interface IRelationships {
 
 @Injectable()
 export class ResourceServiceHelper {
-    public mapToDTOListPayload<Entity extends { id: number }, Resource>(resourceType: string,
+    public mapToDTOListPayload<Entity extends { id: number | string }, Resource>(resourceType: string,
         {
             entities,
             attributeMapper
@@ -29,7 +29,7 @@ export class ResourceServiceHelper {
         };
     }
 
-    public mapToDTOPayload<Entity extends { id: number }, Resource>(resourceType: string, {
+    public mapToDTOPayload<Entity extends { id: number | string }, Resource>(resourceType: string, {
         entity,
         attributeMapper
     }: {
@@ -60,7 +60,7 @@ export class ResourceServiceHelper {
         } else return { ...resource };
     }
 
-    public async addRequestedResources<T extends { id: number }>(request: T | T[], addMethod: (e: T) => Promise<T>) {
+    public async addRequestedResources<T extends { id: number | string }>(request: T | T[], addMethod: (e: T) => Promise<T>) {
         const data = Array.isArray(request) ? request : [request];
         const entities: T[] = [];
         for (const d of data.filter((de) => de !== undefined && de !== null)) {

@@ -4,24 +4,25 @@
   </button>
   <span class="icon"></span>
   <span class="logo">Cooper Pantry</span>
+  <span class="fill-horizontal"></span>
+  <button mat-flat-button routerLink="/login" *ngIf="!(loggedIn | async)" color="primary">Login</button>
+  <button mat-flat-button *ngIf="loggedIn | async" color="primary">Account</button>
 </mat-toolbar>
 
-<!-- <div style="height: 100%; width: 100%;">
-  <router-outlet></router-outlet>
-</div> -->
-
-<div *ngIf="!(isNbRoute | async)">
+<ng-container *ngIf="!(isNbRoute | async)">
   <ng-container *ngTemplateOutlet="normal"></ng-container>
-</div>
+</ng-container>
 
-<div *ngIf="(isNbRoute | async)">
+<ng-container *ngIf="(isNbRoute | async)">
   <ng-container *ngTemplateOutlet="nb"></ng-container>
-</div>
+</ng-container>
 
 
 <ng-template #normal>
-  <router-outlet>
-  </router-outlet>
+  <div style="height: 100%; width: 100%">
+    <router-outlet>
+    </router-outlet>
+  </div>
 </ng-template>
 
 <ng-template #nb>

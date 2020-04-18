@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { baseApiUrlToken } from '@cooper/api-services';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { firebaseConfig } from './common/firebase-token';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +29,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbThemeModule.forRoot({ name: 'default' }),
   ],
   providers: [
-    { provide: baseApiUrlToken, useValue: 'http://localhost:3333/api' }
+    { provide: baseApiUrlToken, useValue: 'http://localhost:3333/api' },
+    { provide: firebaseConfig, useValue: environment.firebase },
   ],
   bootstrap: [AppComponent]
 })
