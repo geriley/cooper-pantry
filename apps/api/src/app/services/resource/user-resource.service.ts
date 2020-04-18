@@ -79,10 +79,16 @@ export class UserResourceService {
     private mapPayloadToEntity(data: IPayloadData<IUserDTO>): User {
         return {
             id: data.id ? parseInt(data.id, 10) : undefined,
+            givenName: data.attributes.firstName,
+            familyName: data.attributes.lastName,
         };
     }
 
     private mapEntityToResource(e: User): IUserDTO {
-        return {};
+        return {
+            firstName: e.givenName,
+            lastName: e.familyName,
+            address: e.residentialAddress,
+        };
     }
 }

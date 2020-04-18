@@ -1,0 +1,79 @@
+<mat-horizontal-stepper linear="true" #stepper>
+    <mat-step [stepControl]="name">
+        <form [formGroup]="name">
+            <ng-template matStepLabel>Fill out your name</ng-template>
+
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First name" formControlName="firstName" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="First name" formControlName="lastName" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Mobile Phone Number</mat-label>
+                <input matInput type="tel" formControlName="mobilePhone" required>
+            </mat-form-field>
+
+
+            <div class="form-group">
+                <mat-label>User Role</mat-label>
+                <div>
+                    <mat-radio-group class="form-group" aria-label="User Role" formControlName="userRole" required>
+                        <mat-radio-button class="radio-button" value="ADMIN">Pantry Administrator</mat-radio-button>
+                        <mat-radio-button class="radio-button" value="CONSUMER">Pantry Consumer</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="address">
+        <form [formGroup]="address">
+            <ng-template matStepLabel>Fill out your address</ng-template>
+            <mat-form-field>
+                <mat-label>Address 1</mat-label>
+                <input matInput formControlName="address1" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Address 2</mat-label>
+                <input matInput formControlName="address2">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>State</mat-label>
+                <mat-select formControlName="state" required>
+                    <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                        {{state.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Zip Code</mat-label>
+                <input type="number" matInput formControlName="zipCode" required>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Confirm</ng-template>
+        <b>Please confirm your account information:</b>
+        <p>First Name: {{ name.value.firstName }}</p>
+        <p>Last Name: {{ name.value.lastName }}</p>
+        <p>Role: {{ name.value.userRole }}</p>
+        <p>Address 1: {{ address.value.address1 }}</p>
+        <p>Address 2: {{ address.value.address2 }}</p>
+        <p>State: {{ address.value.state }}</p>
+        <p>Zip Code: {{ address.value.zipCode }}</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="submit()">Submit</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

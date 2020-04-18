@@ -7,6 +7,7 @@ const appRoutes: Routes = [
     { path: 'home', loadChildren: () => import('./pages/home').then(m => m.HomeModule) },
     { path: 'customer', loadChildren: () => import('./pages/customer/customer.module').then((m) => m.CustomerModule) },
     { path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then((m) => m.AdminModule) },
+    { path: 'join', loadChildren: () => import('./pages/account-creation/account-creation.module').then((m) => m.AccountCreationModule) },
     { path: '**', component: UnfoundPageComponent }
 ];
 

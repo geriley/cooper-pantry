@@ -6,10 +6,30 @@
   <span class="logo">Cooper Pantry</span>
 </mat-toolbar>
 
-<nb-layout>
-  <nb-layout-column>
-    <div style="height: 100%; width: 100%;">
-      <router-outlet></router-outlet>
-    </div>
-  </nb-layout-column>
-</nb-layout>
+<!-- <div style="height: 100%; width: 100%;">
+  <router-outlet></router-outlet>
+</div> -->
+
+<div *ngIf="!(isNbRoute | async)">
+  <ng-container *ngTemplateOutlet="normal"></ng-container>
+</div>
+
+<div *ngIf="(isNbRoute | async)">
+  <ng-container *ngTemplateOutlet="nb"></ng-container>
+</div>
+
+
+<ng-template #normal>
+  <router-outlet>
+  </router-outlet>
+</ng-template>
+
+<ng-template #nb>
+  <nb-layout>
+    <nb-layout-column>
+      <div style="height: 100%; width: 100%;">
+        <router-outlet></router-outlet>
+      </div>
+    </nb-layout-column>
+  </nb-layout>
+</ng-template>

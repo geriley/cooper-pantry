@@ -61,7 +61,6 @@ export class TwilioChatBotService implements OnDestroy {
         ).subscribe((msg) => {
             channel.sendMessage(msg)
         });
-        this.updateUserChannel(channel.sid);
         this.httpService.addChatBot({ channelSid: channel.sid }).toPromise();
 
     }
@@ -70,15 +69,6 @@ export class TwilioChatBotService implements OnDestroy {
         this.send.next(msg.message);
     }
 
-    private updateUserChannel(channelSid: string) {
-        this.user.updateUser({
-            id: this.currentId,
-            type: CooperResourceType.User,
-            attributes: {
-                chatBotChannelSid: channelSid,
-            }
-        }).toPromise();
-    }
 
     public ngOnDestroy(): void {
         this.destroyed.next();
