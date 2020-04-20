@@ -7,5 +7,9 @@ export enum FoodSecurityLevel {
 
 export interface ICustomerDomain {
     userId: string;
+    name: {
+        first: string;
+        last: string;
+    }
     foodSecurityLevel: FoodSecurityLevel;
 }

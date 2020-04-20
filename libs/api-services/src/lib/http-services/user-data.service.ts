@@ -19,6 +19,7 @@ export class UserDataService {
     }
 
     public updateUser(payload: IPayload<IUserDTO>): Observable<IPayload<IUserDTO>> {
+        console.log(payload);
         const id = payload.data[0].id;
         const url = `${this.url}/users/${id}`;
         return this.http.put<IPayload<IUserDTO>>(url, payload);

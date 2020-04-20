@@ -1,21 +1,59 @@
 <mat-toolbar color="primary">
-  <button class="menu-btn" mat-button>
+  <button class="menu-btn" mat-button (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span class="icon"></span>
-  <span class="logo">Cooper Pantry</span>
+  <span class="icon" routerLink="/home"></span>  
+  <span routerLink="/home">
+    <span class="logo">Cooper Pantry</span>
+  </span>
+
   <span class="fill-horizontal"></span>
-  <button mat-flat-button routerLink="/login" *ngIf="!(loggedIn | async)" color="primary">Login</button>
-  <button mat-flat-button *ngIf="loggedIn | async" color="primary">Account</button>
 </mat-toolbar>
 
-<ng-container *ngIf="!(isNbRoute | async)">
-  <ng-container *ngTemplateOutlet="normal"></ng-container>
-</ng-container>
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer mode="side">
+    <ng-container *ngIf="(loggedIn | async)">
+      <mat-nav-list>
+        <mat-list-item (click)="drawer.close()">
+          <mat-icon mat-list-icon>storefront</mat-icon>
+          Pantry Management
+        </mat-list-item>
+        <mat-list-item (click)="drawer.close()">
+          <mat-icon mat-list-icon>sms</mat-icon>
+          Communication
+        </mat-list-item>
+        <mat-list-item routerLink="/admin/outreach" (click)="drawer.close()">
+          <mat-icon mat-list-icon>bubble_chart</mat-icon>
+          Reports
+        </mat-list-item>
+        <mat-list-item routerLink="/account/contact-info" (click)="drawer.close()">
+          <mat-icon mat-list-icon>settings</mat-icon>
+          Settings
+        </mat-list-item>
+      </mat-nav-list>
+    </ng-container>
 
-<ng-container *ngIf="(isNbRoute | async)">
-  <ng-container *ngTemplateOutlet="nb"></ng-container>
-</ng-container>
+    <ng-container *ngIf="!(loggedIn | async)">
+      <mat-nav-list>
+        <mat-list-item routerLink="/login" (click)="drawer.close()">
+          <mat-icon mat-list-icon>account_circle</mat-icon>
+          Login
+        </mat-list-item>
+      </mat-nav-list>      
+    </ng-container>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-container *ngIf="!(isNbRoute | async)">
+      <ng-container *ngTemplateOutlet="normal"></ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="(isNbRoute | async)">
+      <ng-container *ngTemplateOutlet="nb"></ng-container>
+    </ng-container>
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
 
 
 <ng-template #normal>
@@ -25,7 +63,7 @@
   </div>
 </ng-template>
 
-<ng-template #nb>
+<!-- <ng-template #nb>
   <nb-layout>
     <nb-layout-column>
       <div style="height: 100%; width: 100%;">
@@ -33,4 +71,4 @@
       </div>
     </nb-layout-column>
   </nb-layout>
-</ng-template>
+</ng-template> -->

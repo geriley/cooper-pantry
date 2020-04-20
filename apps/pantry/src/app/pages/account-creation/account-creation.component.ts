@@ -1,5 +1,4 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { states } from './states';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -9,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccountCreationComponent {
-    public states = states;
+    public states = [];
     public name = this._formBuilder.group({
         firstName: ['', Validators.required],
         lastName: ['', Validators.required],

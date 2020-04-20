@@ -19,7 +19,8 @@
       "@cooper/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@cooper/assistant/feature": ["libs/assistant/feature/src/index.ts"],
       "@cooper/api-services": ["libs/api-services/src/index.ts"],
-      "@cooper/statistics/risk": ["libs/statistics/risk/src/index.ts"]
+      "@cooper/statistics/risk": ["libs/statistics/risk/src/index.ts"],
+      "@cooper/state/user-context": ["libs/state/user-context/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

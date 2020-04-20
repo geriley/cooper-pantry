@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { UserDataService } from '../http-services/user-data.service';
-import { IPayloadData, IUserDTO, IPayload } from '@cooper/api-interfaces';
+import { IPayload, IPayloadData, IUserDTO } from '@cooper/api-interfaces';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ICustomerDomain, FoodSecurityLevel } from '../interfaces/customer.interface';
-import { IPayloadDataRelationship } from '../../../../api-interfaces/src/lib/dto/payload.model';
 import { ISurveyScoreDTO, SurveyResultLevel } from '../../../../api-interfaces/src/lib/dto/survey-score.model';
 import { CooperResourceType } from '../../../../api-interfaces/src/lib/resource-types.enum';
+import { UserDataService } from '../http-services/user-data.service';
+import { FoodSecurityLevel, ICustomerDomain } from '../interfaces/customer.interface';
 
 @Injectable()
 export class UserAccessService {
@@ -19,6 +18,7 @@ export class UserAccessService {
     }
 
     public updateUser(data: IPayloadData<IUserDTO>): Observable<IPayload<IUserDTO>> {
+        console.log(data);
         return this.http.updateUser({
             data: [data]
         });
@@ -29,13 +29,17 @@ export class UserAccessService {
             map((payload) => {
                 const data = payload.data as IPayloadData<IUserDTO>[];
                 return data.map((d) => {
-                    const foodSecuritySurveys = d.relationships[CooperResourceType.SurveyResponse];
+                    const foodSecuritySurveys = d?.relationships ? d.relationships[CooperResourceType.SurveyResponse] : [];
                     const mostRecentFoodSecuritySurvey = Array.isArray(foodSecuritySurveys) ? foodSecuritySurveys[0] : foodSecuritySurveys;
-                    const surveyId = mostRecentFoodSecuritySurvey.id;
-                    const survey: IPayloadData<ISurveyScoreDTO> = payload.included.find((i) => i.id === surveyId);                    
+                    const surveyId = mostRecentFoodSecuritySurvey?.id;
+                    const survey: IPayloadData<ISurveyScoreDTO> = payload?.included?.find((i) => i.id === surveyId);                    
                     return { 
                         userId: d.id,
-                        foodSecurityLevel: this.convertSurveyResultLevel(survey.attributes.surveyResultLevel),
+                        name: {
+                            first: d?.attributes?.firstName,
+                            last: d?.attributes?.lastName
+                        },
+                        foodSecurityLevel: this.convertSurveyResultLevel(survey?.attributes?.surveyResultLevel),
                     };
                 });
             })

@@ -1,0 +1,44 @@
+<div *ngIf="contact" class="form-group">
+    <h1>Update Contact Information</h1>
+    <form [formGroup]="contact">
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First name" formControlName="firstName" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last name" formControlName="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Mobile Phone Number</mat-label>
+            <input matInput type="tel" formControlName="mobilePhone" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Address 1</mat-label>
+            <input matInput formControlName="address1" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Address 2</mat-label>
+            <input matInput formControlName="address2">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>State</mat-label>
+            <mat-select formControlName="state" required>
+                <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                    {{state.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Zip Code</mat-label>
+            <input type="number" matInput formControlName="zipcode" required>
+        </mat-form-field>
+    </form>
+    <button mat-flat-button color="primary" (click)="save()">Save</button>
+</div>

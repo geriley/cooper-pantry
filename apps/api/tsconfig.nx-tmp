@@ -14,6 +14,12 @@
       ],
       "@cooper/api-services": [
         "libs/api-services/src/index.ts"
+      ],
+      "@cooper/statistics/risk": [
+        "libs/statistics/risk/src/index.ts"
+      ],
+      "@cooper/state/user-context": [
+        "libs/state/user-context/src/index.ts"
       ]
     }
   },

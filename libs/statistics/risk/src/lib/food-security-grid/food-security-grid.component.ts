@@ -12,5 +12,5 @@ export class FoodSecurityGrid {
     constructor(private service: UserAccessService) { }
 
     public customers: Observable<ICustomerDomain[]> = this.service.getCustomers();
-    displayedColumns: string[] = ['userId', 'security'];
+    displayedColumns: string[] = ['firstName', 'lastName', 'security'];
 }

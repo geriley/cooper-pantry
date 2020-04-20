@@ -1,6 +1,128 @@
 {
   "projectGraph": {
     "nodes": {
+      "state-user-context": {
+        "name": "state-user-context",
+        "type": "lib",
+        "data": {
+          "projectType": "library",
+          "root": "libs/state/user-context",
+          "sourceRoot": "libs/state/user-context/src",
+          "prefix": "cooper",
+          "architect": {
+            "lint": {
+              "builder": "@angular-devkit/build-angular:tslint",
+              "options": {
+                "tsConfig": [
+                  "libs/state/user-context/tsconfig.lib.json",
+                  "libs/state/user-context/tsconfig.spec.json"
+                ],
+                "exclude": [
+                  "**/node_modules/**",
+                  "!libs/state/user-context/**"
+                ]
+              }
+            },
+            "test": {
+              "builder": "@nrwl/jest:jest",
+              "options": {
+                "jestConfig": "libs/state/user-context/jest.config.js",
+                "tsConfig": "libs/state/user-context/tsconfig.spec.json",
+                "passWithNoTests": true,
+                "setupFile": "libs/state/user-context/src/test-setup.ts"
+              }
+            }
+          },
+          "schematics": {
+            "@nrwl/angular:component": {
+              "style": "scss"
+            }
+          },
+          "tags": [],
+          "files": [
+            {
+              "file": "libs/state/user-context/jest.config.js",
+              "ext": ".js",
+              "mtime": 1587241321506.4275
+            },
+            {
+              "file": "libs/state/user-context/README.md",
+              "ext": ".md",
+              "mtime": 1587241321492.4707
+            },
+            {
+              "file": "libs/state/user-context/src/index.ts",
+              "ext": ".ts",
+              "mtime": 1587335403959.6104
+            },
+            {
+              "file": "libs/state/user-context/src/lib/ngrx/actions.ts",
+              "ext": ".ts",
+              "mtime": 1587334877070.1023
+            },
+            {
+              "file": "libs/state/user-context/src/lib/ngrx/effects.ts",
+              "ext": ".ts",
+              "mtime": 1587334877070.1023
+            },
+            {
+              "file": "libs/state/user-context/src/lib/ngrx/facade.ts",
+              "ext": ".ts",
+              "mtime": 1587334877070.1023
+            },
+            {
+              "file": "libs/state/user-context/src/lib/ngrx/reducer.ts",
+              "ext": ".ts",
+              "mtime": 1587334877070.1023
+            },
+            {
+              "file": "libs/state/user-context/src/lib/ngrx/state.ts",
+              "ext": ".ts",
+              "mtime": 1587335403959.6104
+            },
+            {
+              "file": "libs/state/user-context/src/lib/state-user-context.module.spec.ts",
+              "ext": ".ts",
+              "mtime": 1587241321503.4358
+            },
+            {
+              "file": "libs/state/user-context/src/lib/state-user-context.module.ts",
+              "ext": ".ts",
+              "mtime": 1587335403959.6104
+            },
+            {
+              "file": "libs/state/user-context/src/test-setup.ts",
+              "ext": ".ts",
+              "mtime": 1587241321561.065
+            },
+            {
+              "file": "libs/state/user-context/tsconfig.json",
+              "ext": ".json",
+              "mtime": 1587241321504.433
+            },
+            {
+              "file": "libs/state/user-context/tsconfig.lib.json",
+              "ext": ".json",
+              "mtime": 1587241321494.463
+            },
+            {
+              "file": "libs/state/user-context/tsconfig.lib.prod.json",
+              "ext": ".json",
+              "mtime": 1587241321497.4517
+            },
+            {
+              "file": "libs/state/user-context/tsconfig.spec.json",
+              "ext": ".json",
+              "mtime": 1587241321557.0645
+            },
+            {
+              "file": "libs/state/user-context/tslint.json",
+              "ext": ".json",
+              "mtime": 1587241321498.4492
+            }
+          ]
+        }
+      },
       "assistant-feature": {
         "name": "assistant-feature",
         "type": "lib",
@@ -170,7 +292,7 @@
             {
               "file": "libs/statistics/risk/src/lib/food-security-grid/food-security-grid.component.html",
               "ext": ".html",
-              "mtime": 1586998882905.474
+              "mtime": 1587334877134.9285
             },
             {
               "file": "libs/statistics/risk/src/lib/food-security-grid/food-security-grid.component.scss",
@@ -286,7 +408,7 @@
             {
               "file": "libs/api-interfaces/src/lib/dto/index.ts",
               "ext": ".ts",
-              "mtime": 1586902195429.207
+              "mtime": 1587241412068.1028
             },
             {
               "file": "libs/api-interfaces/src/lib/dto/pantry.model.ts",
@@ -306,7 +428,7 @@
             {
               "file": "libs/api-interfaces/src/lib/dto/user.model.ts",
               "ext": ".ts",
-              "mtime": 1587001445616.2139
+              "mtime": 1587334877070.1023
             },
             {
               "file": "libs/api-interfaces/src/lib/request-dto/add-bot-dto.interface.ts",
@@ -408,7 +530,7 @@
             {
               "file": "libs/api-services/src/lib/access-services/user-access.service.ts",
               "ext": ".ts",
-              "mtime": 1586998396269.4534
+              "mtime": 1587334877207.8838
             },
             {
               "file": "libs/api-services/src/lib/api-services.module.spec.ts",
@@ -433,7 +555,7 @@
             {
               "file": "libs/api-services/src/lib/http-services/index.ts",
               "ext": ".ts",
-              "mtime": 1586717942069.9856
+              "mtime": 1587242459931.2964
             },
             {
               "file": "libs/api-services/src/lib/http-services/user-data.service.ts",
@@ -699,17 +821,17 @@
             {
               "file": "apps/pantry/src/app/app-routing.module.ts",
               "ext": ".ts",
-              "mtime": 1587085707492.491
+              "mtime": 1587233960595.9507
             },
             {
               "file": "apps/pantry/src/app/app.component.html",
               "ext": ".html",
-              "mtime": 1587087379800.639
+              "mtime": 1587334877070.1023
             },
             {
               "file": "apps/pantry/src/app/app.component.scss",
               "ext": ".scss",
-              "mtime": 1586834107433.914
+              "mtime": 1587329942066.57
             },
             {
               "file": "apps/pantry/src/app/app.component.spec.ts",
@@ -719,17 +841,32 @@
             {
               "file": "apps/pantry/src/app/app.component.ts",
               "ext": ".ts",
-              "mtime": 1587088564704.2307
+              "mtime": 1587240198569.5464
             },
             {
               "file": "apps/pantry/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1586820131793.2056
+              "mtime": 1587335404132.6865
+            },
+            {
+              "file": "apps/pantry/src/app/common/firebase-token.ts",
+              "ext": ".ts",
+              "mtime": 1587233922174.6924
+            },
+            {
+              "file": "apps/pantry/src/app/common/firebase.service.ts",
+              "ext": ".ts",
+              "mtime": 1587335404001.4978
+            },
+            {
+              "file": "apps/pantry/src/app/common/index.ts",
+              "ext": ".ts",
+              "mtime": 1587233922174.6924
             },
             {
               "file": "apps/pantry/src/app/pages/account-creation/account-creation.component.html",
               "ext": ".html",
-              "mtime": 1587088649156.8733
+              "mtime": 1587328038973.162
             },
             {
               "file": "apps/pantry/src/app/pages/account-creation/account-creation.component.scss",
@@ -739,12 +876,12 @@
             {
               "file": "apps/pantry/src/app/pages/account-creation/account-creation.component.ts",
               "ext": ".ts",
-              "mtime": 1587088728966.968
+              "mtime": 1587330520546.1252
             },
             {
               "file": "apps/pantry/src/app/pages/account-creation/account-creation.module.ts",
               "ext": ".ts",
-              "mtime": 1587086047746.6125
+              "mtime": 1587328038973.162
             },
             {
               "file": "apps/pantry/src/app/pages/account-creation/index.ts",
@@ -752,9 +889,34 @@
               "mtime": 1587085707492.491
             },
             {
-              "file": "apps/pantry/src/app/pages/account-creation/states.ts",
+              "file": "apps/pantry/src/app/pages/account-management/account-management.module.ts",
               "ext": ".ts",
-              "mtime": 1587085707492.491
+              "mtime": 1587330786667.2385
+            },
+            {
+              "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.html",
+              "ext": ".html",
+              "mtime": 1587330786667.2385
+            },
+            {
+              "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.scss",
+              "ext": ".scss",
+              "mtime": 1587330786667.2385
+            },
+            {
+              "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.ts",
+              "ext": ".ts",
+              "mtime": 1587330786667.2385
+            },
+            {
+              "file": "apps/pantry/src/app/pages/account-management/index.ts",
+              "ext": ".ts",
+              "mtime": 1587334877070.1023
+            },
+            {
+              "file": "apps/pantry/src/app/pages/account-management/states.ts",
+              "ext": ".ts",
+              "mtime": 1587330501304
             },
             {
               "file": "apps/pantry/src/app/pages/admin/admin-routing.module.ts",
@@ -804,12 +966,12 @@
             {
               "file": "apps/pantry/src/app/pages/home/home.component.html",
               "ext": ".html",
-              "mtime": 1586834285395.4734
+              "mtime": 1587240428173.3186
             },
             {
               "file": "apps/pantry/src/app/pages/home/home.component.scss",
               "ext": ".scss",
-              "mtime": 1586834218649.108
+              "mtime": 1587329613383.496
             },
             {
               "file": "apps/pantry/src/app/pages/home/home.component.ts",
@@ -825,6 +987,21 @@
               "file": "apps/pantry/src/app/pages/home/index.ts",
               "ext": ".ts",
               "mtime": 1586647826936.6345
+            },
+            {
+              "file": "apps/pantry/src/app/pages/sign-in/sign-in.component.html",
+              "ext": ".html",
+              "mtime": 1587335404001.4978
+            },
+            {
+              "file": "apps/pantry/src/app/pages/sign-in/sign-in.component.ts",
+              "ext": ".ts",
+              "mtime": 1587335404133.6843
+            },
+            {
+              "file": "apps/pantry/src/app/pages/sign-in/sign-in.module.ts",
+              "ext": ".ts",
+              "mtime": 1587234239219.916
             },
             {
               "file": "apps/pantry/src/app/pages/unfound-page/unfound-page.component.ts",
@@ -854,7 +1031,7 @@
             {
               "file": "apps/pantry/src/environments/environment.ts",
               "ext": ".ts",
-              "mtime": 1586475383888.0762
+              "mtime": 1587235487941.5413
             },
             {
               "file": "apps/pantry/src/favicon.ico",
@@ -864,7 +1041,7 @@
             {
               "file": "apps/pantry/src/index.html",
               "ext": ".html",
-              "mtime": 1586654988706.336
+              "mtime": 1587241252529.3904
             },
             {
               "file": "apps/pantry/src/main.ts",
@@ -1025,7 +1202,7 @@
             {
               "file": "apps/api/src/app/common/base-resource.service.ts",
               "ext": ".ts",
-              "mtime": 1586992478835.9863
+              "mtime": 1587236141147.5022
             },
             {
               "file": "apps/api/src/app/common/index.ts",
@@ -1060,7 +1237,7 @@
             {
               "file": "apps/api/src/app/controllers/modules/user-http.module.ts",
               "ext": ".ts",
-              "mtime": 1586992629434.2256
+              "mtime": 1587335645577.859
             },
             {
               "file": "apps/api/src/app/controllers/pantry.controller.ts",
@@ -1075,7 +1252,7 @@
             {
               "file": "apps/api/src/app/controllers/user.controller.ts",
               "ext": ".ts",
-              "mtime": 1586993417320.849
+              "mtime": 1587336867596.2827
             },
             {
               "file": "apps/api/src/app/entities/address.entity.ts",
@@ -1085,12 +1262,17 @@
             {
               "file": "apps/api/src/app/entities/index.ts",
               "ext": ".ts",
-              "mtime": 1586713078152.4082
+              "mtime": 1587336057542.8916
+            },
+            {
+              "file": "apps/api/src/app/entities/modules/address.module.ts",
+              "ext": ".ts",
+              "mtime": 1587335645577.859
             },
             {
               "file": "apps/api/src/app/entities/modules/index.ts",
               "ext": ".ts",
-              "mtime": 1586713078153.405
+              "mtime": 1587335645577.859
             },
             {
               "file": "apps/api/src/app/entities/modules/pantry.module.ts",
@@ -1105,7 +1287,7 @@
             {
               "file": "apps/api/src/app/entities/modules/user.module.ts",
               "ext": ".ts",
-              "mtime": 1586713078152.4082
+              "mtime": 1587335897327.3318
             },
             {
               "file": "apps/api/src/app/entities/pantry.entity.ts",
@@ -1120,7 +1302,7 @@
             {
               "file": "apps/api/src/app/entities/user.entity.ts",
               "ext": ".ts",
-              "mtime": 1587001445636.203
+              "mtime": 1587336833482.866
             },
             {
               "file": "apps/api/src/app/models/autopilot.model.ts",
@@ -1150,7 +1332,7 @@
             {
               "file": "apps/api/src/app/services/interfaces/survey-responses.interface.ts",
               "ext": ".ts",
-              "mtime": 1586990734578.1172
+              "mtime": 1587236141071.261
             },
             {
               "file": "apps/api/src/app/services/interfaces/user.interface.ts",
@@ -1195,7 +1377,7 @@
             {
               "file": "apps/api/src/app/services/resource/user-resource.service.ts",
               "ext": ".ts",
-              "mtime": 1587001445620.2036
+              "mtime": 1587335552520.4048
             },
             {
               "file": "apps/api/src/app/services/twilio/twilio.service.ts",
@@ -1231,11 +1413,6 @@
               "file": "apps/api/tsconfig.json",
               "ext": ".json",
               "mtime": 1586475383919.9912
-            },
-            {
-              "file": "apps/api/tsconfig.nx-tmp",
-              "ext": ".nx-tmp",
-              "mtime": 1586992521226.8508
             },
             {
               "file": "apps/api/tsconfig.spec.json",
@@ -1410,6 +1587,22 @@
           "files": []
         }
       },
+      "@ngrx/effects": {
+        "type": "npm",
+        "name": "@ngrx/effects",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
+      "@ngrx/store": {
+        "type": "npm",
+        "name": "@ngrx/store",
+        "data": {
+          "version": "^9.1.0",
+          "files": []
+        }
+      },
       "@nrwl/angular": {
         "type": "npm",
         "name": "@nrwl/angular",
@@ -1447,6 +1640,14 @@
         "name": "eva-icons",
         "data": {
           "version": "^1.1.2",
+          "files": []
+        }
+      },
+      "firebase": {
+        "type": "npm",
+        "name": "firebase",
+        "data": {
+          "version": "^7.14.1",
           "files": []
         }
       },
@@ -1724,6 +1925,48 @@
       }
     },
     "dependencies": {
+      "state-user-context": [
+        {
+          "type": "static",
+          "source": "state-user-context",
+          "target": "api-services"
+        },
+        {
+          "type": "static",
+          "source": "state-user-context",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "state-user-context",
+          "target": "@ngrx/store"
+        },
+        {
+          "type": "static",
+          "source": "state-user-context",
+          "target": "@angular/core"
+        },
+        {
+          "type": "static",
+          "source": "state-user-context",
+          "target": "@ngrx/effects"
+        },
+        {
+          "type": "static",
+          "source": "state-user-context",
+          "target": "rxjs"
+        },
+        {
+          "type": "static",
+          "source": "state-user-context",
+          "target": "@angular/common"
+        },
+        {
+          "type": "static",
+          "source": "state-user-context",
+          "target": "jest-preset-angular"
+        }
+      ],
       "assistant-feature": [
         {
           "type": "static",
@@ -1842,6 +2085,16 @@
         {
           "type": "static",
           "source": "pantry",
+          "target": "state-user-context"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "api-interfaces"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
           "target": "statistics-risk"
         },
         {
@@ -1888,6 +2141,11 @@
           "type": "static",
           "source": "pantry",
           "target": "@nebular/eva-icons"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "firebase"
         },
         {
           "type": "static",
@@ -1997,11 +2255,14 @@
       "@nestjs/serve-static": [],
       "@nestjs/swagger": [],
       "@nestjs/typeorm": [],
+      "@ngrx/effects": [],
+      "@ngrx/store": [],
       "@nrwl/angular": [],
       "@types/twilio": [],
       "babel-runtime": [],
       "core-js": [],
       "eva-icons": [],
+      "firebase": [],
       "pg": [],
       "pg-connection-string": [],
       "reflect-metadata": [],
@@ -2039,6 +2300,88 @@
     }
   },
   "fileMap": {
+    "state-user-context": [
+      {
+        "file": "libs/state/user-context/jest.config.js",
+        "ext": ".js",
+        "mtime": 1587241321506.4275
+      },
+      {
+        "file": "libs/state/user-context/README.md",
+        "ext": ".md",
+        "mtime": 1587241321492.4707
+      },
+      {
+        "file": "libs/state/user-context/src/index.ts",
+        "ext": ".ts",
+        "mtime": 1587335403959.6104
+      },
+      {
+        "file": "libs/state/user-context/src/lib/ngrx/actions.ts",
+        "ext": ".ts",
+        "mtime": 1587334877070.1023
+      },
+      {
+        "file": "libs/state/user-context/src/lib/ngrx/effects.ts",
+        "ext": ".ts",
+        "mtime": 1587334877070.1023
+      },
+      {
+        "file": "libs/state/user-context/src/lib/ngrx/facade.ts",
+        "ext": ".ts",
+        "mtime": 1587334877070.1023
+      },
+      {
+        "file": "libs/state/user-context/src/lib/ngrx/reducer.ts",
+        "ext": ".ts",
+        "mtime": 1587334877070.1023
+      },
+      {
+        "file": "libs/state/user-context/src/lib/ngrx/state.ts",
+        "ext": ".ts",
+        "mtime": 1587335403959.6104
+      },
+      {
+        "file": "libs/state/user-context/src/lib/state-user-context.module.spec.ts",
+        "ext": ".ts",
+        "mtime": 1587241321503.4358
+      },
+      {
+        "file": "libs/state/user-context/src/lib/state-user-context.module.ts",
+        "ext": ".ts",
+        "mtime": 1587335403959.6104
+      },
+      {
+        "file": "libs/state/user-context/src/test-setup.ts",
+        "ext": ".ts",
+        "mtime": 1587241321561.065
+      },
+      {
+        "file": "libs/state/user-context/tsconfig.json",
+        "ext": ".json",
+        "mtime": 1587241321504.433
+      },
+      {
+        "file": "libs/state/user-context/tsconfig.lib.json",
+        "ext": ".json",
+        "mtime": 1587241321494.463
+      },
+      {
+        "file": "libs/state/user-context/tsconfig.lib.prod.json",
+        "ext": ".json",
+        "mtime": 1587241321497.4517
+      },
+      {
+        "file": "libs/state/user-context/tsconfig.spec.json",
+        "ext": ".json",
+        "mtime": 1587241321557.0645
+      },
+      {
+        "file": "libs/state/user-context/tslint.json",
+        "ext": ".json",
+        "mtime": 1587241321498.4492
+      }
+    ],
     "assistant-feature": [
       {
         "file": "libs/assistant/feature/jest.config.js",
@@ -2130,7 +2473,7 @@
       {
         "file": "libs/statistics/risk/src/lib/food-security-grid/food-security-grid.component.html",
         "ext": ".html",
-        "mtime": 1586998882905.474
+        "mtime": 1587334877134.9285
       },
       {
         "file": "libs/statistics/risk/src/lib/food-security-grid/food-security-grid.component.scss",
@@ -2212,7 +2555,7 @@
       {
         "file": "libs/api-interfaces/src/lib/dto/index.ts",
         "ext": ".ts",
-        "mtime": 1586902195429.207
+        "mtime": 1587241412068.1028
       },
       {
         "file": "libs/api-interfaces/src/lib/dto/pantry.model.ts",
@@ -2232,7 +2575,7 @@
       {
         "file": "libs/api-interfaces/src/lib/dto/user.model.ts",
         "ext": ".ts",
-        "mtime": 1587001445616.2139
+        "mtime": 1587334877070.1023
       },
       {
         "file": "libs/api-interfaces/src/lib/request-dto/add-bot-dto.interface.ts",
@@ -2294,7 +2637,7 @@
       {
         "file": "libs/api-services/src/lib/access-services/user-access.service.ts",
         "ext": ".ts",
-        "mtime": 1586998396269.4534
+        "mtime": 1587334877207.8838
       },
       {
         "file": "libs/api-services/src/lib/api-services.module.spec.ts",
@@ -2319,7 +2662,7 @@
       {
         "file": "libs/api-services/src/lib/http-services/index.ts",
         "ext": ".ts",
-        "mtime": 1586717942069.9856
+        "mtime": 1587242459931.2964
       },
       {
         "file": "libs/api-services/src/lib/http-services/user-data.service.ts",
@@ -2438,17 +2781,17 @@
       {
         "file": "apps/pantry/src/app/app-routing.module.ts",
         "ext": ".ts",
-        "mtime": 1587085707492.491
+        "mtime": 1587233960595.9507
       },
       {
         "file": "apps/pantry/src/app/app.component.html",
         "ext": ".html",
-        "mtime": 1587087379800.639
+        "mtime": 1587334877070.1023
       },
       {
         "file": "apps/pantry/src/app/app.component.scss",
         "ext": ".scss",
-        "mtime": 1586834107433.914
+        "mtime": 1587329942066.57
       },
       {
         "file": "apps/pantry/src/app/app.component.spec.ts",
@@ -2458,17 +2801,32 @@
       {
         "file": "apps/pantry/src/app/app.component.ts",
         "ext": ".ts",
-        "mtime": 1587088564704.2307
+        "mtime": 1587240198569.5464
       },
       {
         "file": "apps/pantry/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1586820131793.2056
+        "mtime": 1587335404132.6865
+      },
+      {
+        "file": "apps/pantry/src/app/common/firebase-token.ts",
+        "ext": ".ts",
+        "mtime": 1587233922174.6924
+      },
+      {
+        "file": "apps/pantry/src/app/common/firebase.service.ts",
+        "ext": ".ts",
+        "mtime": 1587335404001.4978
+      },
+      {
+        "file": "apps/pantry/src/app/common/index.ts",
+        "ext": ".ts",
+        "mtime": 1587233922174.6924
       },
       {
         "file": "apps/pantry/src/app/pages/account-creation/account-creation.component.html",
         "ext": ".html",
-        "mtime": 1587088649156.8733
+        "mtime": 1587328038973.162
       },
       {
         "file": "apps/pantry/src/app/pages/account-creation/account-creation.component.scss",
@@ -2478,12 +2836,12 @@
       {
         "file": "apps/pantry/src/app/pages/account-creation/account-creation.component.ts",
         "ext": ".ts",
-        "mtime": 1587088728966.968
+        "mtime": 1587330520546.1252
       },
       {
         "file": "apps/pantry/src/app/pages/account-creation/account-creation.module.ts",
         "ext": ".ts",
-        "mtime": 1587086047746.6125
+        "mtime": 1587328038973.162
       },
       {
         "file": "apps/pantry/src/app/pages/account-creation/index.ts",
@@ -2491,9 +2849,34 @@
         "mtime": 1587085707492.491
       },
       {
-        "file": "apps/pantry/src/app/pages/account-creation/states.ts",
+        "file": "apps/pantry/src/app/pages/account-management/account-management.module.ts",
         "ext": ".ts",
-        "mtime": 1587085707492.491
+        "mtime": 1587330786667.2385
+      },
+      {
+        "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.html",
+        "ext": ".html",
+        "mtime": 1587330786667.2385
+      },
+      {
+        "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.scss",
+        "ext": ".scss",
+        "mtime": 1587330786667.2385
+      },
+      {
+        "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.ts",
+        "ext": ".ts",
+        "mtime": 1587330786667.2385
+      },
+      {
+        "file": "apps/pantry/src/app/pages/account-management/index.ts",
+        "ext": ".ts",
+        "mtime": 1587334877070.1023
+      },
+      {
+        "file": "apps/pantry/src/app/pages/account-management/states.ts",
+        "ext": ".ts",
+        "mtime": 1587330501304
       },
       {
         "file": "apps/pantry/src/app/pages/admin/admin-routing.module.ts",
@@ -2543,12 +2926,12 @@
       {
         "file": "apps/pantry/src/app/pages/home/home.component.html",
         "ext": ".html",
-        "mtime": 1586834285395.4734
+        "mtime": 1587240428173.3186
       },
       {
         "file": "apps/pantry/src/app/pages/home/home.component.scss",
         "ext": ".scss",
-        "mtime": 1586834218649.108
+        "mtime": 1587329613383.496
       },
       {
         "file": "apps/pantry/src/app/pages/home/home.component.ts",
@@ -2564,6 +2947,21 @@
         "file": "apps/pantry/src/app/pages/home/index.ts",
         "ext": ".ts",
         "mtime": 1586647826936.6345
+      },
+      {
+        "file": "apps/pantry/src/app/pages/sign-in/sign-in.component.html",
+        "ext": ".html",
+        "mtime": 1587335404001.4978
+      },
+      {
+        "file": "apps/pantry/src/app/pages/sign-in/sign-in.component.ts",
+        "ext": ".ts",
+        "mtime": 1587335404133.6843
+      },
+      {
+        "file": "apps/pantry/src/app/pages/sign-in/sign-in.module.ts",
+        "ext": ".ts",
+        "mtime": 1587234239219.916
       },
       {
         "file": "apps/pantry/src/app/pages/unfound-page/unfound-page.component.ts",
@@ -2593,7 +2991,7 @@
       {
         "file": "apps/pantry/src/environments/environment.ts",
         "ext": ".ts",
-        "mtime": 1586475383888.0762
+        "mtime": 1587235487941.5413
       },
       {
         "file": "apps/pantry/src/favicon.ico",
@@ -2603,7 +3001,7 @@
       {
         "file": "apps/pantry/src/index.html",
         "ext": ".html",
-        "mtime": 1586654988706.336
+        "mtime": 1587241252529.3904
       },
       {
         "file": "apps/pantry/src/main.ts",
@@ -2685,7 +3083,7 @@
       {
         "file": "apps/api/src/app/common/base-resource.service.ts",
         "ext": ".ts",
-        "mtime": 1586992478835.9863
+        "mtime": 1587236141147.5022
       },
       {
         "file": "apps/api/src/app/common/index.ts",
@@ -2720,7 +3118,7 @@
       {
         "file": "apps/api/src/app/controllers/modules/user-http.module.ts",
         "ext": ".ts",
-        "mtime": 1586992629434.2256
+        "mtime": 1587335645577.859
       },
       {
         "file": "apps/api/src/app/controllers/pantry.controller.ts",
@@ -2735,7 +3133,7 @@
       {
         "file": "apps/api/src/app/controllers/user.controller.ts",
         "ext": ".ts",
-        "mtime": 1586993417320.849
+        "mtime": 1587336867596.2827
       },
       {
         "file": "apps/api/src/app/entities/address.entity.ts",
@@ -2745,12 +3143,17 @@
       {
         "file": "apps/api/src/app/entities/index.ts",
         "ext": ".ts",
-        "mtime": 1586713078152.4082
+        "mtime": 1587336057542.8916
+      },
+      {
+        "file": "apps/api/src/app/entities/modules/address.module.ts",
+        "ext": ".ts",
+        "mtime": 1587335645577.859
       },
       {
         "file": "apps/api/src/app/entities/modules/index.ts",
         "ext": ".ts",
-        "mtime": 1586713078153.405
+        "mtime": 1587335645577.859
       },
       {
         "file": "apps/api/src/app/entities/modules/pantry.module.ts",
@@ -2765,7 +3168,7 @@
       {
         "file": "apps/api/src/app/entities/modules/user.module.ts",
         "ext": ".ts",
-        "mtime": 1586713078152.4082
+        "mtime": 1587335897327.3318
       },
       {
         "file": "apps/api/src/app/entities/pantry.entity.ts",
@@ -2780,7 +3183,7 @@
       {
         "file": "apps/api/src/app/entities/user.entity.ts",
         "ext": ".ts",
-        "mtime": 1587001445636.203
+        "mtime": 1587336833482.866
       },
       {
         "file": "apps/api/src/app/models/autopilot.model.ts",
@@ -2810,7 +3213,7 @@
       {
         "file": "apps/api/src/app/services/interfaces/survey-responses.interface.ts",
         "ext": ".ts",
-        "mtime": 1586990734578.1172
+        "mtime": 1587236141071.261
       },
       {
         "file": "apps/api/src/app/services/interfaces/user.interface.ts",
@@ -2855,7 +3258,7 @@
       {
         "file": "apps/api/src/app/services/resource/user-resource.service.ts",
         "ext": ".ts",
-        "mtime": 1587001445620.2036
+        "mtime": 1587335552520.4048
       },
       {
         "file": "apps/api/src/app/services/twilio/twilio.service.ts",
@@ -2891,11 +3294,6 @@
         "file": "apps/api/tsconfig.json",
         "ext": ".json",
         "mtime": 1586475383919.9912
-      },
-      {
-        "file": "apps/api/tsconfig.nx-tmp",
-        "ext": ".nx-tmp",
-        "mtime": 1586992521226.8508
       },
       {
         "file": "apps/api/tsconfig.spec.json",

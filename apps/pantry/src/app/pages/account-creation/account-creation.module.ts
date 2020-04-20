@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
 
 const routes: Routes = [
     { path: '', component: AccountCreationComponent }
@@ -18,6 +19,7 @@ const routes: Routes = [
         CommonModule,
         ReactiveFormsModule,
         MatStepperModule,
+        MatTabsModule,
         MatInputModule,
         MatSelectModule,
         MatRadioModule,

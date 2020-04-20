@@ -317,6 +317,38 @@
           "style": "scss"
         }
       }
+    },
+    "state-user-context": {
+      "projectType": "library",
+      "root": "libs/state/user-context",
+      "sourceRoot": "libs/state/user-context/src",
+      "prefix": "cooper",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/state/user-context/tsconfig.lib.json",
+              "libs/state/user-context/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/state/user-context/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/state/user-context/jest.config.js",
+            "tsConfig": "libs/state/user-context/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/state/user-context/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

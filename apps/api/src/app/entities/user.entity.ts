@@ -1,24 +1,24 @@
-import { Column, Entity, JoinColumn, OneToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn } from 'typeorm';
 import { Address } from './address.entity';
 
 @Entity()
 export class User {
     // ID from Firebase
-    @Column()
+    @PrimaryColumn()
     public id: string;
 
-    @Column()
+    @Column({ nullable: true })
     public givenName: string;
 
-    @Column()
+    @Column({ nullable: true })
     public familyName: string;
 
-    @Column({ nullable: true })
-    public residentialAddressId?: number;
-
-    @OneToOne(type => Address)
-    @JoinColumn({ name: 'residentialAddressId', referencedColumnName: 'id'})
+    @OneToOne(type => Address, { cascade: true })
+    @JoinColumn()
     public residentialAddress?: Address;  
+
+    @Column({ nullable: true })
+    public mobilePhone: string;    
 
     @Column()
     public userRole: string;

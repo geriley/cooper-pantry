@@ -35,6 +35,14 @@
   text-align: center;
 }
 
+@media screen and (max-width: 600px) {
+  .header-text {
+    color: white;
+    font-size: 2rem;
+    width: 100%;
+  }
+}
+
 .sub-header-text {
   color: white;
   font-family: Roboto, 'Helvetica Neue', sans-serif;

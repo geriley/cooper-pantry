@@ -683,12 +683,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserController", function() { return UserController; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/resource */ "./apps/api/src/app/services/resource/index.ts");
-/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
-/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @nestjs/swagger */ "@nestjs/swagger");
-/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nestjs/swagger */ "@nestjs/swagger");
+/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/resource */ "./apps/api/src/app/services/resource/index.ts");
 var _a, _b, _c, _d, _e, _f, _g, _h;
 
 
@@ -702,9 +702,9 @@ let UserController = class UserController {
     getById(params) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             try {
-                const user = yield this.service.getById(parseInt(params.id, 10));
+                const user = yield this.service.getById(params.id);
                 if (!user.data) {
-                    throw new _nestjs_common__WEBPACK_IMPORTED_MODULE_1__["NotFoundException"]({
+                    throw new _nestjs_common__WEBPACK_IMPORTED_MODULE_2__["NotFoundException"]({
                         errors: [
                             {
                                 status: '404',
@@ -750,6 +750,7 @@ let UserController = class UserController {
     post(pantry) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             try {
+                console.log(pantry);
                 return this.service.upsert(pantry);
             }
             catch (err) {
@@ -784,47 +785,47 @@ let UserController = class UserController {
     }
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])(':id'),
-    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__["ApiParam"])({ name: 'id' }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Param"])()),
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Get"])(':id'),
+    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_3__["ApiParam"])({ name: 'id' }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Param"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Object]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_a = typeof Promise !== "undefined" && Promise) === "function" ? _a : Object)
 ], UserController.prototype, "getById", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])(),
-    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__["ApiQuery"])({ name: 'include' }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Query"])()),
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Get"])(),
+    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_3__["ApiQuery"])({ name: 'include' }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Query"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Object]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_b = typeof Promise !== "undefined" && Promise) === "function" ? _b : Object)
 ], UserController.prototype, "get", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])(),
-    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__["ApiBody"])({}),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Post"])(),
+    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_3__["ApiBody"])({}),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Body"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"]) === "function" ? _c : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__["IPayload"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__["IPayload"]) === "function" ? _c : Object]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_d = typeof Promise !== "undefined" && Promise) === "function" ? _d : Object)
 ], UserController.prototype, "post", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Put"])(':id'),
-    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__["ApiParam"])({ name: 'id' }),
-    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__["ApiBody"])({}),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Put"])(':id'),
+    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_3__["ApiParam"])({ name: 'id' }),
+    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_3__["ApiBody"])({}),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Body"])()),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_e = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IPayload"]) === "function" ? _e : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_e = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__["IPayload"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__["IPayload"]) === "function" ? _e : Object]),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_f = typeof Promise !== "undefined" && Promise) === "function" ? _f : Object)
 ], UserController.prototype, "put", null);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])('survey-scores'),
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Get"])('survey-scores'),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", []),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_g = typeof Promise !== "undefined" && Promise) === "function" ? _g : Object)
 ], UserController.prototype, "getUserSurveys", null);
 UserController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('users'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_h = typeof _services_resource__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"]) === "function" ? _h : Object])
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Controller"])('users'),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_h = typeof _services_resource__WEBPACK_IMPORTED_MODULE_4__["UserResourceService"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_4__["UserResourceService"]) === "function" ? _h : Object])
 ], UserController);
 
 
@@ -885,7 +886,7 @@ Address = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 /*!********************************************!*\
   !*** ./apps/api/src/app/entities/index.ts ***!
   \********************************************/
-/*! exports provided: PantryModule, SurveyResponseModule, UserModule, Pantry, SurveyResponse, User, entities */
+/*! exports provided: PantryModule, SurveyResponseModule, UserModule, AddressModule, Pantry, SurveyResponse, User, entities */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -894,12 +895,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pantry_entity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pantry.entity */ "./apps/api/src/app/entities/pantry.entity.ts");
 /* harmony import */ var _survey_response_entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./survey-response.entity */ "./apps/api/src/app/entities/survey-response.entity.ts");
 /* harmony import */ var _user_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user.entity */ "./apps/api/src/app/entities/user.entity.ts");
-/* harmony import */ var _modules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules */ "./apps/api/src/app/entities/modules/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PantryModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_3__["PantryModule"]; });
+/* harmony import */ var _address_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./address.entity */ "./apps/api/src/app/entities/address.entity.ts");
+/* harmony import */ var _modules__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules */ "./apps/api/src/app/entities/modules/index.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PantryModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_4__["PantryModule"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResponseModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_3__["SurveyResponseModule"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResponseModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_4__["SurveyResponseModule"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_3__["UserModule"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_4__["UserModule"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AddressModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_4__["AddressModule"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Pantry", function() { return _pantry_entity__WEBPACK_IMPORTED_MODULE_0__["Pantry"]; });
 
@@ -914,11 +918,47 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const entities = [
     _pantry_entity__WEBPACK_IMPORTED_MODULE_0__["Pantry"],
     _survey_response_entity__WEBPACK_IMPORTED_MODULE_1__["SurveyResponse"],
-    _user_entity__WEBPACK_IMPORTED_MODULE_2__["User"]
+    _address_entity__WEBPACK_IMPORTED_MODULE_3__["Address"],
+    _user_entity__WEBPACK_IMPORTED_MODULE_2__["User"],
 ];
+
+
+/***/ }),
+
+/***/ "./apps/api/src/app/entities/modules/address.module.ts":
+/*!*************************************************************!*\
+  !*** ./apps/api/src/app/entities/modules/address.module.ts ***!
+  \*************************************************************/
+/*! exports provided: AddressModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddressModule", function() { return AddressModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _address_entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../address.entity */ "./apps/api/src/app/entities/address.entity.ts");
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+let AddressModule = class AddressModule {
+};
+AddressModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Module"])({
+        imports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["TypeOrmModule"].forFeature([_address_entity__WEBPACK_IMPORTED_MODULE_1__["Address"]])],
+        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["TypeOrmModule"]]
+    })
+], AddressModule);
+
 
 
 /***/ }),
@@ -927,7 +967,7 @@ const entities = [
 /*!****************************************************!*\
   !*** ./apps/api/src/app/entities/modules/index.ts ***!
   \****************************************************/
-/*! exports provided: PantryModule, SurveyResponseModule, UserModule */
+/*! exports provided: PantryModule, SurveyResponseModule, UserModule, AddressModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -940,6 +980,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _user_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user.module */ "./apps/api/src/app/entities/modules/user.module.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return _user_module__WEBPACK_IMPORTED_MODULE_2__["UserModule"]; });
+
+/* harmony import */ var _address_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./address.module */ "./apps/api/src/app/entities/modules/address.module.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AddressModule", function() { return _address_module__WEBPACK_IMPORTED_MODULE_3__["AddressModule"]; });
+
 
 
 
@@ -1028,11 +1072,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return UserModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _user_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../user.entity */ "./apps/api/src/app/entities/user.entity.ts");
+/* harmony import */ var _address_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./address.module */ "./apps/api/src/app/entities/modules/address.module.ts");
+
 
 
 
@@ -1040,9 +1086,9 @@ __webpack_require__.r(__webpack_exports__);
 let UserModule = class UserModule {
 };
 UserModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Module"])({
-        imports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__["TypeOrmModule"].forFeature([_user_entity__WEBPACK_IMPORTED_MODULE_3__["User"]])],
-        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__["TypeOrmModule"]]
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
+        imports: [_address_module__WEBPACK_IMPORTED_MODULE_4__["AddressModule"], _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__["TypeOrmModule"].forFeature([_user_entity__WEBPACK_IMPORTED_MODULE_3__["User"]])],
+        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__["TypeOrmModule"]]
     })
 ], UserModule);
 
@@ -1152,26 +1198,30 @@ var _a;
 let User = class User {
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryGeneratedColumn"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryColumn"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
 ], User.prototype, "id", void 0);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
 ], User.prototype, "givenName", void 0);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
 ], User.prototype, "familyName", void 0);
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
-], User.prototype, "residentialAddressId", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["OneToOne"])(type => _address_entity__WEBPACK_IMPORTED_MODULE_2__["Address"]),
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["JoinColumn"])({ name: 'residentialAddressId', referencedColumnName: 'id' }),
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["OneToOne"])(type => _address_entity__WEBPACK_IMPORTED_MODULE_2__["Address"], { cascade: true }),
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["JoinColumn"])(),
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", typeof (_a = typeof _address_entity__WEBPACK_IMPORTED_MODULE_2__["Address"] !== "undefined" && _address_entity__WEBPACK_IMPORTED_MODULE_2__["Address"]) === "function" ? _a : Object)
 ], User.prototype, "residentialAddress", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], User.prototype, "mobilePhone", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], User.prototype, "userRole", void 0);
 User = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
 ], User);
@@ -1423,12 +1473,12 @@ let UserRepoService = class UserRepoService {
     }
     getById(id) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.userRepo.findOne(id);
+            return this.userRepo.findOne(id, { relations: ['residentialAddress'] });
         });
     }
     findAll() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.userRepo.find();
+            return this.userRepo.find({ relations: ['residentialAddress'] });
         });
     }
     add(pantry) {
@@ -1653,7 +1703,6 @@ let UserResourceService = class UserResourceService {
     }
     get(criteria) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            console.log(criteria);
             const users = yield this.userRepo.findAll();
             const userIds = users.map((u) => u.id);
             const scoreRelationships = yield this.scoresService.getScores({ userIds });
@@ -1685,22 +1734,49 @@ let UserResourceService = class UserResourceService {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
             const data = Array.isArray(request.data) ? request.data : [request.data];
             const requestData = data.filter(d => d !== undefined).map((d) => this.mapPayloadToEntity(d));
-            const addedEntities = yield this.helper.addRequestedResources(requestData, (e) => this.userRepo.add(e));
+            const addedEntities = yield this.helper.addRequestedResources(requestData, (e) => {
+                return this.userRepo.getById(e === null || e === void 0 ? void 0 : e.id).then((u) => {
+                    var _a;
+                    const addressId = (_a = u === null || u === void 0 ? void 0 : u.residentialAddress) === null || _a === void 0 ? void 0 : _a.id;
+                    e.residentialAddress = Object.assign(Object.assign({}, e.residentialAddress), { id: addressId });
+                    return this.userRepo.add(e);
+                });
+            });
             return Array.isArray(request.data) ? this.helper.mapToDTOListPayload(this.resourceType, { entities: addedEntities, attributeMapper: (e) => this.mapEntityToResource(e) }) : this.helper.mapToDTOPayload(this.resourceType, { entity: addedEntities[0], attributeMapper: (e) => this.mapEntityToResource(e) });
         });
     }
     mapPayloadToEntity(data) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         return {
-            id: data.id ? parseInt(data.id, 10) : undefined,
+            id: data.id ? data.id : undefined,
             givenName: data.attributes.firstName,
             familyName: data.attributes.lastName,
+            userRole: data.attributes.userRole,
+            residentialAddress: {
+                id: undefined,
+                zipcode: (_b = (_a = data === null || data === void 0 ? void 0 : data.attributes) === null || _a === void 0 ? void 0 : _a.address) === null || _b === void 0 ? void 0 : _b.zipcode,
+                address1: (_d = (_c = data === null || data === void 0 ? void 0 : data.attributes) === null || _c === void 0 ? void 0 : _c.address) === null || _d === void 0 ? void 0 : _d.address1,
+                address2: (_f = (_e = data === null || data === void 0 ? void 0 : data.attributes) === null || _e === void 0 ? void 0 : _e.address) === null || _f === void 0 ? void 0 : _f.address2,
+                city: (_h = (_g = data === null || data === void 0 ? void 0 : data.attributes) === null || _g === void 0 ? void 0 : _g.address) === null || _h === void 0 ? void 0 : _h.city,
+                state: (_k = (_j = data === null || data === void 0 ? void 0 : data.attributes) === null || _j === void 0 ? void 0 : _j.address) === null || _k === void 0 ? void 0 : _k.state,
+            },
+            mobilePhone: (_l = data === null || data === void 0 ? void 0 : data.attributes) === null || _l === void 0 ? void 0 : _l.mobilePhone,
         };
     }
     mapEntityToResource(e) {
+        var _a, _b, _c, _d, _e;
         return {
             firstName: e.givenName,
             lastName: e.familyName,
-            address: e.residentialAddress,
+            address: {
+                zipcode: (_a = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _a === void 0 ? void 0 : _a.zipcode,
+                address1: (_b = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _b === void 0 ? void 0 : _b.address1,
+                address2: (_c = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _c === void 0 ? void 0 : _c.address2,
+                city: (_d = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _d === void 0 ? void 0 : _d.city,
+                state: (_e = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _e === void 0 ? void 0 : _e.state,
+            },
+            userRole: e.userRole,
+            mobilePhone: e === null || e === void 0 ? void 0 : e.mobilePhone
         };
     }
 };
@@ -1916,6 +1992,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./libs/api-interfaces/src/lib/dto/address.model.ts":
+/*!**********************************************************!*\
+  !*** ./libs/api-interfaces/src/lib/dto/address.model.ts ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./libs/api-interfaces/src/lib/dto/index.ts":
 /*!**************************************************!*\
   !*** ./libs/api-interfaces/src/lib/dto/index.ts ***!
@@ -1932,12 +2019,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pantry_model__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_pantry_model__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _pantry_model__WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _pantry_model__WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 /* harmony import */ var _user_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user.model */ "./libs/api-interfaces/src/lib/dto/user.model.ts");
-/* harmony import */ var _user_model__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_user_model__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _user_model__WEBPACK_IMPORTED_MODULE_2__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _user_model__WEBPACK_IMPORTED_MODULE_2__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserRole", function() { return _user_model__WEBPACK_IMPORTED_MODULE_2__["UserRole"]; });
+
 /* harmony import */ var _survey_score_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./survey-score.model */ "./libs/api-interfaces/src/lib/dto/survey-score.model.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return _survey_score_model__WEBPACK_IMPORTED_MODULE_3__["SurveyTypeDTO"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return _survey_score_model__WEBPACK_IMPORTED_MODULE_3__["SurveyResultLevel"]; });
+
+/* harmony import */ var _address_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./address.model */ "./libs/api-interfaces/src/lib/dto/address.model.ts");
+/* harmony import */ var _address_model__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_address_model__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _address_model__WEBPACK_IMPORTED_MODULE_4__) if(["UserRole","SurveyTypeDTO","SurveyResultLevel","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _address_model__WEBPACK_IMPORTED_MODULE_4__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 
@@ -1998,9 +2089,17 @@ var SurveyResultLevel;
 /*!*******************************************************!*\
   !*** ./libs/api-interfaces/src/lib/dto/user.model.ts ***!
   \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: UserRole */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRole", function() { return UserRole; });
+var UserRole;
+(function (UserRole) {
+    UserRole["PantryAdmin"] = "PANTRY ADMIN";
+    UserRole["Customer"] = "CUSTOMER";
+})(UserRole || (UserRole = {}));
 
 
 /***/ }),

@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { UserRepoService } from '../repository';
-import { IPayload, IPayloadData, IUserDTO, CooperResourceType, ISurveyScoreDTO, IPayloadDataRelationship } from '@cooper/api-interfaces';
+import { IPayload, IPayloadData, IUserDTO, CooperResourceType, ISurveyScoreDTO, IPayloadDataRelationship, UserRole } from '@cooper/api-interfaces';
 import { ResourceServiceHelper } from '../../common';
 import { User } from '../../entities';
 import { IUserSearchCriteria } from '../interfaces';
@@ -17,7 +17,7 @@ export class UserResourceService {
 
     private readonly resourceType = CooperResourceType.User;
 
-    public async getById(id: number): Promise<IPayload<IUserDTO>> {
+    public async getById(id: string): Promise<IPayload<IUserDTO>> {
         const user = await this.userRepo.getById(id);
         return this.helper.mapToDTOPayload<User, IUserDTO>(
             this.resourceType,
@@ -26,7 +26,6 @@ export class UserResourceService {
     }
 
     public async get(criteria: IUserSearchCriteria): Promise<IPayload<IUserDTO>> {
-        console.log(criteria);
         const users = await this.userRepo.findAll();
         const userIds = users.map((u) => u.id);
         const scoreRelationships = await this.scoresService.getScores({ userIds });
@@ -64,7 +63,13 @@ export class UserResourceService {
     public async upsert(request: IPayload<IUserDTO>): Promise<IPayload<IUserDTO>> {
         const data = Array.isArray(request.data) ? request.data : [request.data];
         const requestData = data.filter(d => d !== undefined).map((d) => this.mapPayloadToEntity(d));
-        const addedEntities = await this.helper.addRequestedResources(requestData, (e) => this.userRepo.add(e));
+        const addedEntities = await this.helper.addRequestedResources(requestData, (e) => {
+            return this.userRepo.getById(e?.id).then((u) => {
+                const addressId = u?.residentialAddress?.id;
+                e.residentialAddress = { ...e.residentialAddress, id: addressId };
+                return this.userRepo.add(e);
+            });            
+        });
 
         return Array.isArray(request.data) ? this.helper.mapToDTOListPayload<User, IUserDTO>(
             this.resourceType,
@@ -82,6 +87,15 @@ export class UserResourceService {
             givenName: data.attributes.firstName,
             familyName: data.attributes.lastName,
             userRole: data.attributes.userRole,
+            residentialAddress: {
+                id: undefined,
+                zipcode: data?.attributes?.address?.zipcode,
+                address1: data?.attributes?.address?.address1,
+                address2: data?.attributes?.address?.address2,
+                city: data?.attributes?.address?.city,
+                state: data?.attributes?.address?.state,
+            },
+            mobilePhone: data?.attributes?.mobilePhone,
         };
     }
 
@@ -89,8 +103,15 @@ export class UserResourceService {
         return {
             firstName: e.givenName,
             lastName: e.familyName,
-            address: e.residentialAddress,
-            userRole: e.userRole
+            address: {
+                zipcode: e?.residentialAddress?.zipcode,
+                address1: e?.residentialAddress?.address1,
+                address2: e?.residentialAddress?.address2,
+                city: e?.residentialAddress?.city,
+                state: e?.residentialAddress?.state,
+            },
+            userRole: e.userRole as UserRole,
+            mobilePhone: e?.mobilePhone
         };
     }
 }

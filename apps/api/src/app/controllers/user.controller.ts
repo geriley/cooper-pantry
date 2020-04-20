@@ -11,7 +11,7 @@ export class UserController {
     @ApiParam({ name: 'id' })
     public async getById(@Param() params: { id: string }): Promise<IPayload<IUserDTO>> {
         try {
-            const user = await this.service.getById(parseInt(params.id, 10));
+            const user = await this.service.getById(params.id);
             if (!user.data) {
                 throw new NotFoundException({
                     errors: [
@@ -58,6 +58,7 @@ export class UserController {
     @ApiBody({})
     public async post(@Body() pantry: IPayload<IUserDTO>): Promise<IPayload<IUserDTO>> {
         try {
+            console.log(pantry);
             return this.service.upsert(pantry);
         } catch (err) {
             return {

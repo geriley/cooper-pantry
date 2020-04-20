@@ -18,6 +18,24 @@
     flex: 1 1 auto;
 }
 
+mat-drawer {
+    width: 15%;
+}
+
+mat-drawer-container {
+    height: 100%;
+}
+
+mat-drawer-content {
+    background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+    mat-drawer {
+        width: 100%;
+    }    
+}
+
 mat-toolbar {
     padding-left: 0px;
     padding-top: 10px;
@@ -46,3 +64,4 @@ mat-toolbar {
     height: inherit !important;
     width: inherit !important;
 }
+

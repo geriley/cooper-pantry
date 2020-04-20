@@ -56,6 +56,8 @@
     "@nestjs/serve-static": "^2.1.0",
     "@nestjs/swagger": "^4.5.1",
     "@nestjs/typeorm": "^7.0.0",
+    "@ngrx/effects": "^9.1.0",
+    "@ngrx/store": "^9.1.0",
     "@nrwl/angular": "9.2.2",
     "@types/twilio": "^2.11.0",
     "babel-runtime": "^6.26.0",

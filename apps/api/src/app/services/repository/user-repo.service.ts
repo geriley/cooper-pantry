@@ -10,12 +10,12 @@ export class UserRepoService {
         private userRepo: Repository<User>,
     ) { }
 
-    public async getById(id: number): Promise<User> {
-        return this.userRepo.findOne(id);
+    public async getById(id: string): Promise<User> {
+        return this.userRepo.findOne(id, { relations: ['residentialAddress'] });
     }
 
     public async findAll(): Promise<User[]> {
-        return this.userRepo.find();
+        return this.userRepo.find({ relations: ['residentialAddress'] });
     }
 
     public async add(pantry: User) {

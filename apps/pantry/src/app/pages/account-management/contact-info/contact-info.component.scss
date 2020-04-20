@@ -1,0 +1,23 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+form {
+  width: 50%;
+}
+
+.radio-buttom {
+  margin: 5px;
+}
+
+mat-form-field {
+  margin-right: 10px;
+}
+
+mat-radio-button {
+  margin-top: 5px;
+}

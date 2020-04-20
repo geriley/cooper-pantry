@@ -13,20 +13,30 @@ import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { firebaseConfig } from './common/firebase-token';
 import { environment } from '../environments/environment';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { StateUserContextModule } from '@cooper/state/user-context';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule, 
-    HttpClientModule, 
+    BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     MatToolbarModule,
+    MatListModule,
     MatButtonModule,
     MatIconModule,
-    NbLayoutModule,
-    NbEvaIconsModule,
-    NbThemeModule.forRoot({ name: 'default' }),
+    MatSidenavModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    //NbLayoutModule,
+    //NbEvaIconsModule,
+    //NbThemeModule.forRoot({ name: 'default' }),
+    StateUserContextModule
   ],
   providers: [
     { provide: baseApiUrlToken, useValue: 'http://localhost:3333/api' },
