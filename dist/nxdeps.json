@@ -58,22 +58,22 @@
             {
               "file": "libs/state/user-context/src/lib/ngrx/actions.ts",
               "ext": ".ts",
-              "mtime": 1587334877070.1023
+              "mtime": 1587338313433.1465
             },
             {
               "file": "libs/state/user-context/src/lib/ngrx/effects.ts",
               "ext": ".ts",
-              "mtime": 1587334877070.1023
+              "mtime": 1587342842127.1333
             },
             {
               "file": "libs/state/user-context/src/lib/ngrx/facade.ts",
               "ext": ".ts",
-              "mtime": 1587334877070.1023
+              "mtime": 1587340803062.1782
             },
             {
               "file": "libs/state/user-context/src/lib/ngrx/reducer.ts",
               "ext": ".ts",
-              "mtime": 1587334877070.1023
+              "mtime": 1587340389093.4902
             },
             {
               "file": "libs/state/user-context/src/lib/ngrx/state.ts",
@@ -88,7 +88,7 @@
             {
               "file": "libs/state/user-context/src/lib/state-user-context.module.ts",
               "ext": ".ts",
-              "mtime": 1587335403959.6104
+              "mtime": 1587341264254.7273
             },
             {
               "file": "libs/state/user-context/src/test-setup.ts",
@@ -292,7 +292,7 @@
             {
               "file": "libs/statistics/risk/src/lib/food-security-grid/food-security-grid.component.html",
               "ext": ".html",
-              "mtime": 1587334877134.9285
+              "mtime": 1587342250745.6604
             },
             {
               "file": "libs/statistics/risk/src/lib/food-security-grid/food-security-grid.component.scss",
@@ -302,7 +302,7 @@
             {
               "file": "libs/statistics/risk/src/lib/food-security-grid/food-security-grid.component.ts",
               "ext": ".ts",
-              "mtime": 1586998938270.0312
+              "mtime": 1587342250745.6604
             },
             {
               "file": "libs/statistics/risk/src/lib/statistics-risk.module.spec.ts",
@@ -403,7 +403,7 @@
             {
               "file": "libs/api-interfaces/src/lib/dto/address.model.ts",
               "ext": ".ts",
-              "mtime": 1587001445611.2273
+              "mtime": 1587337829278.336
             },
             {
               "file": "libs/api-interfaces/src/lib/dto/index.ts",
@@ -428,7 +428,7 @@
             {
               "file": "libs/api-interfaces/src/lib/dto/user.model.ts",
               "ext": ".ts",
-              "mtime": 1587334877070.1023
+              "mtime": 1587338654251.244
             },
             {
               "file": "libs/api-interfaces/src/lib/request-dto/add-bot-dto.interface.ts",
@@ -530,7 +530,7 @@
             {
               "file": "libs/api-services/src/lib/access-services/user-access.service.ts",
               "ext": ".ts",
-              "mtime": 1587334877207.8838
+              "mtime": 1587342057951.4004
             },
             {
               "file": "libs/api-services/src/lib/api-services.module.spec.ts",
@@ -560,12 +560,12 @@
             {
               "file": "libs/api-services/src/lib/http-services/user-data.service.ts",
               "ext": ".ts",
-              "mtime": 1586996069200.2837
+              "mtime": 1587338895761.8765
             },
             {
               "file": "libs/api-services/src/lib/interfaces/customer.interface.ts",
               "ext": ".ts",
-              "mtime": 1586999095623.111
+              "mtime": 1587342057951.4004
             },
             {
               "file": "libs/api-services/src/lib/interfaces/index.ts",
@@ -821,12 +821,12 @@
             {
               "file": "apps/pantry/src/app/app-routing.module.ts",
               "ext": ".ts",
-              "mtime": 1587233960595.9507
+              "mtime": 1587338531298.5393
             },
             {
               "file": "apps/pantry/src/app/app.component.html",
               "ext": ".html",
-              "mtime": 1587334877070.1023
+              "mtime": 1587342760739.8135
             },
             {
               "file": "apps/pantry/src/app/app.component.scss",
@@ -846,7 +846,7 @@
             {
               "file": "apps/pantry/src/app/app.module.ts",
               "ext": ".ts",
-              "mtime": 1587335404132.6865
+              "mtime": 1587340103749.1748
             },
             {
               "file": "apps/pantry/src/app/common/firebase-token.ts",
@@ -856,7 +856,7 @@
             {
               "file": "apps/pantry/src/app/common/firebase.service.ts",
               "ext": ".ts",
-              "mtime": 1587335404001.4978
+              "mtime": 1587342975314.1897
             },
             {
               "file": "apps/pantry/src/app/common/index.ts",
@@ -891,22 +891,22 @@
             {
               "file": "apps/pantry/src/app/pages/account-management/account-management.module.ts",
               "ext": ".ts",
-              "mtime": 1587330786667.2385
+              "mtime": 1587339940796.9854
             },
             {
               "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.html",
               "ext": ".html",
-              "mtime": 1587330786667.2385
+              "mtime": 1587341731950.9395
             },
             {
               "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.scss",
               "ext": ".scss",
-              "mtime": 1587330786667.2385
+              "mtime": 1587339310645.623
             },
             {
               "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.ts",
               "ext": ".ts",
-              "mtime": 1587330786667.2385
+              "mtime": 1587341593876.4458
             },
             {
               "file": "apps/pantry/src/app/pages/account-management/index.ts",
@@ -926,12 +926,12 @@
             {
               "file": "apps/pantry/src/app/pages/admin/admin.module.ts",
               "ext": ".ts",
-              "mtime": 1586997878957.3965
+              "mtime": 1587342347682.9458
             },
             {
               "file": "apps/pantry/src/app/pages/admin/outreach/outreach.component.html",
               "ext": ".html",
-              "mtime": 1586998052595.6177
+              "mtime": 1587342497250.1492
             },
             {
               "file": "apps/pantry/src/app/pages/admin/outreach/outreach.component.ts",
@@ -996,7 +996,7 @@
             {
               "file": "apps/pantry/src/app/pages/sign-in/sign-in.component.ts",
               "ext": ".ts",
-              "mtime": 1587335404133.6843
+              "mtime": 1587342975292.2666
             },
             {
               "file": "apps/pantry/src/app/pages/sign-in/sign-in.module.ts",
@@ -1026,7 +1026,7 @@
             {
               "file": "apps/pantry/src/environments/environment.prod.ts",
               "ext": ".ts",
-              "mtime": 1586475383887.078
+              "mtime": 1587347103446.2285
             },
             {
               "file": "apps/pantry/src/environments/environment.ts",
@@ -1252,7 +1252,7 @@
             {
               "file": "apps/api/src/app/controllers/user.controller.ts",
               "ext": ".ts",
-              "mtime": 1587336867596.2827
+              "mtime": 1587337611310.0159
             },
             {
               "file": "apps/api/src/app/entities/address.entity.ts",
@@ -1262,7 +1262,7 @@
             {
               "file": "apps/api/src/app/entities/index.ts",
               "ext": ".ts",
-              "mtime": 1587336057542.8916
+              "mtime": 1587336975009.157
             },
             {
               "file": "apps/api/src/app/entities/modules/address.module.ts",
@@ -1287,7 +1287,7 @@
             {
               "file": "apps/api/src/app/entities/modules/user.module.ts",
               "ext": ".ts",
-              "mtime": 1587335897327.3318
+              "mtime": 1587337217304.8848
             },
             {
               "file": "apps/api/src/app/entities/pantry.entity.ts",
@@ -1302,7 +1302,7 @@
             {
               "file": "apps/api/src/app/entities/user.entity.ts",
               "ext": ".ts",
-              "mtime": 1587336833482.866
+              "mtime": 1587337960133.958
             },
             {
               "file": "apps/api/src/app/models/autopilot.model.ts",
@@ -1357,7 +1357,7 @@
             {
               "file": "apps/api/src/app/services/repository/user-repo.service.ts",
               "ext": ".ts",
-              "mtime": 1586720668931.1313
+              "mtime": 1587337692655.5825
             },
             {
               "file": "apps/api/src/app/services/resource/index.ts",
@@ -1377,7 +1377,7 @@
             {
               "file": "apps/api/src/app/services/resource/user-resource.service.ts",
               "ext": ".ts",
-              "mtime": 1587335552520.4048
+              "mtime": 1587337960133.958
             },
             {
               "file": "apps/api/src/app/services/twilio/twilio.service.ts",
@@ -1959,6 +1959,11 @@
         {
           "type": "static",
           "source": "state-user-context",
+          "target": "@angular/material"
+        },
+        {
+          "type": "static",
+          "source": "state-user-context",
           "target": "@angular/common"
         },
         {
@@ -2145,6 +2150,16 @@
         {
           "type": "static",
           "source": "pantry",
+          "target": "@ngrx/store"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
+          "target": "@ngrx/effects"
+        },
+        {
+          "type": "static",
+          "source": "pantry",
           "target": "firebase"
         },
         {
@@ -2319,22 +2334,22 @@
       {
         "file": "libs/state/user-context/src/lib/ngrx/actions.ts",
         "ext": ".ts",
-        "mtime": 1587334877070.1023
+        "mtime": 1587338313433.1465
       },
       {
         "file": "libs/state/user-context/src/lib/ngrx/effects.ts",
         "ext": ".ts",
-        "mtime": 1587334877070.1023
+        "mtime": 1587342842127.1333
       },
       {
         "file": "libs/state/user-context/src/lib/ngrx/facade.ts",
         "ext": ".ts",
-        "mtime": 1587334877070.1023
+        "mtime": 1587340803062.1782
       },
       {
         "file": "libs/state/user-context/src/lib/ngrx/reducer.ts",
         "ext": ".ts",
-        "mtime": 1587334877070.1023
+        "mtime": 1587340389093.4902
       },
       {
         "file": "libs/state/user-context/src/lib/ngrx/state.ts",
@@ -2349,7 +2364,7 @@
       {
         "file": "libs/state/user-context/src/lib/state-user-context.module.ts",
         "ext": ".ts",
-        "mtime": 1587335403959.6104
+        "mtime": 1587341264254.7273
       },
       {
         "file": "libs/state/user-context/src/test-setup.ts",
@@ -2473,7 +2488,7 @@
       {
         "file": "libs/statistics/risk/src/lib/food-security-grid/food-security-grid.component.html",
         "ext": ".html",
-        "mtime": 1587334877134.9285
+        "mtime": 1587342250745.6604
       },
       {
         "file": "libs/statistics/risk/src/lib/food-security-grid/food-security-grid.component.scss",
@@ -2483,7 +2498,7 @@
       {
         "file": "libs/statistics/risk/src/lib/food-security-grid/food-security-grid.component.ts",
         "ext": ".ts",
-        "mtime": 1586998938270.0312
+        "mtime": 1587342250745.6604
       },
       {
         "file": "libs/statistics/risk/src/lib/statistics-risk.module.spec.ts",
@@ -2550,7 +2565,7 @@
       {
         "file": "libs/api-interfaces/src/lib/dto/address.model.ts",
         "ext": ".ts",
-        "mtime": 1587001445611.2273
+        "mtime": 1587337829278.336
       },
       {
         "file": "libs/api-interfaces/src/lib/dto/index.ts",
@@ -2575,7 +2590,7 @@
       {
         "file": "libs/api-interfaces/src/lib/dto/user.model.ts",
         "ext": ".ts",
-        "mtime": 1587334877070.1023
+        "mtime": 1587338654251.244
       },
       {
         "file": "libs/api-interfaces/src/lib/request-dto/add-bot-dto.interface.ts",
@@ -2637,7 +2652,7 @@
       {
         "file": "libs/api-services/src/lib/access-services/user-access.service.ts",
         "ext": ".ts",
-        "mtime": 1587334877207.8838
+        "mtime": 1587342057951.4004
       },
       {
         "file": "libs/api-services/src/lib/api-services.module.spec.ts",
@@ -2667,12 +2682,12 @@
       {
         "file": "libs/api-services/src/lib/http-services/user-data.service.ts",
         "ext": ".ts",
-        "mtime": 1586996069200.2837
+        "mtime": 1587338895761.8765
       },
       {
         "file": "libs/api-services/src/lib/interfaces/customer.interface.ts",
         "ext": ".ts",
-        "mtime": 1586999095623.111
+        "mtime": 1587342057951.4004
       },
       {
         "file": "libs/api-services/src/lib/interfaces/index.ts",
@@ -2781,12 +2796,12 @@
       {
         "file": "apps/pantry/src/app/app-routing.module.ts",
         "ext": ".ts",
-        "mtime": 1587233960595.9507
+        "mtime": 1587338531298.5393
       },
       {
         "file": "apps/pantry/src/app/app.component.html",
         "ext": ".html",
-        "mtime": 1587334877070.1023
+        "mtime": 1587342760739.8135
       },
       {
         "file": "apps/pantry/src/app/app.component.scss",
@@ -2806,7 +2821,7 @@
       {
         "file": "apps/pantry/src/app/app.module.ts",
         "ext": ".ts",
-        "mtime": 1587335404132.6865
+        "mtime": 1587340103749.1748
       },
       {
         "file": "apps/pantry/src/app/common/firebase-token.ts",
@@ -2816,7 +2831,7 @@
       {
         "file": "apps/pantry/src/app/common/firebase.service.ts",
         "ext": ".ts",
-        "mtime": 1587335404001.4978
+        "mtime": 1587342975314.1897
       },
       {
         "file": "apps/pantry/src/app/common/index.ts",
@@ -2851,22 +2866,22 @@
       {
         "file": "apps/pantry/src/app/pages/account-management/account-management.module.ts",
         "ext": ".ts",
-        "mtime": 1587330786667.2385
+        "mtime": 1587339940796.9854
       },
       {
         "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.html",
         "ext": ".html",
-        "mtime": 1587330786667.2385
+        "mtime": 1587341731950.9395
       },
       {
         "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.scss",
         "ext": ".scss",
-        "mtime": 1587330786667.2385
+        "mtime": 1587339310645.623
       },
       {
         "file": "apps/pantry/src/app/pages/account-management/contact-info/contact-info.component.ts",
         "ext": ".ts",
-        "mtime": 1587330786667.2385
+        "mtime": 1587341593876.4458
       },
       {
         "file": "apps/pantry/src/app/pages/account-management/index.ts",
@@ -2886,12 +2901,12 @@
       {
         "file": "apps/pantry/src/app/pages/admin/admin.module.ts",
         "ext": ".ts",
-        "mtime": 1586997878957.3965
+        "mtime": 1587342347682.9458
       },
       {
         "file": "apps/pantry/src/app/pages/admin/outreach/outreach.component.html",
         "ext": ".html",
-        "mtime": 1586998052595.6177
+        "mtime": 1587342497250.1492
       },
       {
         "file": "apps/pantry/src/app/pages/admin/outreach/outreach.component.ts",
@@ -2956,7 +2971,7 @@
       {
         "file": "apps/pantry/src/app/pages/sign-in/sign-in.component.ts",
         "ext": ".ts",
-        "mtime": 1587335404133.6843
+        "mtime": 1587342975292.2666
       },
       {
         "file": "apps/pantry/src/app/pages/sign-in/sign-in.module.ts",
@@ -2986,7 +3001,7 @@
       {
         "file": "apps/pantry/src/environments/environment.prod.ts",
         "ext": ".ts",
-        "mtime": 1586475383887.078
+        "mtime": 1587347103446.2285
       },
       {
         "file": "apps/pantry/src/environments/environment.ts",
@@ -3133,7 +3148,7 @@
       {
         "file": "apps/api/src/app/controllers/user.controller.ts",
         "ext": ".ts",
-        "mtime": 1587336867596.2827
+        "mtime": 1587337611310.0159
       },
       {
         "file": "apps/api/src/app/entities/address.entity.ts",
@@ -3143,7 +3158,7 @@
       {
         "file": "apps/api/src/app/entities/index.ts",
         "ext": ".ts",
-        "mtime": 1587336057542.8916
+        "mtime": 1587336975009.157
       },
       {
         "file": "apps/api/src/app/entities/modules/address.module.ts",
@@ -3168,7 +3183,7 @@
       {
         "file": "apps/api/src/app/entities/modules/user.module.ts",
         "ext": ".ts",
-        "mtime": 1587335897327.3318
+        "mtime": 1587337217304.8848
       },
       {
         "file": "apps/api/src/app/entities/pantry.entity.ts",
@@ -3183,7 +3198,7 @@
       {
         "file": "apps/api/src/app/entities/user.entity.ts",
         "ext": ".ts",
-        "mtime": 1587336833482.866
+        "mtime": 1587337960133.958
       },
       {
         "file": "apps/api/src/app/models/autopilot.model.ts",
@@ -3238,7 +3253,7 @@
       {
         "file": "apps/api/src/app/services/repository/user-repo.service.ts",
         "ext": ".ts",
-        "mtime": 1586720668931.1313
+        "mtime": 1587337692655.5825
       },
       {
         "file": "apps/api/src/app/services/resource/index.ts",
@@ -3258,7 +3273,7 @@
       {
         "file": "apps/api/src/app/services/resource/user-resource.service.ts",
         "ext": ".ts",
-        "mtime": 1587335552520.4048
+        "mtime": 1587337960133.958
       },
       {
         "file": "apps/api/src/app/services/twilio/twilio.service.ts",

@@ -81,126 +81,840 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 56);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
 
-/***/ "./apps/api/src/app/app.controller.ts":
-/*!********************************************!*\
-  !*** ./apps/api/src/app/app.controller.ts ***!
-  \********************************************/
-/*! exports provided: AppController */
+module.exports = require("tslib");
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = require("@nestjs/common");
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = require("typeorm");
+
+/***/ }),
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppController", function() { return AppController; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony import */ var _lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31);
+/* harmony reexport (checked) */ if(__webpack_require__.o(_lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__, "CooperResourceType")) __webpack_require__.d(__webpack_exports__, "CooperResourceType", function() { return _lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__["CooperResourceType"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__, "IAddBotRequestDTO")) __webpack_require__.d(__webpack_exports__, "IAddBotRequestDTO", function() { return _lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__["IAddBotRequestDTO"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__, "IPayload")) __webpack_require__.d(__webpack_exports__, "IPayload", function() { return _lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__["IPayload"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__, "SurveyResultLevel")) __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return _lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__["SurveyResultLevel"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__, "SurveyTypeDTO")) __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return _lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__["SurveyTypeDTO"]; });
+
+
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("@nestjs/typeorm");
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+const environment = {
+    production: true
+};
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("@nestjs/swagger");
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return entities; });
+/* harmony import */ var _pantry_entity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* harmony import */ var _survey_response_entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
+/* harmony import */ var _user_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+/* harmony import */ var _address_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11);
+/* harmony import */ var _modules__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(27);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "b", function() { return _modules__WEBPACK_IMPORTED_MODULE_4__["a"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "d", function() { return _modules__WEBPACK_IMPORTED_MODULE_4__["b"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _pantry_entity__WEBPACK_IMPORTED_MODULE_0__["a"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "c", function() { return _survey_response_entity__WEBPACK_IMPORTED_MODULE_1__["a"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "e", function() { return _user_entity__WEBPACK_IMPORTED_MODULE_2__["a"]; });
+
+
+
+
+
+
+
+
+
+const entities = [
+    _pantry_entity__WEBPACK_IMPORTED_MODULE_0__[/* Pantry */ "a"],
+    _survey_response_entity__WEBPACK_IMPORTED_MODULE_1__[/* SurveyResponse */ "a"],
+    _address_entity__WEBPACK_IMPORTED_MODULE_3__[/* Address */ "a"],
+    _user_entity__WEBPACK_IMPORTED_MODULE_2__[/* User */ "a"],
+];
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _pantry_repo_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _pantry_repo_service__WEBPACK_IMPORTED_MODULE_0__["a"]; });
+
+/* harmony import */ var _survey_responses_repo_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(30);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "b", function() { return _survey_responses_repo_service__WEBPACK_IMPORTED_MODULE_1__["a"]; });
+
+/* harmony import */ var _user_repo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(21);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "c", function() { return _user_repo_service__WEBPACK_IMPORTED_MODULE_2__["a"]; });
+
+
+
+
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _pantry_resource_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _pantry_resource_service__WEBPACK_IMPORTED_MODULE_0__["a"]; });
+
+/* harmony import */ var _survey_responses_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "b", function() { return _survey_responses_service__WEBPACK_IMPORTED_MODULE_1__["a"]; });
+
+/* harmony import */ var _user_resource_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(23);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "c", function() { return _user_resource_service__WEBPACK_IMPORTED_MODULE_2__["a"]; });
+
+
+
+
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _address_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+var _a;
 
 
-let AppController = class AppController {
-    getData() {
-        return { message: 'hello' };
-    }
+
+let User = class User {
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])('hello'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", []),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
-], AppController.prototype, "getData", null);
-AppController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])()
-], AppController);
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryColumn"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], User.prototype, "id", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], User.prototype, "givenName", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], User.prototype, "familyName", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["OneToOne"])(type => _address_entity__WEBPACK_IMPORTED_MODULE_2__[/* Address */ "a"], { cascade: true }),
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["JoinColumn"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", typeof (_a = typeof _address_entity__WEBPACK_IMPORTED_MODULE_2__[/* Address */ "a"] !== "undefined" && _address_entity__WEBPACK_IMPORTED_MODULE_2__[/* Address */ "a"]) === "function" ? _a : Object)
+], User.prototype, "residentialAddress", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], User.prototype, "mobilePhone", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], User.prototype, "userRole", void 0);
+User = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
+], User);
 
 
 
 /***/ }),
-
-/***/ "./apps/api/src/app/app.module.ts":
-/*!****************************************!*\
-  !*** ./apps/api/src/app/app.module.ts ***!
-  \****************************************/
-/*! exports provided: AppModule */
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Address; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _nestjs_serve_static__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/serve-static */ "@nestjs/serve-static");
-/* harmony import */ var _nestjs_serve_static__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_serve_static__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! path */ "path");
-/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _app_controller__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.controller */ "./apps/api/src/app/app.controller.ts");
-/* harmony import */ var pg_connection_string__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! pg-connection-string */ "pg-connection-string");
-/* harmony import */ var pg_connection_string__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(pg_connection_string__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./entities */ "./apps/api/src/app/entities/index.ts");
-/* harmony import */ var _controllers_modules__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./controllers/modules */ "./apps/api/src/app/controllers/modules/index.ts");
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_1__);
 
 
-
-
-
-
-
-
-
-const databaseUrl = process.env.DATABASE_URL;
-const connectionOptions = databaseUrl ? pg_connection_string__WEBPACK_IMPORTED_MODULE_6__["parse"](databaseUrl) : undefined;
-let AppModule = class AppModule {
+let Address = class Address {
 };
-AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
-        imports: [
-            _nestjs_serve_static__WEBPACK_IMPORTED_MODULE_2__["ServeStaticModule"].forRoot({
-                rootPath: Object(path__WEBPACK_IMPORTED_MODULE_4__["join"])(__dirname, '..', 'pantry'),
-                exclude: ['/api*']
-            }),
-            _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["TypeOrmModule"].forRoot({
-                type: 'postgres',
-                host: connectionOptions ? connectionOptions.host : 'localhost',
-                port: connectionOptions ? parseInt(connectionOptions.port, 10) : 5432,
-                username: connectionOptions ? connectionOptions.user : 'postgres',
-                password: connectionOptions ? connectionOptions.password : 'demo',
-                database: connectionOptions ? connectionOptions.database : 'cooper-pantry',
-                entities: [
-                    ..._entities__WEBPACK_IMPORTED_MODULE_7__["entities"],
-                ],
-                synchronize: true,
-            }),
-            ..._controllers_modules__WEBPACK_IMPORTED_MODULE_8__["controllerModules"],
-        ],
-        controllers: [_app_controller__WEBPACK_IMPORTED_MODULE_5__["AppController"]],
-    })
-], AppModule);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryGeneratedColumn"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
+], Address.prototype, "id", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], Address.prototype, "address1", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], Address.prototype, "address2", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], Address.prototype, "city", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], Address.prototype, "state", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], Address.prototype, "zipcode", void 0);
+Address = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
+], Address);
 
 
 
 /***/ }),
-
-/***/ "./apps/api/src/app/common/base-resource.service.ts":
-/*!**********************************************************!*\
-  !*** ./apps/api/src/app/common/base-resource.service.ts ***!
-  \**********************************************************/
-/*! exports provided: ResourceServiceHelper */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResourceServiceHelper", function() { return ResourceServiceHelper; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Pantry; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_1__);
+
+
+let Pantry = class Pantry {
+};
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryGeneratedColumn"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
+], Pantry.prototype, "id", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
+], Pantry.prototype, "name", void 0);
+Pantry = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
+], Pantry);
+
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SurveyResponse; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _user_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+var _a;
+
+
+
+let SurveyResponse = class SurveyResponse {
+};
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryGeneratedColumn"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
+], SurveyResponse.prototype, "id", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
+], SurveyResponse.prototype, "userId", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["ManyToOne"])(type => _user_entity__WEBPACK_IMPORTED_MODULE_2__[/* User */ "a"]),
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["JoinColumn"])({ name: 'userId', referencedColumnName: 'id' }),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", typeof (_a = typeof _user_entity__WEBPACK_IMPORTED_MODULE_2__[/* User */ "a"] !== "undefined" && _user_entity__WEBPACK_IMPORTED_MODULE_2__[/* User */ "a"]) === "function" ? _a : Object)
+], SurveyResponse.prototype, "user", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])('jsonb'),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Object)
+], SurveyResponse.prototype, "response", void 0);
+SurveyResponse = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
+], SurveyResponse);
+
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PantryResourceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+var _a;
+
+
+
+
+let PantryResourceService = class PantryResourceService {
+    constructor(pantryRepo) {
+        this.pantryRepo = pantryRepo;
+        this.resourceType = _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].Pantry;
+    }
+    get() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const pantries = yield this.pantryRepo.findAll();
+            return {
+                data: pantries.map((p) => ({
+                    type: this.resourceType,
+                    id: p.id.toString(),
+                    attributes: this.mapPantryEntityToResource(p)
+                }))
+            };
+        });
+    }
+    upsert(request) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const data = Array.isArray(request.data) ? request.data : [request.data];
+            const createdEntities = [];
+            for (const d of data.filter((de) => de !== undefined && de !== null)) {
+                const newResource = {
+                    id: d.id ? parseInt(d.id, 10) : undefined,
+                    name: d.attributes.name,
+                };
+                const p = yield this.pantryRepo.add(newResource);
+                createdEntities.push(p);
+            }
+            const mappedEntities = createdEntities.map((e) => ({
+                id: e.id.toString(),
+                type: this.resourceType,
+                attributes: this.mapPantryEntityToResource(e)
+            }));
+            return {
+                data: Array.isArray(request.data)
+                    ? mappedEntities
+                    : (mappedEntities.length === 1 ? mappedEntities[0] : undefined)
+            };
+        });
+    }
+    mapPantryEntityToResource(pantry) {
+        return {
+            name: pantry.name
+        };
+    }
+};
+PantryResourceService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _repository__WEBPACK_IMPORTED_MODULE_2__[/* PantryRepoService */ "a"] !== "undefined" && _repository__WEBPACK_IMPORTED_MODULE_2__[/* PantryRepoService */ "a"]) === "function" ? _a : Object])
+], PantryResourceService);
+
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SurveyResponseResourceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
+/* harmony import */ var _repository__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
+var _a, _b;
+
+
+
+
+
+let SurveyResponseResourceService = class SurveyResponseResourceService {
+    constructor(repo, helper) {
+        this.repo = repo;
+        this.helper = helper;
+    }
+    addBotSurveyResponse(response) {
+        const response2 = JSON.parse(response);
+        const entity = { id: undefined, userId: parseInt(response2.twilio.chat.From, 10), response: response };
+        return this.repo.add(entity);
+    }
+    getScores(criteria) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const entities = yield this.repo.findAll(criteria);
+            return {
+                data: entities.map((e) => {
+                    const response = JSON.parse(e.response);
+                    const task = Object.keys(response.twilio.collected_data)[0];
+                    const answers = response.twilio.collected_data[task].answers;
+                    const score = this.helper.calculate(task, answers);
+                    return {
+                        type: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__["CooperResourceType"].SurveyResponse,
+                        id: e.id.toString(),
+                        attributes: Object.assign({}, score),
+                        relationships: {
+                            'user': { id: e.userId.toString(), type: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__["CooperResourceType"].User }
+                        }
+                    };
+                })
+            };
+        });
+    }
+};
+SurveyResponseResourceService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _repository__WEBPACK_IMPORTED_MODULE_4__[/* SurveyResponseRepoService */ "b"] !== "undefined" && _repository__WEBPACK_IMPORTED_MODULE_4__[/* SurveyResponseRepoService */ "b"]) === "function" ? _a : Object, typeof (_b = typeof _helper__WEBPACK_IMPORTED_MODULE_3__[/* SurveyScoreService */ "a"] !== "undefined" && _helper__WEBPACK_IMPORTED_MODULE_3__[/* SurveyScoreService */ "a"]) === "function" ? _b : Object])
+], SurveyResponseResourceService);
+
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _survey_score_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _survey_score_service__WEBPACK_IMPORTED_MODULE_0__["a"]; });
+
+
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TwilioService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+/* harmony import */ var twilio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(25);
+/* harmony import */ var twilio__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(twilio__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+let TwilioService = class TwilioService {
+    generateChatAccessToken(req) {
+        const twilioAccountSid = _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].production ? process.env.TWILIO_ACCOUNT_SID : _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].twilioAccount;
+        const twilioApiKey = _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].production ? process.env.TWILIO_API_KEY : _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].twilioChatApiKey;
+        const twilioApiSecret = _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].production ? process.env.TWILIO_CHAT_API_SECRET : _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].twilioChatApiSecret;
+        const serviceSid = _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].production ? process.env.TWILIO_CHAT_SERVICE_SID : _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].twilioChatSid;
+        const chatGrant = new twilio__WEBPACK_IMPORTED_MODULE_3__["jwt"].AccessToken.ChatGrant({
+            serviceSid: serviceSid,
+        });
+        const token = new twilio__WEBPACK_IMPORTED_MODULE_3__["jwt"].AccessToken(twilioAccountSid, twilioApiKey, twilioApiSecret, { identity: req.identity });
+        token.addGrant(chatGrant);
+        return token.toJwt();
+    }
+    addBotToChannel(req) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const twilioAccountSid = _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].production ? process.env.TWILIO_ACCOUNT_SID : _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].twilioAccount;
+            const twilioAuthToken = _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].production ? process.env.TWILIO_AUTH_TOKEN : _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].twilioAuthToken;
+            const serviceSid = _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].production ? process.env.TWILIO_CHAT_SERVICE_SID : _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].twilioChatSid;
+            const url = _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].production ? process.env.TWILIO_CHAT_AUTOPILOT_URL : _environments_environment__WEBPACK_IMPORTED_MODULE_2__[/* environment */ "a"].twilioChatAutopilotUrl;
+            const client = new twilio__WEBPACK_IMPORTED_MODULE_3__["Twilio"](twilioAccountSid, twilioAuthToken);
+            const channel = yield client.chat.services(serviceSid)
+                .channels(req.channelSid);
+            const list = yield channel
+                .webhooks.list();
+            const hasWebhookAlready = list.some((i) => i.url === url);
+            client.chat.services(serviceSid)
+                .channels(req.channelSid)
+                .webhooks
+                .create({
+                configuration: {
+                    url: url,
+                    method: 'POST',
+                    filters: ['onMessageSent'],
+                },
+                type: 'webhook'
+            });
+        });
+    }
+};
+TwilioService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], TwilioService);
+
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _user_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
+/* harmony import */ var _address_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(19);
+
+
+
+
+
+let UserModule = class UserModule {
+};
+UserModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
+        imports: [_address_module__WEBPACK_IMPORTED_MODULE_4__[/* AddressModule */ "a"], _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__["TypeOrmModule"].forFeature([_user_entity__WEBPACK_IMPORTED_MODULE_3__[/* User */ "a"]])],
+        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__["TypeOrmModule"]]
+    })
+], UserModule);
+
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddressModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _address_entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+let AddressModule = class AddressModule {
+};
+AddressModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Module"])({
+        imports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["TypeOrmModule"].forFeature([_address_entity__WEBPACK_IMPORTED_MODULE_1__[/* Address */ "a"]])],
+        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["TypeOrmModule"]]
+    })
+], AddressModule);
+
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PantryRepoService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_4__);
+var _a;
+
+
+
+
+
+let PantryRepoService = class PantryRepoService {
+    constructor(pantryRepo) {
+        this.pantryRepo = pantryRepo;
+    }
+    findAll() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.pantryRepo.find();
+        });
+    }
+    add(pantry) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.pantryRepo.save(pantry);
+        });
+    }
+};
+PantryRepoService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__["InjectRepository"])(_entities__WEBPACK_IMPORTED_MODULE_3__[/* Pantry */ "a"])),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof typeorm__WEBPACK_IMPORTED_MODULE_4__["Repository"] !== "undefined" && typeorm__WEBPACK_IMPORTED_MODULE_4__["Repository"]) === "function" ? _a : Object])
+], PantryRepoService);
+
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserRepoService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_4__);
+var _a;
+
+
+
+
+
+let UserRepoService = class UserRepoService {
+    constructor(userRepo) {
+        this.userRepo = userRepo;
+    }
+    getById(id) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.userRepo.findOne(id, { relations: ['residentialAddress'] });
+        });
+    }
+    findAll() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.userRepo.find({ relations: ['residentialAddress'] });
+        });
+    }
+    add(pantry) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.userRepo.save(pantry);
+        });
+    }
+};
+UserRepoService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["InjectRepository"])(_entities__WEBPACK_IMPORTED_MODULE_1__[/* User */ "e"])),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof typeorm__WEBPACK_IMPORTED_MODULE_4__["Repository"] !== "undefined" && typeorm__WEBPACK_IMPORTED_MODULE_4__["Repository"]) === "function" ? _a : Object])
+], UserRepoService);
+
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export SurveyTask */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SurveyScoreService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+
+
+
+var SurveyTask;
+(function (SurveyTask) {
+    SurveyTask["ShortFoodSecurityTask"] = "short_fss_answers";
+})(SurveyTask || (SurveyTask = {}));
+let SurveyScoreService = class SurveyScoreService {
+    calculate(task, answers) {
+        switch (task) {
+            case SurveyTask.ShortFoodSecurityTask: {
+                return this.calcShortFormFSS(answers);
+            }
+            default: {
+                return {
+                    score: 0,
+                    surveyResultLevel: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Info,
+                    surveyType: undefined,
+                };
+            }
+        }
+    }
+    calcShortFormFSS(answers) {
+        const affirmativeAnswers = ['yes', 'often', 'sometimes'];
+        const shortFoodSecurityScore = [...Object.values(answers)].filter((a) => affirmativeAnswers.some((aa) => a.answer.toLowerCase())).length;
+        const taskAttributes = {
+            surveyType: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyTypeDTO"].ShortFoodSecurity,
+            score: shortFoodSecurityScore,
+            surveyResultLevel: (shortFoodSecurityScore >= 5)
+                ? _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Critical
+                : (shortFoodSecurityScore >= 2 ? _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Warning
+                    : _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Info)
+        };
+        return taskAttributes;
+    }
+};
+SurveyScoreService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+], SurveyScoreService);
+
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserResourceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(26);
+/* harmony import */ var _survey_responses_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(15);
+var _a, _b, _c;
+
+
+
+
+
+
+let UserResourceService = class UserResourceService {
+    constructor(userRepo, scoresService, helper) {
+        this.userRepo = userRepo;
+        this.scoresService = scoresService;
+        this.helper = helper;
+        this.resourceType = _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].User;
+    }
+    getById(id) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const user = yield this.userRepo.getById(id);
+            return this.helper.mapToDTOPayload(this.resourceType, { entity: user, attributeMapper: (e) => this.mapEntityToResource(e) });
+        });
+    }
+    get(criteria) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const users = yield this.userRepo.findAll();
+            const userIds = users.map((u) => u.id);
+            const scoreRelationships = yield this.scoresService.getScores({ userIds });
+            const score = scoreRelationships.data.map((s) => ({
+                id: s.id,
+                userId: s.relationships['user'].id
+            })).reduce((acc, next) => {
+                const userId = parseInt(next.userId, 10);
+                const curr = acc[userId];
+                return (curr)
+                    ? Object.assign(Object.assign({}, acc), { [userId]: [...curr, next.id] }) : Object.assign(Object.assign({}, acc), { [userId]: [next.id] });
+            }, {});
+            const userData = this.helper.mapToDTOListPayload(this.resourceType, { entities: users, attributeMapper: (e) => this.mapEntityToResource(e) });
+            const dto = {
+                data: userData.data.map((ud) => this.helper.addRelationships(ud, {
+                    ids: score[ud.id],
+                    relationshipName: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].SurveyResponse,
+                    relationshipType: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].SurveyResponse,
+                }))
+            };
+            if (criteria && criteria.include && criteria.include.some((i) => i === _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].SurveyResponse)) {
+                return Object.assign(Object.assign({}, dto), { included: scoreRelationships.data });
+            }
+            else
+                return dto;
+        });
+    }
+    upsert(request) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const data = Array.isArray(request.data) ? request.data : [request.data];
+            const requestData = data.filter(d => d !== undefined).map((d) => this.mapPayloadToEntity(d));
+            const addedEntities = yield this.helper.addRequestedResources(requestData, (e) => {
+                return this.userRepo.getById(e === null || e === void 0 ? void 0 : e.id).then((u) => {
+                    var _a;
+                    const addressId = (_a = u === null || u === void 0 ? void 0 : u.residentialAddress) === null || _a === void 0 ? void 0 : _a.id;
+                    e.residentialAddress = Object.assign(Object.assign({}, e.residentialAddress), { id: addressId });
+                    return this.userRepo.add(e);
+                });
+            });
+            return Array.isArray(request.data) ? this.helper.mapToDTOListPayload(this.resourceType, { entities: addedEntities, attributeMapper: (e) => this.mapEntityToResource(e) }) : this.helper.mapToDTOPayload(this.resourceType, { entity: addedEntities[0], attributeMapper: (e) => this.mapEntityToResource(e) });
+        });
+    }
+    mapPayloadToEntity(data) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+        return {
+            id: data.id ? data.id : undefined,
+            givenName: data.attributes.firstName,
+            familyName: data.attributes.lastName,
+            userRole: data.attributes.userRole,
+            residentialAddress: {
+                id: undefined,
+                zipcode: (_b = (_a = data === null || data === void 0 ? void 0 : data.attributes) === null || _a === void 0 ? void 0 : _a.address) === null || _b === void 0 ? void 0 : _b.zipcode,
+                address1: (_d = (_c = data === null || data === void 0 ? void 0 : data.attributes) === null || _c === void 0 ? void 0 : _c.address) === null || _d === void 0 ? void 0 : _d.address1,
+                address2: (_f = (_e = data === null || data === void 0 ? void 0 : data.attributes) === null || _e === void 0 ? void 0 : _e.address) === null || _f === void 0 ? void 0 : _f.address2,
+                city: (_h = (_g = data === null || data === void 0 ? void 0 : data.attributes) === null || _g === void 0 ? void 0 : _g.address) === null || _h === void 0 ? void 0 : _h.city,
+                state: (_k = (_j = data === null || data === void 0 ? void 0 : data.attributes) === null || _j === void 0 ? void 0 : _j.address) === null || _k === void 0 ? void 0 : _k.state,
+            },
+            mobilePhone: (_l = data === null || data === void 0 ? void 0 : data.attributes) === null || _l === void 0 ? void 0 : _l.mobilePhone,
+        };
+    }
+    mapEntityToResource(e) {
+        var _a, _b, _c, _d, _e;
+        return {
+            firstName: e.givenName,
+            lastName: e.familyName,
+            address: {
+                zipcode: (_a = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _a === void 0 ? void 0 : _a.zipcode,
+                address1: (_b = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _b === void 0 ? void 0 : _b.address1,
+                address2: (_c = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _c === void 0 ? void 0 : _c.address2,
+                city: (_d = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _d === void 0 ? void 0 : _d.city,
+                state: (_e = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _e === void 0 ? void 0 : _e.state,
+            },
+            userRole: e.userRole,
+            mobilePhone: e === null || e === void 0 ? void 0 : e.mobilePhone
+        };
+    }
+};
+UserResourceService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _repository__WEBPACK_IMPORTED_MODULE_2__[/* UserRepoService */ "c"] !== "undefined" && _repository__WEBPACK_IMPORTED_MODULE_2__[/* UserRepoService */ "c"]) === "function" ? _a : Object, typeof (_b = typeof _survey_responses_service__WEBPACK_IMPORTED_MODULE_5__[/* SurveyResponseResourceService */ "a"] !== "undefined" && _survey_responses_service__WEBPACK_IMPORTED_MODULE_5__[/* SurveyResponseResourceService */ "a"]) === "function" ? _b : Object, typeof (_c = typeof _common__WEBPACK_IMPORTED_MODULE_4__[/* ResourceServiceHelper */ "a"] !== "undefined" && _common__WEBPACK_IMPORTED_MODULE_4__[/* ResourceServiceHelper */ "a"]) === "function" ? _c : Object])
+], UserResourceService);
+
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResourceServiceHelper; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -253,166 +967,462 @@ ResourceServiceHelper = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
 
 
 /***/ }),
+/* 25 */
+/***/ (function(module, exports) {
 
-/***/ "./apps/api/src/app/common/index.ts":
-/*!******************************************!*\
-  !*** ./apps/api/src/app/common/index.ts ***!
-  \******************************************/
-/*! exports provided: ResourceServiceHelper */
+module.exports = require("twilio");
+
+/***/ }),
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _base_resource_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base-resource.service */ "./apps/api/src/app/common/base-resource.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ResourceServiceHelper", function() { return _base_resource_service__WEBPACK_IMPORTED_MODULE_0__["ResourceServiceHelper"]; });
+/* harmony import */ var _base_resource_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _base_resource_service__WEBPACK_IMPORTED_MODULE_0__["a"]; });
 
 
 
 
 /***/ }),
-
-/***/ "./apps/api/src/app/controllers/communication.controller.ts":
-/*!******************************************************************!*\
-  !*** ./apps/api/src/app/controllers/communication.controller.ts ***!
-  \******************************************************************/
-/*! exports provided: CommunicationsController */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommunicationsController", function() { return CommunicationsController; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony import */ var _pantry_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(28);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _pantry_module__WEBPACK_IMPORTED_MODULE_0__["a"]; });
+
+/* harmony import */ var _survey_response_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(29);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "b", function() { return _survey_response_module__WEBPACK_IMPORTED_MODULE_1__["a"]; });
+
+/* harmony import */ var _user_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(18);
+/* harmony import */ var _address_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19);
+
+
+
+
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PantryModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _pantry_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
+
+
+
+
+let PantryModule = class PantryModule {
+};
+PantryModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Module"])({
+        imports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__["TypeOrmModule"].forFeature([_pantry_entity__WEBPACK_IMPORTED_MODULE_3__[/* Pantry */ "a"]])],
+        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__["TypeOrmModule"]]
+    })
+], PantryModule);
+
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SurveyResponseModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _survey_response_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
+
+
+
+
+let SurveyResponseModule = class SurveyResponseModule {
+};
+SurveyResponseModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Module"])({
+        imports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__["TypeOrmModule"].forFeature([_survey_response_entity__WEBPACK_IMPORTED_MODULE_3__[/* SurveyResponse */ "a"]])],
+        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__["TypeOrmModule"]]
+    })
+], SurveyResponseModule);
+
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SurveyResponseRepoService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/twilio/twilio.service */ "./apps/api/src/app/services/twilio/twilio.service.ts");
-/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
-/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @nestjs/swagger */ "@nestjs/swagger");
-/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__);
-var _a, _b, _c;
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2);
+/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
+var _a;
 
 
 
 
 
-let CommunicationsController = class CommunicationsController {
-    constructor(twilioService) {
-        this.twilioService = twilioService;
+let SurveyResponseRepoService = class SurveyResponseRepoService {
+    constructor(pantryRepo) {
+        this.pantryRepo = pantryRepo;
     }
-    getChatAccessToken(req) {
-        return {
-            jwt: this.twilioService.generateChatAccessToken(req)
-        };
-    }
-    addChatBot(req) {
+    findAll(criteria) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            yield this.twilioService.addBotToChannel(req);
+            if (criteria.userIds) {
+                return this.pantryRepo.find({
+                    where: {
+                        userId: Object(typeorm__WEBPACK_IMPORTED_MODULE_3__["In"])(criteria.userIds)
+                    }
+                });
+            }
+            else
+                return this.pantryRepo.find();
+        });
+    }
+    add(pantry) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            return this.pantryRepo.save(pantry);
         });
     }
 };
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])('chatAccessToken'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Object]),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", Object)
-], CommunicationsController.prototype, "getChatAccessToken", null);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])('addBot'),
-    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__["ApiBody"])({}),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IAddBotRequestDTO"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IAddBotRequestDTO"]) === "function" ? _a : Object]),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_b = typeof Promise !== "undefined" && Promise) === "function" ? _b : Object)
-], CommunicationsController.prototype, "addChatBot", null);
-CommunicationsController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('communications'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__["TwilioService"] !== "undefined" && _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__["TwilioService"]) === "function" ? _c : Object])
-], CommunicationsController);
+SurveyResponseRepoService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__["InjectRepository"])(_entities__WEBPACK_IMPORTED_MODULE_4__[/* SurveyResponse */ "c"])),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof typeorm__WEBPACK_IMPORTED_MODULE_3__["Repository"] !== "undefined" && typeorm__WEBPACK_IMPORTED_MODULE_3__["Repository"]) === "function" ? _a : Object])
+], SurveyResponseRepoService);
 
 
 
 /***/ }),
-
-/***/ "./apps/api/src/app/controllers/modules/communication-http.module.ts":
-/*!***************************************************************************!*\
-  !*** ./apps/api/src/app/controllers/modules/communication-http.module.ts ***!
-  \***************************************************************************/
-/*! exports provided: CommunicationHttpModule */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommunicationHttpModule", function() { return CommunicationHttpModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony import */ var _resource_types_enum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(32);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CooperResourceType", function() { return _resource_types_enum__WEBPACK_IMPORTED_MODULE_0__["a"]; });
+
+/* harmony import */ var _dto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33);
+/* harmony reexport (checked) */ if(__webpack_require__.o(_dto__WEBPACK_IMPORTED_MODULE_1__, "IAddBotRequestDTO")) __webpack_require__.d(__webpack_exports__, "IAddBotRequestDTO", function() { return _dto__WEBPACK_IMPORTED_MODULE_1__["IAddBotRequestDTO"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_dto__WEBPACK_IMPORTED_MODULE_1__, "IPayload")) __webpack_require__.d(__webpack_exports__, "IPayload", function() { return _dto__WEBPACK_IMPORTED_MODULE_1__["IPayload"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_dto__WEBPACK_IMPORTED_MODULE_1__, "SurveyResultLevel")) __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return _dto__WEBPACK_IMPORTED_MODULE_1__["SurveyResultLevel"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_dto__WEBPACK_IMPORTED_MODULE_1__, "SurveyTypeDTO")) __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return _dto__WEBPACK_IMPORTED_MODULE_1__["SurveyTypeDTO"]; });
+
+/* harmony import */ var _request_dto__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39);
+/* harmony reexport (checked) */ if(__webpack_require__.o(_request_dto__WEBPACK_IMPORTED_MODULE_2__, "IAddBotRequestDTO")) __webpack_require__.d(__webpack_exports__, "IAddBotRequestDTO", function() { return _request_dto__WEBPACK_IMPORTED_MODULE_2__["IAddBotRequestDTO"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_request_dto__WEBPACK_IMPORTED_MODULE_2__, "IPayload")) __webpack_require__.d(__webpack_exports__, "IPayload", function() { return _request_dto__WEBPACK_IMPORTED_MODULE_2__["IPayload"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_request_dto__WEBPACK_IMPORTED_MODULE_2__, "SurveyResultLevel")) __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return _request_dto__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_request_dto__WEBPACK_IMPORTED_MODULE_2__, "SurveyTypeDTO")) __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return _request_dto__WEBPACK_IMPORTED_MODULE_2__["SurveyTypeDTO"]; });
+
+
+
+
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CooperResourceType; });
+var CooperResourceType;
+(function (CooperResourceType) {
+    CooperResourceType["Pantry"] = "pantry";
+    CooperResourceType["SurveyResponse"] = "survey-response";
+    CooperResourceType["User"] = "user";
+})(CooperResourceType || (CooperResourceType = {}));
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _payload_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34);
+/* harmony import */ var _payload_model__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_payload_model__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (checked) */ if(__webpack_require__.o(_payload_model__WEBPACK_IMPORTED_MODULE_0__, "IAddBotRequestDTO")) __webpack_require__.d(__webpack_exports__, "IAddBotRequestDTO", function() { return _payload_model__WEBPACK_IMPORTED_MODULE_0__["IAddBotRequestDTO"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_payload_model__WEBPACK_IMPORTED_MODULE_0__, "IPayload")) __webpack_require__.d(__webpack_exports__, "IPayload", function() { return _payload_model__WEBPACK_IMPORTED_MODULE_0__["IPayload"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_payload_model__WEBPACK_IMPORTED_MODULE_0__, "SurveyResultLevel")) __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return _payload_model__WEBPACK_IMPORTED_MODULE_0__["SurveyResultLevel"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_payload_model__WEBPACK_IMPORTED_MODULE_0__, "SurveyTypeDTO")) __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return _payload_model__WEBPACK_IMPORTED_MODULE_0__["SurveyTypeDTO"]; });
+
+/* harmony import */ var _pantry_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(35);
+/* harmony import */ var _pantry_model__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_pantry_model__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony reexport (checked) */ if(__webpack_require__.o(_pantry_model__WEBPACK_IMPORTED_MODULE_1__, "IAddBotRequestDTO")) __webpack_require__.d(__webpack_exports__, "IAddBotRequestDTO", function() { return _pantry_model__WEBPACK_IMPORTED_MODULE_1__["IAddBotRequestDTO"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_pantry_model__WEBPACK_IMPORTED_MODULE_1__, "IPayload")) __webpack_require__.d(__webpack_exports__, "IPayload", function() { return _pantry_model__WEBPACK_IMPORTED_MODULE_1__["IPayload"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_pantry_model__WEBPACK_IMPORTED_MODULE_1__, "SurveyResultLevel")) __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return _pantry_model__WEBPACK_IMPORTED_MODULE_1__["SurveyResultLevel"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_pantry_model__WEBPACK_IMPORTED_MODULE_1__, "SurveyTypeDTO")) __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return _pantry_model__WEBPACK_IMPORTED_MODULE_1__["SurveyTypeDTO"]; });
+
+/* harmony import */ var _user_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
+/* harmony import */ var _survey_score_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return _survey_score_model__WEBPACK_IMPORTED_MODULE_3__["a"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return _survey_score_model__WEBPACK_IMPORTED_MODULE_3__["b"]; });
+
+/* harmony import */ var _address_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38);
+/* harmony import */ var _address_model__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_address_model__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony reexport (checked) */ if(__webpack_require__.o(_address_model__WEBPACK_IMPORTED_MODULE_4__, "IAddBotRequestDTO")) __webpack_require__.d(__webpack_exports__, "IAddBotRequestDTO", function() { return _address_model__WEBPACK_IMPORTED_MODULE_4__["IAddBotRequestDTO"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_address_model__WEBPACK_IMPORTED_MODULE_4__, "IPayload")) __webpack_require__.d(__webpack_exports__, "IPayload", function() { return _address_model__WEBPACK_IMPORTED_MODULE_4__["IPayload"]; });
+
+
+
+
+
+
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export UserRole */
+var UserRole;
+(function (UserRole) {
+    UserRole["PantryAdmin"] = "PANTRY ADMIN";
+    UserRole["Customer"] = "CUSTOMER";
+})(UserRole || (UserRole = {}));
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return SurveyTypeDTO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SurveyResultLevel; });
+var SurveyTypeDTO;
+(function (SurveyTypeDTO) {
+    SurveyTypeDTO[SurveyTypeDTO["ShortFoodSecurity"] = 0] = "ShortFoodSecurity";
+})(SurveyTypeDTO || (SurveyTypeDTO = {}));
+var SurveyResultLevel;
+(function (SurveyResultLevel) {
+    SurveyResultLevel[SurveyResultLevel["Info"] = 0] = "Info";
+    SurveyResultLevel[SurveyResultLevel["Warning"] = 1] = "Warning";
+    SurveyResultLevel[SurveyResultLevel["Critical"] = 2] = "Critical";
+})(SurveyResultLevel || (SurveyResultLevel = {}));
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
+/* harmony import */ var _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (checked) */ if(__webpack_require__.o(_add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__, "IAddBotRequestDTO")) __webpack_require__.d(__webpack_exports__, "IAddBotRequestDTO", function() { return _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__["IAddBotRequestDTO"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__, "IPayload")) __webpack_require__.d(__webpack_exports__, "IPayload", function() { return _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__["IPayload"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__, "SurveyResultLevel")) __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__["SurveyResultLevel"]; });
+
+/* harmony reexport (checked) */ if(__webpack_require__.o(_add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__, "SurveyTypeDTO")) __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__["SurveyTypeDTO"]; });
+
+
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports) {
+
+module.exports = require("@nestjs/core");
+
+/***/ }),
+/* 42 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/twilio/twilio.service */ "./apps/api/src/app/services/twilio/twilio.service.ts");
-/* harmony import */ var _communication_controller__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../communication.controller */ "./apps/api/src/app/controllers/communication.controller.ts");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _nestjs_serve_static__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(43);
+/* harmony import */ var _nestjs_serve_static__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_serve_static__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(44);
+/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _app_controller__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(45);
+/* harmony import */ var pg_connection_string__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(46);
+/* harmony import */ var pg_connection_string__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(pg_connection_string__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7);
+/* harmony import */ var _controllers_modules__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(47);
 
 
 
 
-let CommunicationHttpModule = class CommunicationHttpModule {
+
+
+
+
+
+const databaseUrl = process.env.DATABASE_URL;
+const connectionOptions = databaseUrl ? pg_connection_string__WEBPACK_IMPORTED_MODULE_6__["parse"](databaseUrl) : undefined;
+let AppModule = class AppModule {
 };
-CommunicationHttpModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_3__["Module"])({
-        providers: [_services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_1__["TwilioService"]],
-        controllers: [_communication_controller__WEBPACK_IMPORTED_MODULE_2__["CommunicationsController"]]
+AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
+        imports: [
+            _nestjs_serve_static__WEBPACK_IMPORTED_MODULE_2__["ServeStaticModule"].forRoot({
+                rootPath: Object(path__WEBPACK_IMPORTED_MODULE_4__["join"])(__dirname, '..', 'pantry'),
+                exclude: ['/api*']
+            }),
+            _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["TypeOrmModule"].forRoot({
+                type: 'postgres',
+                host: connectionOptions ? connectionOptions.host : 'localhost',
+                port: connectionOptions ? parseInt(connectionOptions.port, 10) : 5432,
+                username: connectionOptions ? connectionOptions.user : 'postgres',
+                password: connectionOptions ? connectionOptions.password : 'demo',
+                database: connectionOptions ? connectionOptions.database : 'cooper-pantry',
+                entities: [
+                    ..._entities__WEBPACK_IMPORTED_MODULE_7__[/* entities */ "f"],
+                ],
+                synchronize: true,
+            }),
+            ..._controllers_modules__WEBPACK_IMPORTED_MODULE_8__[/* controllerModules */ "a"],
+        ],
+        controllers: [_app_controller__WEBPACK_IMPORTED_MODULE_5__[/* AppController */ "a"]],
     })
-], CommunicationHttpModule);
+], AppModule);
 
 
 
 /***/ }),
+/* 43 */
+/***/ (function(module, exports) {
 
-/***/ "./apps/api/src/app/controllers/modules/index.ts":
-/*!*******************************************************!*\
-  !*** ./apps/api/src/app/controllers/modules/index.ts ***!
-  \*******************************************************/
-/*! exports provided: controllerModules */
+module.exports = require("@nestjs/serve-static");
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+module.exports = require("path");
+
+/***/ }),
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "controllerModules", function() { return controllerModules; });
-/* harmony import */ var _pantry_http_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pantry-http.module */ "./apps/api/src/app/controllers/modules/pantry-http.module.ts");
-/* harmony import */ var _survey_response_http_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./survey-response-http.module */ "./apps/api/src/app/controllers/modules/survey-response-http.module.ts");
-/* harmony import */ var _communication_http_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./communication-http.module */ "./apps/api/src/app/controllers/modules/communication-http.module.ts");
-/* harmony import */ var _user_http_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./user-http.module */ "./apps/api/src/app/controllers/modules/user-http.module.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppController; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+
+
+let AppController = class AppController {
+    getData() {
+        return { message: 'hello' };
+    }
+};
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Get"])('hello'),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", []),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", void 0)
+], AppController.prototype, "getData", null);
+AppController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])()
+], AppController);
+
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports) {
+
+module.exports = require("pg-connection-string");
+
+/***/ }),
+/* 47 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return controllerModules; });
+/* harmony import */ var _pantry_http_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48);
+/* harmony import */ var _survey_response_http_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50);
+/* harmony import */ var _communication_http_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52);
+/* harmony import */ var _user_http_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54);
 
 
 
 
 const controllerModules = [
-    _pantry_http_module__WEBPACK_IMPORTED_MODULE_0__["PantryHttpModule"],
-    _survey_response_http_module__WEBPACK_IMPORTED_MODULE_1__["SurveyResponseHttpModule"],
-    _communication_http_module__WEBPACK_IMPORTED_MODULE_2__["CommunicationHttpModule"],
-    _user_http_module__WEBPACK_IMPORTED_MODULE_3__["UserHttpModule"]
+    _pantry_http_module__WEBPACK_IMPORTED_MODULE_0__[/* PantryHttpModule */ "a"],
+    _survey_response_http_module__WEBPACK_IMPORTED_MODULE_1__[/* SurveyResponseHttpModule */ "a"],
+    _communication_http_module__WEBPACK_IMPORTED_MODULE_2__[/* CommunicationHttpModule */ "a"],
+    _user_http_module__WEBPACK_IMPORTED_MODULE_3__[/* UserHttpModule */ "a"]
 ];
 
 
 /***/ }),
-
-/***/ "./apps/api/src/app/controllers/modules/pantry-http.module.ts":
-/*!********************************************************************!*\
-  !*** ./apps/api/src/app/controllers/modules/pantry-http.module.ts ***!
-  \********************************************************************/
-/*! exports provided: PantryHttpModule */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PantryHttpModule", function() { return PantryHttpModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PantryHttpModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../entities */ "./apps/api/src/app/entities/index.ts");
-/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/resource */ "./apps/api/src/app/services/resource/index.ts");
-/* harmony import */ var _pantry_controller__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pantry.controller */ "./apps/api/src/app/controllers/pantry.controller.ts");
-/* harmony import */ var _services_repository_pantry_repo_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/repository/pantry-repo.service */ "./apps/api/src/app/services/repository/pantry-repo.service.ts");
+/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
+/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
+/* harmony import */ var _pantry_controller__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(49);
+/* harmony import */ var _services_repository_pantry_repo_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(20);
 
 
 
@@ -423,121 +1433,27 @@ let PantryHttpModule = class PantryHttpModule {
 };
 PantryHttpModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
-        imports: [_entities__WEBPACK_IMPORTED_MODULE_2__["PantryModule"]],
-        providers: [_services_resource__WEBPACK_IMPORTED_MODULE_3__["PantryResourceService"], _services_repository_pantry_repo_service__WEBPACK_IMPORTED_MODULE_5__["PantryRepoService"]],
-        controllers: [_pantry_controller__WEBPACK_IMPORTED_MODULE_4__["PantriesController"]]
+        imports: [_entities__WEBPACK_IMPORTED_MODULE_2__[/* PantryModule */ "b"]],
+        providers: [_services_resource__WEBPACK_IMPORTED_MODULE_3__[/* PantryResourceService */ "a"], _services_repository_pantry_repo_service__WEBPACK_IMPORTED_MODULE_5__[/* PantryRepoService */ "a"]],
+        controllers: [_pantry_controller__WEBPACK_IMPORTED_MODULE_4__[/* PantriesController */ "a"]]
     })
 ], PantryHttpModule);
 
 
 
 /***/ }),
-
-/***/ "./apps/api/src/app/controllers/modules/survey-response-http.module.ts":
-/*!*****************************************************************************!*\
-  !*** ./apps/api/src/app/controllers/modules/survey-response-http.module.ts ***!
-  \*****************************************************************************/
-/*! exports provided: SurveyResponseHttpModule */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyResponseHttpModule", function() { return SurveyResponseHttpModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PantriesController; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../entities */ "./apps/api/src/app/entities/index.ts");
-/* harmony import */ var _services_repository__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/repository */ "./apps/api/src/app/services/repository/index.ts");
-/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/resource */ "./apps/api/src/app/services/resource/index.ts");
-/* harmony import */ var _survey_controller__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../survey.controller */ "./apps/api/src/app/controllers/survey.controller.ts");
-/* harmony import */ var _services_helper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/helper */ "./apps/api/src/app/services/helper/index.ts");
-
-
-
-
-
-
-
-let SurveyResponseHttpModule = class SurveyResponseHttpModule {
-};
-SurveyResponseHttpModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
-        imports: [_entities__WEBPACK_IMPORTED_MODULE_2__["SurveyResponseModule"]],
-        providers: [_services_repository__WEBPACK_IMPORTED_MODULE_3__["SurveyResponseRepoService"], _services_resource__WEBPACK_IMPORTED_MODULE_4__["SurveyResponseResourceService"], _services_helper__WEBPACK_IMPORTED_MODULE_6__["SurveyScoreService"]],
-        controllers: [_survey_controller__WEBPACK_IMPORTED_MODULE_5__["SurveyResponsesController"]]
-    })
-], SurveyResponseHttpModule);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/controllers/modules/user-http.module.ts":
-/*!******************************************************************!*\
-  !*** ./apps/api/src/app/controllers/modules/user-http.module.ts ***!
-  \******************************************************************/
-/*! exports provided: UserHttpModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserHttpModule", function() { return UserHttpModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _common_base_resource_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../common/base-resource.service */ "./apps/api/src/app/common/base-resource.service.ts");
-/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../entities */ "./apps/api/src/app/entities/index.ts");
-/* harmony import */ var _entities_modules_user_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../entities/modules/user.module */ "./apps/api/src/app/entities/modules/user.module.ts");
-/* harmony import */ var _services_helper_survey_score_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/helper/survey-score.service */ "./apps/api/src/app/services/helper/survey-score.service.ts");
-/* harmony import */ var _services_repository__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/repository */ "./apps/api/src/app/services/repository/index.ts");
-/* harmony import */ var _services_repository_user_repo_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/repository/user-repo.service */ "./apps/api/src/app/services/repository/user-repo.service.ts");
-/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../services/resource */ "./apps/api/src/app/services/resource/index.ts");
-/* harmony import */ var _services_resource_user_resource_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../services/resource/user-resource.service */ "./apps/api/src/app/services/resource/user-resource.service.ts");
-/* harmony import */ var _user_controller__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../user.controller */ "./apps/api/src/app/controllers/user.controller.ts");
-
-
-
-
-
-
-
-
-
-
-
-let UserHttpModule = class UserHttpModule {
-};
-UserHttpModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
-        imports: [_entities_modules_user_module__WEBPACK_IMPORTED_MODULE_4__["UserModule"], _entities__WEBPACK_IMPORTED_MODULE_3__["SurveyResponseModule"]],
-        providers: [_services_resource_user_resource_service__WEBPACK_IMPORTED_MODULE_9__["UserResourceService"], _services_repository_user_repo_service__WEBPACK_IMPORTED_MODULE_7__["UserRepoService"], _common_base_resource_service__WEBPACK_IMPORTED_MODULE_2__["ResourceServiceHelper"], _services_resource__WEBPACK_IMPORTED_MODULE_8__["SurveyResponseResourceService"], _services_repository__WEBPACK_IMPORTED_MODULE_6__["SurveyResponseRepoService"], _services_helper_survey_score_service__WEBPACK_IMPORTED_MODULE_5__["SurveyScoreService"]],
-        controllers: [_user_controller__WEBPACK_IMPORTED_MODULE_10__["UserController"]]
-    })
-], UserHttpModule);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/controllers/pantry.controller.ts":
-/*!***********************************************************!*\
-  !*** ./apps/api/src/app/controllers/pantry.controller.ts ***!
-  \***********************************************************/
-/*! exports provided: PantriesController */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PantriesController", function() { return PantriesController; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _services_resource_pantry_resource_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/resource/pantry-resource.service */ "./apps/api/src/app/services/resource/pantry-resource.service.ts");
-/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
-/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @nestjs/swagger */ "@nestjs/swagger");
+/* harmony import */ var _services_resource_pantry_resource_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
 /* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__);
 var _a, _b, _c, _d;
 
@@ -596,30 +1512,58 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 ], PantriesController.prototype, "post", null);
 PantriesController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('pantries'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_d = typeof _services_resource_pantry_resource_service__WEBPACK_IMPORTED_MODULE_2__["PantryResourceService"] !== "undefined" && _services_resource_pantry_resource_service__WEBPACK_IMPORTED_MODULE_2__["PantryResourceService"]) === "function" ? _d : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_d = typeof _services_resource_pantry_resource_service__WEBPACK_IMPORTED_MODULE_2__[/* PantryResourceService */ "a"] !== "undefined" && _services_resource_pantry_resource_service__WEBPACK_IMPORTED_MODULE_2__[/* PantryResourceService */ "a"]) === "function" ? _d : Object])
 ], PantriesController);
 
 
 
 /***/ }),
-
-/***/ "./apps/api/src/app/controllers/survey.controller.ts":
-/*!***********************************************************!*\
-  !*** ./apps/api/src/app/controllers/survey.controller.ts ***!
-  \***********************************************************/
-/*! exports provided: SurveyResponsesController */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyResponsesController", function() { return SurveyResponsesController; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SurveyResponseHttpModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/swagger */ "@nestjs/swagger");
+/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
+/* harmony import */ var _services_repository__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
+/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
+/* harmony import */ var _survey_controller__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(51);
+/* harmony import */ var _services_helper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(16);
+
+
+
+
+
+
+
+let SurveyResponseHttpModule = class SurveyResponseHttpModule {
+};
+SurveyResponseHttpModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
+        imports: [_entities__WEBPACK_IMPORTED_MODULE_2__[/* SurveyResponseModule */ "d"]],
+        providers: [_services_repository__WEBPACK_IMPORTED_MODULE_3__[/* SurveyResponseRepoService */ "b"], _services_resource__WEBPACK_IMPORTED_MODULE_4__[/* SurveyResponseResourceService */ "b"], _services_helper__WEBPACK_IMPORTED_MODULE_6__[/* SurveyScoreService */ "a"]],
+        controllers: [_survey_controller__WEBPACK_IMPORTED_MODULE_5__[/* SurveyResponsesController */ "a"]]
+    })
+], SurveyResponseHttpModule);
+
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SurveyResponsesController; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 /* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/resource */ "./apps/api/src/app/services/resource/index.ts");
+/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9);
 var _a, _b, _c;
 
 
@@ -664,31 +1608,151 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 ], SurveyResponsesController.prototype, "get", null);
 SurveyResponsesController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('survey-responses'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _services_resource__WEBPACK_IMPORTED_MODULE_3__["SurveyResponseResourceService"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_3__["SurveyResponseResourceService"]) === "function" ? _c : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _services_resource__WEBPACK_IMPORTED_MODULE_3__[/* SurveyResponseResourceService */ "b"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_3__[/* SurveyResponseResourceService */ "b"]) === "function" ? _c : Object])
 ], SurveyResponsesController);
 
 
 
 /***/ }),
-
-/***/ "./apps/api/src/app/controllers/user.controller.ts":
-/*!*********************************************************!*\
-  !*** ./apps/api/src/app/controllers/user.controller.ts ***!
-  \*********************************************************/
-/*! exports provided: UserController */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserController", function() { return UserController; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommunicationHttpModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
+/* harmony import */ var _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17);
+/* harmony import */ var _communication_controller__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+let CommunicationHttpModule = class CommunicationHttpModule {
+};
+CommunicationHttpModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_3__["Module"])({
+        providers: [_services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_1__[/* TwilioService */ "a"]],
+        controllers: [_communication_controller__WEBPACK_IMPORTED_MODULE_2__[/* CommunicationsController */ "a"]]
+    })
+], CommunicationHttpModule);
+
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CommunicationsController; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__);
+var _a, _b, _c;
+
+
+
+
+
+let CommunicationsController = class CommunicationsController {
+    constructor(twilioService) {
+        this.twilioService = twilioService;
+    }
+    getChatAccessToken(req) {
+        return {
+            jwt: this.twilioService.generateChatAccessToken(req)
+        };
+    }
+    addChatBot(req) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            yield this.twilioService.addBotToChannel(req);
+        });
+    }
+};
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])('chatAccessToken'),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", Object)
+], CommunicationsController.prototype, "getChatAccessToken", null);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Post"])('addBot'),
+    Object(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_4__["ApiBody"])({}),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Body"])()),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Function),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IAddBotRequestDTO"] !== "undefined" && _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["IAddBotRequestDTO"]) === "function" ? _a : Object]),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:returntype", typeof (_b = typeof Promise !== "undefined" && Promise) === "function" ? _b : Object)
+], CommunicationsController.prototype, "addChatBot", null);
+CommunicationsController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Controller"])('communications'),
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_c = typeof _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__[/* TwilioService */ "a"] !== "undefined" && _services_twilio_twilio_service__WEBPACK_IMPORTED_MODULE_2__[/* TwilioService */ "a"]) === "function" ? _c : Object])
+], CommunicationsController);
+
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserHttpModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _common_base_resource_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(24);
+/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
+/* harmony import */ var _entities_modules_user_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(18);
+/* harmony import */ var _services_helper_survey_score_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(22);
+/* harmony import */ var _services_repository__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
+/* harmony import */ var _services_repository_user_repo_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(21);
+/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9);
+/* harmony import */ var _services_resource_user_resource_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(23);
+/* harmony import */ var _user_controller__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(55);
+
+
+
+
+
+
+
+
+
+
+
+let UserHttpModule = class UserHttpModule {
+};
+UserHttpModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
+        imports: [_entities_modules_user_module__WEBPACK_IMPORTED_MODULE_4__[/* UserModule */ "a"], _entities__WEBPACK_IMPORTED_MODULE_3__[/* SurveyResponseModule */ "d"]],
+        providers: [_services_resource_user_resource_service__WEBPACK_IMPORTED_MODULE_9__[/* UserResourceService */ "a"], _services_repository_user_repo_service__WEBPACK_IMPORTED_MODULE_7__[/* UserRepoService */ "a"], _common_base_resource_service__WEBPACK_IMPORTED_MODULE_2__[/* ResourceServiceHelper */ "a"], _services_resource__WEBPACK_IMPORTED_MODULE_8__[/* SurveyResponseResourceService */ "b"], _services_repository__WEBPACK_IMPORTED_MODULE_6__[/* SurveyResponseRepoService */ "b"], _services_helper_survey_score_service__WEBPACK_IMPORTED_MODULE_5__[/* SurveyScoreService */ "a"]],
+        controllers: [_user_controller__WEBPACK_IMPORTED_MODULE_10__[/* UserController */ "a"]]
+    })
+], UserHttpModule);
+
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserController; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
 /* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nestjs/swagger */ "@nestjs/swagger");
+/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
 /* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/resource */ "./apps/api/src/app/services/resource/index.ts");
+/* harmony import */ var _services_resource__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
 var _a, _b, _c, _d, _e, _f, _g, _h;
 
 
@@ -825,1102 +1889,31 @@ Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 ], UserController.prototype, "getUserSurveys", null);
 UserController = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Controller"])('users'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_h = typeof _services_resource__WEBPACK_IMPORTED_MODULE_4__["UserResourceService"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_4__["UserResourceService"]) === "function" ? _h : Object])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_h = typeof _services_resource__WEBPACK_IMPORTED_MODULE_4__[/* UserResourceService */ "c"] !== "undefined" && _services_resource__WEBPACK_IMPORTED_MODULE_4__[/* UserResourceService */ "c"]) === "function" ? _h : Object])
 ], UserController);
 
 
 
 /***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ "./apps/api/src/app/entities/address.entity.ts":
-/*!*****************************************************!*\
-  !*** ./apps/api/src/app/entities/address.entity.ts ***!
-  \*****************************************************/
-/*! exports provided: Address */
+module.exports = __webpack_require__(57);
+
+
+/***/ }),
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Address", function() { return Address; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typeorm */ "typeorm");
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_1__);
-
-
-let Address = class Address {
-};
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryGeneratedColumn"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
-], Address.prototype, "id", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], Address.prototype, "address1", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], Address.prototype, "address2", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], Address.prototype, "city", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], Address.prototype, "state", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], Address.prototype, "zipcode", void 0);
-Address = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
-], Address);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/entities/index.ts":
-/*!********************************************!*\
-  !*** ./apps/api/src/app/entities/index.ts ***!
-  \********************************************/
-/*! exports provided: PantryModule, SurveyResponseModule, UserModule, AddressModule, Pantry, SurveyResponse, User, entities */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "entities", function() { return entities; });
-/* harmony import */ var _pantry_entity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pantry.entity */ "./apps/api/src/app/entities/pantry.entity.ts");
-/* harmony import */ var _survey_response_entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./survey-response.entity */ "./apps/api/src/app/entities/survey-response.entity.ts");
-/* harmony import */ var _user_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user.entity */ "./apps/api/src/app/entities/user.entity.ts");
-/* harmony import */ var _address_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./address.entity */ "./apps/api/src/app/entities/address.entity.ts");
-/* harmony import */ var _modules__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules */ "./apps/api/src/app/entities/modules/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PantryModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_4__["PantryModule"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResponseModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_4__["SurveyResponseModule"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_4__["UserModule"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AddressModule", function() { return _modules__WEBPACK_IMPORTED_MODULE_4__["AddressModule"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Pantry", function() { return _pantry_entity__WEBPACK_IMPORTED_MODULE_0__["Pantry"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResponse", function() { return _survey_response_entity__WEBPACK_IMPORTED_MODULE_1__["SurveyResponse"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "User", function() { return _user_entity__WEBPACK_IMPORTED_MODULE_2__["User"]; });
-
-
-
-
-
-
-
-
-
-const entities = [
-    _pantry_entity__WEBPACK_IMPORTED_MODULE_0__["Pantry"],
-    _survey_response_entity__WEBPACK_IMPORTED_MODULE_1__["SurveyResponse"],
-    _address_entity__WEBPACK_IMPORTED_MODULE_3__["Address"],
-    _user_entity__WEBPACK_IMPORTED_MODULE_2__["User"],
-];
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/entities/modules/address.module.ts":
-/*!*************************************************************!*\
-  !*** ./apps/api/src/app/entities/modules/address.module.ts ***!
-  \*************************************************************/
-/*! exports provided: AddressModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddressModule", function() { return AddressModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _address_entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../address.entity */ "./apps/api/src/app/entities/address.entity.ts");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-let AddressModule = class AddressModule {
-};
-AddressModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Module"])({
-        imports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["TypeOrmModule"].forFeature([_address_entity__WEBPACK_IMPORTED_MODULE_1__["Address"]])],
-        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["TypeOrmModule"]]
-    })
-], AddressModule);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/entities/modules/index.ts":
-/*!****************************************************!*\
-  !*** ./apps/api/src/app/entities/modules/index.ts ***!
-  \****************************************************/
-/*! exports provided: PantryModule, SurveyResponseModule, UserModule, AddressModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _pantry_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pantry.module */ "./apps/api/src/app/entities/modules/pantry.module.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PantryModule", function() { return _pantry_module__WEBPACK_IMPORTED_MODULE_0__["PantryModule"]; });
-
-/* harmony import */ var _survey_response_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./survey-response.module */ "./apps/api/src/app/entities/modules/survey-response.module.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResponseModule", function() { return _survey_response_module__WEBPACK_IMPORTED_MODULE_1__["SurveyResponseModule"]; });
-
-/* harmony import */ var _user_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user.module */ "./apps/api/src/app/entities/modules/user.module.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return _user_module__WEBPACK_IMPORTED_MODULE_2__["UserModule"]; });
-
-/* harmony import */ var _address_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./address.module */ "./apps/api/src/app/entities/modules/address.module.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AddressModule", function() { return _address_module__WEBPACK_IMPORTED_MODULE_3__["AddressModule"]; });
-
-
-
-
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/entities/modules/pantry.module.ts":
-/*!************************************************************!*\
-  !*** ./apps/api/src/app/entities/modules/pantry.module.ts ***!
-  \************************************************************/
-/*! exports provided: PantryModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PantryModule", function() { return PantryModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _pantry_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pantry.entity */ "./apps/api/src/app/entities/pantry.entity.ts");
-
-
-
-
-let PantryModule = class PantryModule {
-};
-PantryModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Module"])({
-        imports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__["TypeOrmModule"].forFeature([_pantry_entity__WEBPACK_IMPORTED_MODULE_3__["Pantry"]])],
-        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__["TypeOrmModule"]]
-    })
-], PantryModule);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/entities/modules/survey-response.module.ts":
-/*!*********************************************************************!*\
-  !*** ./apps/api/src/app/entities/modules/survey-response.module.ts ***!
-  \*********************************************************************/
-/*! exports provided: SurveyResponseModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyResponseModule", function() { return SurveyResponseModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _survey_response_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../survey-response.entity */ "./apps/api/src/app/entities/survey-response.entity.ts");
-
-
-
-
-let SurveyResponseModule = class SurveyResponseModule {
-};
-SurveyResponseModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Module"])({
-        imports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__["TypeOrmModule"].forFeature([_survey_response_entity__WEBPACK_IMPORTED_MODULE_3__["SurveyResponse"]])],
-        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_1__["TypeOrmModule"]]
-    })
-], SurveyResponseModule);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/entities/modules/user.module.ts":
-/*!**********************************************************!*\
-  !*** ./apps/api/src/app/entities/modules/user.module.ts ***!
-  \**********************************************************/
-/*! exports provided: UserModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserModule", function() { return UserModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _user_entity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../user.entity */ "./apps/api/src/app/entities/user.entity.ts");
-/* harmony import */ var _address_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./address.module */ "./apps/api/src/app/entities/modules/address.module.ts");
-
-
-
-
-
-let UserModule = class UserModule {
-};
-UserModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Module"])({
-        imports: [_address_module__WEBPACK_IMPORTED_MODULE_4__["AddressModule"], _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__["TypeOrmModule"].forFeature([_user_entity__WEBPACK_IMPORTED_MODULE_3__["User"]])],
-        exports: [_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__["TypeOrmModule"]]
-    })
-], UserModule);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/entities/pantry.entity.ts":
-/*!****************************************************!*\
-  !*** ./apps/api/src/app/entities/pantry.entity.ts ***!
-  \****************************************************/
-/*! exports provided: Pantry */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Pantry", function() { return Pantry; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typeorm */ "typeorm");
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_1__);
-
-
-let Pantry = class Pantry {
-};
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryGeneratedColumn"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
-], Pantry.prototype, "id", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], Pantry.prototype, "name", void 0);
-Pantry = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
-], Pantry);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/entities/survey-response.entity.ts":
-/*!*************************************************************!*\
-  !*** ./apps/api/src/app/entities/survey-response.entity.ts ***!
-  \*************************************************************/
-/*! exports provided: SurveyResponse */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyResponse", function() { return SurveyResponse; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typeorm */ "typeorm");
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _user_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user.entity */ "./apps/api/src/app/entities/user.entity.ts");
-var _a;
-
-
-
-let SurveyResponse = class SurveyResponse {
-};
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryGeneratedColumn"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
-], SurveyResponse.prototype, "id", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Number)
-], SurveyResponse.prototype, "userId", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["ManyToOne"])(type => _user_entity__WEBPACK_IMPORTED_MODULE_2__["User"]),
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["JoinColumn"])({ name: 'userId', referencedColumnName: 'id' }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", typeof (_a = typeof _user_entity__WEBPACK_IMPORTED_MODULE_2__["User"] !== "undefined" && _user_entity__WEBPACK_IMPORTED_MODULE_2__["User"]) === "function" ? _a : Object)
-], SurveyResponse.prototype, "user", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])('jsonb'),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", Object)
-], SurveyResponse.prototype, "response", void 0);
-SurveyResponse = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
-], SurveyResponse);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/entities/user.entity.ts":
-/*!**************************************************!*\
-  !*** ./apps/api/src/app/entities/user.entity.ts ***!
-  \**************************************************/
-/*! exports provided: User */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typeorm */ "typeorm");
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _address_entity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./address.entity */ "./apps/api/src/app/entities/address.entity.ts");
-var _a;
-
-
-
-let User = class User {
-};
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["PrimaryColumn"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], User.prototype, "id", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], User.prototype, "givenName", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], User.prototype, "familyName", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["OneToOne"])(type => _address_entity__WEBPACK_IMPORTED_MODULE_2__["Address"], { cascade: true }),
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["JoinColumn"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", typeof (_a = typeof _address_entity__WEBPACK_IMPORTED_MODULE_2__["Address"] !== "undefined" && _address_entity__WEBPACK_IMPORTED_MODULE_2__["Address"]) === "function" ? _a : Object)
-], User.prototype, "residentialAddress", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])({ nullable: true }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], User.prototype, "mobilePhone", void 0);
-Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Column"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:type", String)
-], User.prototype, "userRole", void 0);
-User = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(typeorm__WEBPACK_IMPORTED_MODULE_1__["Entity"])()
-], User);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/helper/index.ts":
-/*!***************************************************!*\
-  !*** ./apps/api/src/app/services/helper/index.ts ***!
-  \***************************************************/
-/*! exports provided: SurveyTask, SurveyScoreService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _survey_score_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./survey-score.service */ "./apps/api/src/app/services/helper/survey-score.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyTask", function() { return _survey_score_service__WEBPACK_IMPORTED_MODULE_0__["SurveyTask"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyScoreService", function() { return _survey_score_service__WEBPACK_IMPORTED_MODULE_0__["SurveyScoreService"]; });
-
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/helper/survey-score.service.ts":
-/*!******************************************************************!*\
-  !*** ./apps/api/src/app/services/helper/survey-score.service.ts ***!
-  \******************************************************************/
-/*! exports provided: SurveyTask, SurveyScoreService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyTask", function() { return SurveyTask; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyScoreService", function() { return SurveyScoreService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
-
-
-
-var SurveyTask;
-(function (SurveyTask) {
-    SurveyTask["ShortFoodSecurityTask"] = "short_fss_answers";
-})(SurveyTask || (SurveyTask = {}));
-let SurveyScoreService = class SurveyScoreService {
-    calculate(task, answers) {
-        switch (task) {
-            case SurveyTask.ShortFoodSecurityTask: {
-                return this.calcShortFormFSS(answers);
-            }
-            default: {
-                return {
-                    score: 0,
-                    surveyResultLevel: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Info,
-                    surveyType: undefined,
-                };
-            }
-        }
-    }
-    calcShortFormFSS(answers) {
-        const affirmativeAnswers = ['yes', 'often', 'sometimes'];
-        const shortFoodSecurityScore = [...Object.values(answers)].filter((a) => affirmativeAnswers.some((aa) => a.answer.toLowerCase())).length;
-        const taskAttributes = {
-            surveyType: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyTypeDTO"].ShortFoodSecurity,
-            score: shortFoodSecurityScore,
-            surveyResultLevel: (shortFoodSecurityScore >= 5)
-                ? _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Critical
-                : (shortFoodSecurityScore >= 2 ? _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Warning
-                    : _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_2__["SurveyResultLevel"].Info)
-        };
-        return taskAttributes;
-    }
-};
-SurveyScoreService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
-], SurveyScoreService);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/repository/index.ts":
-/*!*******************************************************!*\
-  !*** ./apps/api/src/app/services/repository/index.ts ***!
-  \*******************************************************/
-/*! exports provided: PantryRepoService, SurveyResponseRepoService, UserRepoService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _pantry_repo_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pantry-repo.service */ "./apps/api/src/app/services/repository/pantry-repo.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PantryRepoService", function() { return _pantry_repo_service__WEBPACK_IMPORTED_MODULE_0__["PantryRepoService"]; });
-
-/* harmony import */ var _survey_responses_repo_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./survey-responses-repo.service */ "./apps/api/src/app/services/repository/survey-responses-repo.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResponseRepoService", function() { return _survey_responses_repo_service__WEBPACK_IMPORTED_MODULE_1__["SurveyResponseRepoService"]; });
-
-/* harmony import */ var _user_repo_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-repo.service */ "./apps/api/src/app/services/repository/user-repo.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserRepoService", function() { return _user_repo_service__WEBPACK_IMPORTED_MODULE_2__["UserRepoService"]; });
-
-
-
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/repository/pantry-repo.service.ts":
-/*!*********************************************************************!*\
-  !*** ./apps/api/src/app/services/repository/pantry-repo.service.ts ***!
-  \*********************************************************************/
-/*! exports provided: PantryRepoService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PantryRepoService", function() { return PantryRepoService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../entities */ "./apps/api/src/app/entities/index.ts");
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! typeorm */ "typeorm");
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_4__);
-var _a;
-
-
-
-
-
-let PantryRepoService = class PantryRepoService {
-    constructor(pantryRepo) {
-        this.pantryRepo = pantryRepo;
-    }
-    findAll() {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.pantryRepo.find();
-        });
-    }
-    add(pantry) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.pantryRepo.save(pantry);
-        });
-    }
-};
-PantryRepoService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__["InjectRepository"])(_entities__WEBPACK_IMPORTED_MODULE_3__["Pantry"])),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof typeorm__WEBPACK_IMPORTED_MODULE_4__["Repository"] !== "undefined" && typeorm__WEBPACK_IMPORTED_MODULE_4__["Repository"]) === "function" ? _a : Object])
-], PantryRepoService);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/repository/survey-responses-repo.service.ts":
-/*!*******************************************************************************!*\
-  !*** ./apps/api/src/app/services/repository/survey-responses-repo.service.ts ***!
-  \*******************************************************************************/
-/*! exports provided: SurveyResponseRepoService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyResponseRepoService", function() { return SurveyResponseRepoService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! typeorm */ "typeorm");
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../entities */ "./apps/api/src/app/entities/index.ts");
-var _a;
-
-
-
-
-
-let SurveyResponseRepoService = class SurveyResponseRepoService {
-    constructor(pantryRepo) {
-        this.pantryRepo = pantryRepo;
-    }
-    findAll(criteria) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            if (criteria.userIds) {
-                return this.pantryRepo.find({
-                    where: {
-                        userId: Object(typeorm__WEBPACK_IMPORTED_MODULE_3__["In"])(criteria.userIds)
-                    }
-                });
-            }
-            else
-                return this.pantryRepo.find();
-        });
-    }
-    add(pantry) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.pantryRepo.save(pantry);
-        });
-    }
-};
-SurveyResponseRepoService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_2__["InjectRepository"])(_entities__WEBPACK_IMPORTED_MODULE_4__["SurveyResponse"])),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof typeorm__WEBPACK_IMPORTED_MODULE_3__["Repository"] !== "undefined" && typeorm__WEBPACK_IMPORTED_MODULE_3__["Repository"]) === "function" ? _a : Object])
-], SurveyResponseRepoService);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/repository/user-repo.service.ts":
-/*!*******************************************************************!*\
-  !*** ./apps/api/src/app/services/repository/user-repo.service.ts ***!
-  \*******************************************************************/
-/*! exports provided: UserRepoService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRepoService", function() { return UserRepoService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../entities */ "./apps/api/src/app/entities/index.ts");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @nestjs/typeorm */ "@nestjs/typeorm");
-/* harmony import */ var _nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! typeorm */ "typeorm");
-/* harmony import */ var typeorm__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(typeorm__WEBPACK_IMPORTED_MODULE_4__);
-var _a;
-
-
-
-
-
-let UserRepoService = class UserRepoService {
-    constructor(userRepo) {
-        this.userRepo = userRepo;
-    }
-    getById(id) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.userRepo.findOne(id, { relations: ['residentialAddress'] });
-        });
-    }
-    findAll() {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.userRepo.find({ relations: ['residentialAddress'] });
-        });
-    }
-    add(pantry) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            return this.userRepo.save(pantry);
-        });
-    }
-};
-UserRepoService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__param"])(0, Object(_nestjs_typeorm__WEBPACK_IMPORTED_MODULE_3__["InjectRepository"])(_entities__WEBPACK_IMPORTED_MODULE_1__["User"])),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof typeorm__WEBPACK_IMPORTED_MODULE_4__["Repository"] !== "undefined" && typeorm__WEBPACK_IMPORTED_MODULE_4__["Repository"]) === "function" ? _a : Object])
-], UserRepoService);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/resource/index.ts":
-/*!*****************************************************!*\
-  !*** ./apps/api/src/app/services/resource/index.ts ***!
-  \*****************************************************/
-/*! exports provided: PantryResourceService, SurveyResponseResourceService, UserResourceService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _pantry_resource_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pantry-resource.service */ "./apps/api/src/app/services/resource/pantry-resource.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PantryResourceService", function() { return _pantry_resource_service__WEBPACK_IMPORTED_MODULE_0__["PantryResourceService"]; });
-
-/* harmony import */ var _survey_responses_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./survey-responses.service */ "./apps/api/src/app/services/resource/survey-responses.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResponseResourceService", function() { return _survey_responses_service__WEBPACK_IMPORTED_MODULE_1__["SurveyResponseResourceService"]; });
-
-/* harmony import */ var _user_resource_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user-resource.service */ "./apps/api/src/app/services/resource/user-resource.service.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserResourceService", function() { return _user_resource_service__WEBPACK_IMPORTED_MODULE_2__["UserResourceService"]; });
-
-
-
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/resource/pantry-resource.service.ts":
-/*!***********************************************************************!*\
-  !*** ./apps/api/src/app/services/resource/pantry-resource.service.ts ***!
-  \***********************************************************************/
-/*! exports provided: PantryResourceService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PantryResourceService", function() { return PantryResourceService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../repository */ "./apps/api/src/app/services/repository/index.ts");
-/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
-var _a;
-
-
-
-
-let PantryResourceService = class PantryResourceService {
-    constructor(pantryRepo) {
-        this.pantryRepo = pantryRepo;
-        this.resourceType = _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].Pantry;
-    }
-    get() {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const pantries = yield this.pantryRepo.findAll();
-            return {
-                data: pantries.map((p) => ({
-                    type: this.resourceType,
-                    id: p.id.toString(),
-                    attributes: this.mapPantryEntityToResource(p)
-                }))
-            };
-        });
-    }
-    upsert(request) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const data = Array.isArray(request.data) ? request.data : [request.data];
-            const createdEntities = [];
-            for (const d of data.filter((de) => de !== undefined && de !== null)) {
-                const newResource = {
-                    id: d.id ? parseInt(d.id, 10) : undefined,
-                    name: d.attributes.name,
-                };
-                const p = yield this.pantryRepo.add(newResource);
-                createdEntities.push(p);
-            }
-            const mappedEntities = createdEntities.map((e) => ({
-                id: e.id.toString(),
-                type: this.resourceType,
-                attributes: this.mapPantryEntityToResource(e)
-            }));
-            return {
-                data: Array.isArray(request.data)
-                    ? mappedEntities
-                    : (mappedEntities.length === 1 ? mappedEntities[0] : undefined)
-            };
-        });
-    }
-    mapPantryEntityToResource(pantry) {
-        return {
-            name: pantry.name
-        };
-    }
-};
-PantryResourceService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _repository__WEBPACK_IMPORTED_MODULE_2__["PantryRepoService"] !== "undefined" && _repository__WEBPACK_IMPORTED_MODULE_2__["PantryRepoService"]) === "function" ? _a : Object])
-], PantryResourceService);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/resource/survey-responses.service.ts":
-/*!************************************************************************!*\
-  !*** ./apps/api/src/app/services/resource/survey-responses.service.ts ***!
-  \************************************************************************/
-/*! exports provided: SurveyResponseResourceService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyResponseResourceService", function() { return SurveyResponseResourceService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper */ "./apps/api/src/app/services/helper/index.ts");
-/* harmony import */ var _repository__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../repository */ "./apps/api/src/app/services/repository/index.ts");
-var _a, _b;
-
-
-
-
-
-let SurveyResponseResourceService = class SurveyResponseResourceService {
-    constructor(repo, helper) {
-        this.repo = repo;
-        this.helper = helper;
-    }
-    addBotSurveyResponse(response) {
-        const response2 = JSON.parse(response);
-        const entity = { id: undefined, userId: parseInt(response2.twilio.chat.From, 10), response: response };
-        return this.repo.add(entity);
-    }
-    getScores(criteria) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const entities = yield this.repo.findAll(criteria);
-            return {
-                data: entities.map((e) => {
-                    const response = JSON.parse(e.response);
-                    const task = Object.keys(response.twilio.collected_data)[0];
-                    const answers = response.twilio.collected_data[task].answers;
-                    const score = this.helper.calculate(task, answers);
-                    return {
-                        type: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__["CooperResourceType"].SurveyResponse,
-                        id: e.id.toString(),
-                        attributes: Object.assign({}, score),
-                        relationships: {
-                            'user': { id: e.userId.toString(), type: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_1__["CooperResourceType"].User }
-                        }
-                    };
-                })
-            };
-        });
-    }
-};
-SurveyResponseResourceService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _repository__WEBPACK_IMPORTED_MODULE_4__["SurveyResponseRepoService"] !== "undefined" && _repository__WEBPACK_IMPORTED_MODULE_4__["SurveyResponseRepoService"]) === "function" ? _a : Object, typeof (_b = typeof _helper__WEBPACK_IMPORTED_MODULE_3__["SurveyScoreService"] !== "undefined" && _helper__WEBPACK_IMPORTED_MODULE_3__["SurveyScoreService"]) === "function" ? _b : Object])
-], SurveyResponseResourceService);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/resource/user-resource.service.ts":
-/*!*********************************************************************!*\
-  !*** ./apps/api/src/app/services/resource/user-resource.service.ts ***!
-  \*********************************************************************/
-/*! exports provided: UserResourceService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserResourceService", function() { return UserResourceService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _repository__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../repository */ "./apps/api/src/app/services/repository/index.ts");
-/* harmony import */ var _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cooper/api-interfaces */ "./libs/api-interfaces/src/index.ts");
-/* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../common */ "./apps/api/src/app/common/index.ts");
-/* harmony import */ var _survey_responses_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./survey-responses.service */ "./apps/api/src/app/services/resource/survey-responses.service.ts");
-var _a, _b, _c;
-
-
-
-
-
-
-let UserResourceService = class UserResourceService {
-    constructor(userRepo, scoresService, helper) {
-        this.userRepo = userRepo;
-        this.scoresService = scoresService;
-        this.helper = helper;
-        this.resourceType = _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].User;
-    }
-    getById(id) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const user = yield this.userRepo.getById(id);
-            return this.helper.mapToDTOPayload(this.resourceType, { entity: user, attributeMapper: (e) => this.mapEntityToResource(e) });
-        });
-    }
-    get(criteria) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const users = yield this.userRepo.findAll();
-            const userIds = users.map((u) => u.id);
-            const scoreRelationships = yield this.scoresService.getScores({ userIds });
-            const score = scoreRelationships.data.map((s) => ({
-                id: s.id,
-                userId: s.relationships['user'].id
-            })).reduce((acc, next) => {
-                const userId = parseInt(next.userId, 10);
-                const curr = acc[userId];
-                return (curr)
-                    ? Object.assign(Object.assign({}, acc), { [userId]: [...curr, next.id] }) : Object.assign(Object.assign({}, acc), { [userId]: [next.id] });
-            }, {});
-            const userData = this.helper.mapToDTOListPayload(this.resourceType, { entities: users, attributeMapper: (e) => this.mapEntityToResource(e) });
-            const dto = {
-                data: userData.data.map((ud) => this.helper.addRelationships(ud, {
-                    ids: score[ud.id],
-                    relationshipName: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].SurveyResponse,
-                    relationshipType: _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].SurveyResponse,
-                }))
-            };
-            if (criteria && criteria.include && criteria.include.some((i) => i === _cooper_api_interfaces__WEBPACK_IMPORTED_MODULE_3__["CooperResourceType"].SurveyResponse)) {
-                return Object.assign(Object.assign({}, dto), { included: scoreRelationships.data });
-            }
-            else
-                return dto;
-        });
-    }
-    upsert(request) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const data = Array.isArray(request.data) ? request.data : [request.data];
-            const requestData = data.filter(d => d !== undefined).map((d) => this.mapPayloadToEntity(d));
-            const addedEntities = yield this.helper.addRequestedResources(requestData, (e) => {
-                return this.userRepo.getById(e === null || e === void 0 ? void 0 : e.id).then((u) => {
-                    var _a;
-                    const addressId = (_a = u === null || u === void 0 ? void 0 : u.residentialAddress) === null || _a === void 0 ? void 0 : _a.id;
-                    e.residentialAddress = Object.assign(Object.assign({}, e.residentialAddress), { id: addressId });
-                    return this.userRepo.add(e);
-                });
-            });
-            return Array.isArray(request.data) ? this.helper.mapToDTOListPayload(this.resourceType, { entities: addedEntities, attributeMapper: (e) => this.mapEntityToResource(e) }) : this.helper.mapToDTOPayload(this.resourceType, { entity: addedEntities[0], attributeMapper: (e) => this.mapEntityToResource(e) });
-        });
-    }
-    mapPayloadToEntity(data) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
-        return {
-            id: data.id ? data.id : undefined,
-            givenName: data.attributes.firstName,
-            familyName: data.attributes.lastName,
-            userRole: data.attributes.userRole,
-            residentialAddress: {
-                id: undefined,
-                zipcode: (_b = (_a = data === null || data === void 0 ? void 0 : data.attributes) === null || _a === void 0 ? void 0 : _a.address) === null || _b === void 0 ? void 0 : _b.zipcode,
-                address1: (_d = (_c = data === null || data === void 0 ? void 0 : data.attributes) === null || _c === void 0 ? void 0 : _c.address) === null || _d === void 0 ? void 0 : _d.address1,
-                address2: (_f = (_e = data === null || data === void 0 ? void 0 : data.attributes) === null || _e === void 0 ? void 0 : _e.address) === null || _f === void 0 ? void 0 : _f.address2,
-                city: (_h = (_g = data === null || data === void 0 ? void 0 : data.attributes) === null || _g === void 0 ? void 0 : _g.address) === null || _h === void 0 ? void 0 : _h.city,
-                state: (_k = (_j = data === null || data === void 0 ? void 0 : data.attributes) === null || _j === void 0 ? void 0 : _j.address) === null || _k === void 0 ? void 0 : _k.state,
-            },
-            mobilePhone: (_l = data === null || data === void 0 ? void 0 : data.attributes) === null || _l === void 0 ? void 0 : _l.mobilePhone,
-        };
-    }
-    mapEntityToResource(e) {
-        var _a, _b, _c, _d, _e;
-        return {
-            firstName: e.givenName,
-            lastName: e.familyName,
-            address: {
-                zipcode: (_a = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _a === void 0 ? void 0 : _a.zipcode,
-                address1: (_b = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _b === void 0 ? void 0 : _b.address1,
-                address2: (_c = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _c === void 0 ? void 0 : _c.address2,
-                city: (_d = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _d === void 0 ? void 0 : _d.city,
-                state: (_e = e === null || e === void 0 ? void 0 : e.residentialAddress) === null || _e === void 0 ? void 0 : _e.state,
-            },
-            userRole: e.userRole,
-            mobilePhone: e === null || e === void 0 ? void 0 : e.mobilePhone
-        };
-    }
-};
-UserResourceService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [typeof (_a = typeof _repository__WEBPACK_IMPORTED_MODULE_2__["UserRepoService"] !== "undefined" && _repository__WEBPACK_IMPORTED_MODULE_2__["UserRepoService"]) === "function" ? _a : Object, typeof (_b = typeof _survey_responses_service__WEBPACK_IMPORTED_MODULE_5__["SurveyResponseResourceService"] !== "undefined" && _survey_responses_service__WEBPACK_IMPORTED_MODULE_5__["SurveyResponseResourceService"]) === "function" ? _b : Object, typeof (_c = typeof _common__WEBPACK_IMPORTED_MODULE_4__["ResourceServiceHelper"] !== "undefined" && _common__WEBPACK_IMPORTED_MODULE_4__["ResourceServiceHelper"]) === "function" ? _c : Object])
-], UserResourceService);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/app/services/twilio/twilio.service.ts":
-/*!************************************************************!*\
-  !*** ./apps/api/src/app/services/twilio/twilio.service.ts ***!
-  \************************************************************/
-/*! exports provided: TwilioService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwilioService", function() { return TwilioService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/common */ "@nestjs/common");
-/* harmony import */ var _nestjs_common__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../environments/environment */ "./apps/api/src/environments/environment.ts");
-/* harmony import */ var twilio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! twilio */ "twilio");
-/* harmony import */ var twilio__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(twilio__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-let TwilioService = class TwilioService {
-    generateChatAccessToken(req) {
-        const twilioAccountSid = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_ACCOUNT_SID : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioAccount;
-        const twilioApiKey = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_API_KEY : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioChatApiKey;
-        const twilioApiSecret = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_CHAT_API_SECRET : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioChatApiSecret;
-        const serviceSid = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_CHAT_SERVICE_SID : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioChatSid;
-        const chatGrant = new twilio__WEBPACK_IMPORTED_MODULE_3__["jwt"].AccessToken.ChatGrant({
-            serviceSid: serviceSid,
-        });
-        const token = new twilio__WEBPACK_IMPORTED_MODULE_3__["jwt"].AccessToken(twilioAccountSid, twilioApiKey, twilioApiSecret, { identity: req.identity });
-        token.addGrant(chatGrant);
-        return token.toJwt();
-    }
-    addBotToChannel(req) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            const twilioAccountSid = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_ACCOUNT_SID : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioAccount;
-            const twilioAuthToken = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_AUTH_TOKEN : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioAuthToken;
-            const serviceSid = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_CHAT_SERVICE_SID : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioChatSid;
-            const url = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production ? process.env.TWILIO_CHAT_AUTOPILOT_URL : _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].twilioChatAutopilotUrl;
-            const client = new twilio__WEBPACK_IMPORTED_MODULE_3__["Twilio"](twilioAccountSid, twilioAuthToken);
-            const channel = yield client.chat.services(serviceSid)
-                .channels(req.channelSid);
-            const list = yield channel
-                .webhooks.list();
-            const hasWebhookAlready = list.some((i) => i.url === url);
-            client.chat.services(serviceSid)
-                .channels(req.channelSid)
-                .webhooks
-                .create({
-                configuration: {
-                    url: url,
-                    method: 'POST',
-                    filters: ['onMessageSent'],
-                },
-                type: 'webhook'
-            });
-        });
-    }
-};
-TwilioService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_nestjs_common__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
-], TwilioService);
-
-
-
-/***/ }),
-
-/***/ "./apps/api/src/environments/enviornment.dev.ts":
-/*!******************************************************!*\
-  !*** ./apps/api/src/environments/enviornment.dev.ts ***!
-  \******************************************************/
-/*! exports provided: environment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-const environment = {
-    production: false,
-    twilioAccount: 'AC0fc66dbfb5ee5ba9712500f82845c0f7',
-    twilioAuthToken: '6bd5e3407d81cd1771e5da6453d266d8',
-    twilioChatSid: 'IS83bcbe672cbe47f3baae43897155f782',
-    twilioChatApiKey: 'SKaf6201047e5c624370653b99fbbe793e',
-    twilioChatApiSecret: 'wEqVs8o2YUi6CNdhoW7wTNqJNp0euA30',
-    twilioChatAutopilotUrl: 'https://channels.autopilot.twilio.com/v1/AC0fc66dbfb5ee5ba9712500f82845c0f7/UAc78b3ffb4ed74a094563c315b43e5c68/twilio-chat',
-};
-
-
-/***/ }),
-
-/***/ "./apps/api/src/environments/environment.ts":
-/*!**************************************************!*\
-  !*** ./apps/api/src/environments/environment.ts ***!
-  \**************************************************/
-/*! exports provided: environment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-/* harmony import */ var _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./enviornment.dev */ "./apps/api/src/environments/enviornment.dev.ts");
-
-const environment = {
-    production: false,
-    twilioAccount: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioAccount : 'AC##',
-    twilioAuthToken: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioAuthToken : 'auth_token',
-    twilioChatSid: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatSid : 'IS##',
-    twilioChatApiKey: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatApiKey : 'SK##',
-    twilioChatApiSecret: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatApiSecret : '##',
-    twilioChatAutopilotUrl: _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"] ? _enviornment_dev__WEBPACK_IMPORTED_MODULE_0__["environment"].twilioChatAutopilotUrl : 'https://channels.autopilot.twilio.com/v1/##',
-};
-
-
-/***/ }),
-
-/***/ "./apps/api/src/main.ts":
-/*!******************************!*\
-  !*** ./apps/api/src/main.ts ***!
-  \******************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "tslib");
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tslib__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _nestjs_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @nestjs/core */ "@nestjs/core");
+/* harmony import */ var _nestjs_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41);
 /* harmony import */ var _nestjs_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_nestjs_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @nestjs/swagger */ "@nestjs/swagger");
+/* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 /* harmony import */ var _nestjs_swagger__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_nestjs_swagger__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./apps/api/src/app/app.module.ts");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(42);
 /**
  * This is not a production server yet!
  * This is only a minimal backend to get started.
@@ -1931,7 +1924,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function bootstrap() {
     return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-        const app = yield _nestjs_core__WEBPACK_IMPORTED_MODULE_1__["NestFactory"].create(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"]);
+        const app = yield _nestjs_core__WEBPACK_IMPORTED_MODULE_1__["NestFactory"].create(_app_app_module__WEBPACK_IMPORTED_MODULE_3__[/* AppModule */ "a"]);
         const globalPrefix = 'api';
         app.enableCors();
         app.setGlobalPrefix(globalPrefix);
@@ -1951,328 +1944,6 @@ function bootstrap() {
 bootstrap();
 
 
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/index.ts":
-/*!******************************************!*\
-  !*** ./libs/api-interfaces/src/index.ts ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/api-interfaces */ "./libs/api-interfaces/src/lib/api-interfaces.ts");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _lib_api_interfaces__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-
-
-
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/lib/api-interfaces.ts":
-/*!*******************************************************!*\
-  !*** ./libs/api-interfaces/src/lib/api-interfaces.ts ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _resource_types_enum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resource-types.enum */ "./libs/api-interfaces/src/lib/resource-types.enum.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CooperResourceType", function() { return _resource_types_enum__WEBPACK_IMPORTED_MODULE_0__["CooperResourceType"]; });
-
-/* harmony import */ var _dto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dto */ "./libs/api-interfaces/src/lib/dto/index.ts");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _dto__WEBPACK_IMPORTED_MODULE_1__) if(["CooperResourceType","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _dto__WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _request_dto__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./request-dto */ "./libs/api-interfaces/src/lib/request-dto/index.ts");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _request_dto__WEBPACK_IMPORTED_MODULE_2__) if(["CooperResourceType","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _request_dto__WEBPACK_IMPORTED_MODULE_2__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-
-
-
-
-
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/lib/dto/address.model.ts":
-/*!**********************************************************!*\
-  !*** ./libs/api-interfaces/src/lib/dto/address.model.ts ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/lib/dto/index.ts":
-/*!**************************************************!*\
-  !*** ./libs/api-interfaces/src/lib/dto/index.ts ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _payload_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./payload.model */ "./libs/api-interfaces/src/lib/dto/payload.model.ts");
-/* harmony import */ var _payload_model__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_payload_model__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _payload_model__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _payload_model__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _pantry_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pantry.model */ "./libs/api-interfaces/src/lib/dto/pantry.model.ts");
-/* harmony import */ var _pantry_model__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_pantry_model__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _pantry_model__WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _pantry_model__WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _user_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./user.model */ "./libs/api-interfaces/src/lib/dto/user.model.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserRole", function() { return _user_model__WEBPACK_IMPORTED_MODULE_2__["UserRole"]; });
-
-/* harmony import */ var _survey_score_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./survey-score.model */ "./libs/api-interfaces/src/lib/dto/survey-score.model.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return _survey_score_model__WEBPACK_IMPORTED_MODULE_3__["SurveyTypeDTO"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return _survey_score_model__WEBPACK_IMPORTED_MODULE_3__["SurveyResultLevel"]; });
-
-/* harmony import */ var _address_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./address.model */ "./libs/api-interfaces/src/lib/dto/address.model.ts");
-/* harmony import */ var _address_model__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_address_model__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _address_model__WEBPACK_IMPORTED_MODULE_4__) if(["UserRole","SurveyTypeDTO","SurveyResultLevel","default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _address_model__WEBPACK_IMPORTED_MODULE_4__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-
-
-
-
-
-
-
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/lib/dto/pantry.model.ts":
-/*!*********************************************************!*\
-  !*** ./libs/api-interfaces/src/lib/dto/pantry.model.ts ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/lib/dto/payload.model.ts":
-/*!**********************************************************!*\
-  !*** ./libs/api-interfaces/src/lib/dto/payload.model.ts ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/lib/dto/survey-score.model.ts":
-/*!***************************************************************!*\
-  !*** ./libs/api-interfaces/src/lib/dto/survey-score.model.ts ***!
-  \***************************************************************/
-/*! exports provided: SurveyTypeDTO, SurveyResultLevel */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyTypeDTO", function() { return SurveyTypeDTO; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SurveyResultLevel", function() { return SurveyResultLevel; });
-var SurveyTypeDTO;
-(function (SurveyTypeDTO) {
-    SurveyTypeDTO[SurveyTypeDTO["ShortFoodSecurity"] = 0] = "ShortFoodSecurity";
-})(SurveyTypeDTO || (SurveyTypeDTO = {}));
-var SurveyResultLevel;
-(function (SurveyResultLevel) {
-    SurveyResultLevel[SurveyResultLevel["Info"] = 0] = "Info";
-    SurveyResultLevel[SurveyResultLevel["Warning"] = 1] = "Warning";
-    SurveyResultLevel[SurveyResultLevel["Critical"] = 2] = "Critical";
-})(SurveyResultLevel || (SurveyResultLevel = {}));
-
-
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/lib/dto/user.model.ts":
-/*!*******************************************************!*\
-  !*** ./libs/api-interfaces/src/lib/dto/user.model.ts ***!
-  \*******************************************************/
-/*! exports provided: UserRole */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRole", function() { return UserRole; });
-var UserRole;
-(function (UserRole) {
-    UserRole["PantryAdmin"] = "PANTRY ADMIN";
-    UserRole["Customer"] = "CUSTOMER";
-})(UserRole || (UserRole = {}));
-
-
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/lib/request-dto/add-bot-dto.interface.ts":
-/*!**************************************************************************!*\
-  !*** ./libs/api-interfaces/src/lib/request-dto/add-bot-dto.interface.ts ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/lib/request-dto/index.ts":
-/*!**********************************************************!*\
-  !*** ./libs/api-interfaces/src/lib/request-dto/index.ts ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add-bot-dto.interface */ "./libs/api-interfaces/src/lib/request-dto/add-bot-dto.interface.ts");
-/* harmony import */ var _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _add_bot_dto_interface__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-
-
-
-/***/ }),
-
-/***/ "./libs/api-interfaces/src/lib/resource-types.enum.ts":
-/*!************************************************************!*\
-  !*** ./libs/api-interfaces/src/lib/resource-types.enum.ts ***!
-  \************************************************************/
-/*! exports provided: CooperResourceType */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CooperResourceType", function() { return CooperResourceType; });
-var CooperResourceType;
-(function (CooperResourceType) {
-    CooperResourceType["Pantry"] = "pantry";
-    CooperResourceType["SurveyResponse"] = "survey-response";
-    CooperResourceType["User"] = "user";
-})(CooperResourceType || (CooperResourceType = {}));
-
-
-/***/ }),
-
-/***/ 0:
-/*!************************************!*\
-  !*** multi ./apps/api/src/main.ts ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! D:\Gabrielle2\Development\Web\cooper-pantry\cooper\apps\api\src\main.ts */"./apps/api/src/main.ts");
-
-
-/***/ }),
-
-/***/ "@nestjs/common":
-/*!*********************************!*\
-  !*** external "@nestjs/common" ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@nestjs/common");
-
-/***/ }),
-
-/***/ "@nestjs/core":
-/*!*******************************!*\
-  !*** external "@nestjs/core" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@nestjs/core");
-
-/***/ }),
-
-/***/ "@nestjs/serve-static":
-/*!***************************************!*\
-  !*** external "@nestjs/serve-static" ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@nestjs/serve-static");
-
-/***/ }),
-
-/***/ "@nestjs/swagger":
-/*!**********************************!*\
-  !*** external "@nestjs/swagger" ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@nestjs/swagger");
-
-/***/ }),
-
-/***/ "@nestjs/typeorm":
-/*!**********************************!*\
-  !*** external "@nestjs/typeorm" ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@nestjs/typeorm");
-
-/***/ }),
-
-/***/ "path":
-/*!***********************!*\
-  !*** external "path" ***!
-  \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("path");
-
-/***/ }),
-
-/***/ "pg-connection-string":
-/*!***************************************!*\
-  !*** external "pg-connection-string" ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("pg-connection-string");
-
-/***/ }),
-
-/***/ "tslib":
-/*!************************!*\
-  !*** external "tslib" ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("tslib");
-
-/***/ }),
-
-/***/ "twilio":
-/*!*************************!*\
-  !*** external "twilio" ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("twilio");
-
-/***/ }),
-
-/***/ "typeorm":
-/*!**************************!*\
-  !*** external "typeorm" ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("typeorm");
-
 /***/ })
-
-/******/ })));
+/******/ ])));
 //# sourceMappingURL=main.js.map

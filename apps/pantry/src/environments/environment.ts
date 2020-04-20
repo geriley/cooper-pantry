@@ -10,5 +10,6 @@ export const environment = {
     storageBucket: dev.firebase.storageBucket ? dev.firebase.storageBucket : "<storage>.appspot.com",
     messagingSenderId: dev.firebase.messagingSenderId ? dev.firebase.messagingSenderId : "id",
     appId: dev.firebase.appId ? dev.firebase.appId : "app_id"
-  }
+  },
+  apiUrl: 'http://localhost:3333/api',
 };
