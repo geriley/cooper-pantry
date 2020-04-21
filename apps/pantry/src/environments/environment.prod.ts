@@ -1,13 +1,13 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    databaseURL: process.env.FIREBASE_DATABASE_URL,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID
+    apiKey: "AIzaSyCJaksF2FL11xWFBY5M5McGyh8V9lObxqc",
+    authDomain: "cooper-pantry.firebaseapp.com",
+    databaseURL: "https://cooper-pantry.firebaseio.com",
+    projectId: "cooper-pantry",
+    storageBucket: "cooper-pantry.appspot.com",
+    messagingSenderId: "491564530656",
+    appId: "1:491564530656:web:a7795e82d378c3f9bc8985"
   },
   apiUrl: 'https://cooper-pantry.herokuapp.com/api',
 };
