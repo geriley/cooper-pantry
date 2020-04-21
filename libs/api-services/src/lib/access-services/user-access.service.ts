@@ -32,8 +32,8 @@ export class UserAccessService {
                     const foodSecuritySurveys = d?.relationships ? d.relationships[CooperResourceType.SurveyResponse] : [];
                     const mostRecentFoodSecuritySurvey = Array.isArray(foodSecuritySurveys) ? foodSecuritySurveys[0] : foodSecuritySurveys;
                     const surveyId = mostRecentFoodSecuritySurvey?.id;
-                    const survey: IPayloadData<ISurveyScoreDTO> = payload?.included?.find((i) => i.id === surveyId);                    
-                    return { 
+                    const survey: IPayloadData<ISurveyScoreDTO> = payload?.included?.find((i) => i.id === surveyId);
+                    return {
                         userId: d.id,
                         name: {
                             first: d?.attributes?.firstName,
@@ -47,7 +47,7 @@ export class UserAccessService {
     }
 
     private convertSurveyResultLevel(surveyLevel: SurveyResultLevel): FoodSecurityLevel {
-        switch(surveyLevel) {
+        switch (surveyLevel) {
             case SurveyResultLevel.Info:
                 return FoodSecurityLevel.High;
             case SurveyResultLevel.Warning:

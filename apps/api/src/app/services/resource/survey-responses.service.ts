@@ -10,7 +10,7 @@ export class SurveyResponseResourceService {
     constructor(private repo: SurveyResponseRepoService, private helper: SurveyScoreService) { }
     public addBotSurveyResponse(response: string) {
         const response2: ITwilioAutopilotResponse = JSON.parse(response);
-        const entity = { id: undefined, userId: parseInt(response2.twilio.chat.From, 10), response: response };
+        const entity = { id: undefined, userId: response2.twilio.chat.From, response: response };
         return this.repo.add(entity);
     }
 

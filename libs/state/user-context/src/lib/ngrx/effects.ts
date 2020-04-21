@@ -21,7 +21,7 @@ export class UserContextEffects {
             switchMap((action: { id: string }) => {
                 return this.user.getById(action.id).pipe(
                     map((dto) => setUserContext({ user: { ...this.mapFromDTO(dto), id: action.id } })),
-                    tap(() => this.snack.open('Logged in.'))
+                    tap(() => this.snack.open('Logged in.', undefined, { duration: 2000 }))
                 );
             }),
         );

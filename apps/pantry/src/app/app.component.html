@@ -43,14 +43,9 @@
     </ng-container>
   </mat-drawer>
   <mat-drawer-content>
-    <ng-container *ngIf="!(isNbRoute | async)">
+   <ng-container >
       <ng-container *ngTemplateOutlet="normal"></ng-container>
     </ng-container>
-
-    <ng-container *ngIf="(isNbRoute | async)">
-      <ng-container *ngTemplateOutlet="nb"></ng-container>
-    </ng-container>
-
   </mat-drawer-content>
 </mat-drawer-container>
 
@@ -62,13 +57,3 @@
     </router-outlet>
   </div>
 </ng-template>
-
-<!-- <ng-template #nb>
-  <nb-layout>
-    <nb-layout-column>
-      <div style="height: 100%; width: 100%;">
-        <router-outlet></router-outlet>
-      </div>
-    </nb-layout-column>
-  </nb-layout>
-</ng-template> -->

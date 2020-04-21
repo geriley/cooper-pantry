@@ -33,9 +33,6 @@ import { EffectsModule } from '@ngrx/effects';
     MatSidenavModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
-    //NbLayoutModule,
-    //NbEvaIconsModule,
-    //NbThemeModule.forRoot({ name: 'default' }),
     StateUserContextModule
   ],
   providers: [

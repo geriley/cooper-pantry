@@ -1,10 +1,10 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { CommunicationsDataService, UserAccessService } from '@cooper/api-services';
-import { Client } from 'twilio-chat';
-import { CooperResourceType } from '@cooper/api-interfaces';
-import { Message } from 'twilio-chat/lib/message';
 import { Subject } from 'rxjs';
-import { scan, takeUntil, filter } from 'rxjs/operators';
+import { scan, takeUntil, skipUntil, skipWhile, first, map } from 'rxjs/operators';
+import { Client } from 'twilio-chat';
+import { Message } from 'twilio-chat/lib/message';
+import { UserContextFacade } from '@cooper/state/user-context';
 
 interface IChatMessage {
     text: string,
@@ -18,8 +18,11 @@ interface IChatMessage {
 
 @Injectable()
 export class TwilioChatBotService implements OnDestroy {
-    constructor(private httpService: CommunicationsDataService, private user: UserAccessService) { }
-    private currentId = '4';
+    constructor(
+        private httpService: CommunicationsDataService, 
+        private userFacade: UserContextFacade
+    ) { }
+
     private send = new Subject<string>();
     private newMsg = new Subject<IChatMessage>();
     private destroyed = new Subject<void>();
@@ -28,12 +31,17 @@ export class TwilioChatBotService implements OnDestroy {
     );
 
     public async connect() {
-        const user = await this.user.getById(this.currentId).toPromise();
-        const token = await this.httpService.getChatToken({ identity: this.currentId }).toPromise();
+        const userId = await this.userFacade.user.pipe(
+            skipWhile((u) => u.id === undefined),
+            map((u) => u.id),
+            first()
+        ).toPromise();
+
+        const token = await this.httpService.getChatToken({ identity: userId }).toPromise();
         const client = await Client.create(token);
         const channels = (await client.getSubscribedChannels())
         for(const c of channels.items) {
-            if (c.createdBy === user.id) {
+            if (c.createdBy === userId) {
                 await c.delete();
             } else {
                 await c.leave();
@@ -43,7 +51,7 @@ export class TwilioChatBotService implements OnDestroy {
         const channel = await client.createChannel();
         await channel.join();
         channel.on('messageAdded', (msg: Message) => {
-            const isCurrentUser = msg.author === user.id;
+            const isCurrentUser = msg.author === userId;
             this.newMsg.next({
                 text: msg.body,
                 date: msg.dateUpdated,

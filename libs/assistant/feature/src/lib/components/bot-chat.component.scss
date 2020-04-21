@@ -1,0 +1,10 @@
+nb-chat {
+    height: 50vh;
+    width: 40vw;
+}
+@media screen and (max-width: 900px) {
+    nb-chat {
+        height: 90vh;
+        width: 100vw;
+    }
+} 

@@ -10,7 +10,7 @@ interface TwilioChatTokenRequest {
 export class TwilioService {
     public generateChatAccessToken(req: TwilioChatTokenRequest) {
         const twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
-        const twilioApiKey = process.env.TWILIO_API_KEY
+        const twilioApiKey = process.env.TWILIO_API_KEY;
         const twilioApiSecret = process.env.TWILIO_CHAT_API_SECRET;
 
         const serviceSid = process.env.TWILIO_CHAT_SERVICE_SID;

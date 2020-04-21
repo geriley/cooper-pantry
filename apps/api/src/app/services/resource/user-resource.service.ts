@@ -29,16 +29,17 @@ export class UserResourceService {
         const users = await this.userRepo.findAll();
         const userIds = users.map((u) => u.id);
         const scoreRelationships = await this.scoresService.getScores({ userIds });
-        const score: { [userId: number]: number[] } = (scoreRelationships.data as IPayloadData<ISurveyScoreDTO>[]).map((s) => ({
+        const score: { [userId: string]: number[] } = (scoreRelationships.data as IPayloadData<ISurveyScoreDTO>[]).map((s) => ({
             id: s.id,
             userId: (s.relationships['user'] as IPayloadDataRelationship).id
         })).reduce((acc, next) => {
-            const userId = parseInt(next.userId, 10);
+            const userId = next.userId;
             const curr = acc[userId];
             return (curr)
                 ? { ...acc, [userId]: [...curr, next.id] }
                 : { ...acc, [userId]: [next.id] }
         }, {});
+
         const userData = this.helper.mapToDTOListPayload<User, IUserDTO>(
             this.resourceType,
             { entities: users, attributeMapper: (e) => this.mapEntityToResource(e) }

@@ -7,7 +7,7 @@ export class SurveyResponse {
     public id: number;
 
     @Column({ nullable: true })
-    public userId?: number;
+    public userId?: string;
 
     @ManyToOne(type => User)
     @JoinColumn({ name: 'userId', referencedColumnName: 'id'})

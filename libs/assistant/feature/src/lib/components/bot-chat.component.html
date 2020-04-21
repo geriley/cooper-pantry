@@ -1,7 +1,13 @@
-<nb-chat title="Cooper">
-    <nb-chat-message *ngFor="let msg of messages | async" [message]="msg.text" [reply]="msg.reply"
-        [sender]="msg.user.name" [date]="msg.date" [avatar]="msg.user.avatar">
-    </nb-chat-message>
-    <nb-chat-form (send)="sendMessage($event)">
-    </nb-chat-form>
-</nb-chat>
+<nb-layout>
+    <nb-layout-column>
+      <div style="height: 100%; width: 100%;">
+        <nb-chat title="Cooper">
+            <nb-chat-message *ngFor="let msg of messages | async" [message]="msg.text" [reply]="msg.reply"
+                [sender]="msg.user.name" [date]="msg.date" [avatar]="msg.user.avatar">
+            </nb-chat-message>
+            <nb-chat-form (send)="sendMessage($event)">
+            </nb-chat-form>
+        </nb-chat>
+      </div>
+    </nb-layout-column>
+  </nb-layout>

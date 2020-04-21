@@ -6,6 +6,7 @@ import { TwilioChatBotService } from '../services/twilio-chat-bot.service';
 	selector: 'cooper-bot-chat',
 	providers: [TwilioChatBotService],
 	templateUrl: './bot-chat.component.html',
+	styleUrls: ['./bot-chat.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BotChatComponent {
