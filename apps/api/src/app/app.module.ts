@@ -2,11 +2,10 @@ import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
-import { AppController } from './app.controller';
 import * as PostgressConnectionStringParser from "pg-connection-string";
-import { entities } from './entities';
+import { AppController } from './app.controller';
 import { controllerModules } from './controllers/modules';
-import { ConfigModule } from '@nestjs/config';
+import { entities } from './entities';
 
 const databaseUrl: string = process.env.DATABASE_URL;
 const connectionOptions = databaseUrl ? PostgressConnectionStringParser.parse(databaseUrl) : undefined;

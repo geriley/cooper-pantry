@@ -39,9 +39,11 @@ import { EffectsModule } from '@ngrx/effects';
     StateUserContextModule
   ],
   providers: [
-    { provide: baseApiUrlToken, useValue: 'http://localhost:3333/api' },
+    { provide: baseApiUrlToken, useValue: environment.apiUrl },
     { provide: firebaseConfig, useValue: environment.firebase },
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() { }
+}

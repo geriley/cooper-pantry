@@ -57,6 +57,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/pantry/src/environments/environment.ts",
+                  "with": "apps/pantry/src/environments/environment.dev.ts"
+                }
+              ]
             }
           }
         },
@@ -69,6 +77,9 @@
           "configurations": {
             "production": {
               "browserTarget": "pantry:build:production"
+            },
+            "dev": {
+              "browserTarget": "pantry:build:dev"
             }
           }
         },
