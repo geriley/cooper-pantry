@@ -8,10 +8,20 @@ import { UserRepoService } from '../../services/repository/user-repo.service';
 import { SurveyResponseResourceService } from '../../services/resource';
 import { UserResourceService } from '../../services/resource/user-resource.service';
 import { UserController } from '../user.controller';
+import { PantryRepoService } from '../../services/repository/pantry-repo.service';
+import { PantryModule } from '../../entities/modules/pantry.module';
 
 @Module({
-    imports: [UserModule, SurveyResponseModule],
-    providers: [UserResourceService, UserRepoService, ResourceServiceHelper, SurveyResponseResourceService, SurveyResponseRepoService, SurveyScoreService],
+    imports: [UserModule, SurveyResponseModule, PantryModule],
+    providers: [
+        UserResourceService, 
+        UserRepoService, 
+        ResourceServiceHelper, 
+        SurveyResponseResourceService, 
+        SurveyResponseRepoService, 
+        SurveyScoreService,
+        PantryRepoService
+    ],
     controllers: [UserController]
 })
 export class UserHttpModule { }

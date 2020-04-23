@@ -11,11 +11,11 @@ export class UserRepoService {
     ) { }
 
     public async getById(id: string): Promise<User> {
-        return this.userRepo.findOne(id, { relations: ['residentialAddress'] });
+        return this.userRepo.findOne(id, { relations: ['residentialAddress', 'staffedPantry'] });
     }
 
     public async findAll(): Promise<User[]> {
-        return this.userRepo.find({ relations: ['residentialAddress'] });
+        return this.userRepo.find({ relations: ['residentialAddress', 'staffedPantry'] });
     }
 
     public async add(pantry: User) {

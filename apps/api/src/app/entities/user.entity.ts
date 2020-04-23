@@ -1,5 +1,6 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn } from 'typeorm';
 import { Address } from './address.entity';
+import { Pantry } from './pantry.entity';
 
 @Entity()
 export class User {
@@ -22,4 +23,8 @@ export class User {
 
     @Column()
     public userRole: string;
+
+    @OneToOne(type => Pantry, { nullable: true })
+    @JoinColumn()
+    public staffedPantry?: Pantry;
 }

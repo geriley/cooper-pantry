@@ -1,4 +1,4 @@
-import { IPayload, ISurveyScoreDTO, IUserDTO } from '@cooper/api-interfaces';
+import { IPayload, ISurveyScoreDTO, IUserDTO, IPayloadDataRelationship } from '@cooper/api-interfaces';
 import { Body, Controller, Get, NotFoundException, Param, Post, Put, Query } from '@nestjs/common';
 import { ApiBody, ApiParam, ApiQuery } from '@nestjs/swagger';
 import { UserResourceService } from '../services/resource';
@@ -86,9 +86,20 @@ export class UserController {
         }
     }
 
-    @Get('survey-scores')
-    public async getUserSurveys(): Promise<IPayload<ISurveyScoreDTO>> {
-        throw Error();
+    @Post(':id/relationships/employer')
+    @ApiParam({ name: 'id' })
+    @ApiBody({})
+    public async postUserRelationship(@Param() params: { id: string }, @Body() relationship: IPayload<IPayloadDataRelationship>): Promise<IPayload<IUserDTO>> {
+        try {
+            return this.service.addPantryRelationship(params.id, relationship);
+        } catch (err) {
+            return {
+                errors: [{
+                    status: '500',
+                    title: 'Failed to update user pantry relationship.'
+                }]
+            };
+        }
     }
 
 }

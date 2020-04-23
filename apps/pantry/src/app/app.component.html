@@ -14,7 +14,7 @@
   <mat-drawer #drawer mode="side">
     <ng-container *ngIf="(loggedIn | async)">
       <mat-nav-list>
-        <mat-list-item (click)="drawer.close()">
+        <mat-list-item routerLink="/admin/manage" (click)="drawer.close()">
           <mat-icon mat-list-icon>storefront</mat-icon>
           Pantry Management
         </mat-list-item>

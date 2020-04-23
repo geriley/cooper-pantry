@@ -5,6 +5,7 @@ import { ResourceServiceHelper } from '../../common';
 import { User } from '../../entities';
 import { IUserSearchCriteria } from '../interfaces';
 import { SurveyResponseResourceService } from './survey-responses.service';
+import { PantryRepoService } from '../repository/pantry-repo.service';
 
 
 @Injectable()
@@ -12,6 +13,7 @@ export class UserResourceService {
     constructor(
         private userRepo: UserRepoService,
         private scoresService: SurveyResponseResourceService,
+        private pantryRepo: PantryRepoService,
         private helper: ResourceServiceHelper
     ) { }
 
@@ -19,10 +21,22 @@ export class UserResourceService {
 
     public async getById(id: string): Promise<IPayload<IUserDTO>> {
         const user = await this.userRepo.getById(id);
-        return this.helper.mapToDTOPayload<User, IUserDTO>(
+        const dto = this.helper.mapToDTOPayload<User, IUserDTO>(
             this.resourceType,
             { entity: user, attributeMapper: (e) => this.mapEntityToResource(e) }
         );
+        console.log(dto);
+        return {
+            data: {
+                ...dto.data as any,
+                relationships: (user.staffedPantry) ? {
+                    'employer': {
+                        id: user.staffedPantry?.id.toString(),
+                        type: CooperResourceType.Pantry
+                    }
+                } : undefined,
+            }
+        }
     }
 
     public async get(criteria: IUserSearchCriteria): Promise<IPayload<IUserDTO>> {
@@ -79,6 +93,15 @@ export class UserResourceService {
             this.resourceType,
             { entity: addedEntities[0], attributeMapper: (e) => this.mapEntityToResource(e) }
         );
+    }
+
+    public async addPantryRelationship(userId: string, request: IPayload<IPayloadDataRelationship>) {
+        const user = await this.userRepo.getById(userId);
+        const pantryId = parseInt((request.data as IPayloadDataRelationship).id, 10);
+        const pantry = await this.pantryRepo.getById(pantryId);
+        user.staffedPantry = pantry;
+        const updatedUser = await this.userRepo.add(user);
+        return this.getById(updatedUser.id);
     }
 
 

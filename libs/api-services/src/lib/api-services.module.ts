@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommunicationsDataService } from './http-services';
 import { UserAccessService } from './access-services';
 import { UserDataService } from './http-services/user-data.service';
+import { PantryDataService } from './http-services/pantry-data.service';
 
 const accessServices = [
     UserAccessService
@@ -14,6 +15,7 @@ const accessServices = [
     providers: [
         CommunicationsDataService,
         UserDataService,
+        PantryDataService,
         ...accessServices
     ]
 })

@@ -19,9 +19,13 @@ export class UserDataService {
     }
 
     public updateUser(payload: IPayload<IUserDTO>): Observable<IPayload<IUserDTO>> {
-        console.log(payload);
         const id = payload.data[0].id;
         const url = `${this.url}/users/${id}`;
         return this.http.put<IPayload<IUserDTO>>(url, payload);
+    }
+
+    public addPantryRelationship(userId: string, payload) {
+        const url = `${this.url}/users/${userId}/relationships/employer`;
+        return this.http.post(url, payload);
     }
 }

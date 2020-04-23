@@ -1,0 +1,8 @@
+<form class="centered-view" [formGroup]="pantry">
+    <h1>Pantry Information</h1>
+    <mat-form-field>
+        <mat-label>Pantry Name</mat-label>
+        <input matInput placeholder="Pantry" formControlName="name" required>
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="submit()">Save</button>
+</form>

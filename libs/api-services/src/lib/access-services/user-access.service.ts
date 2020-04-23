@@ -11,6 +11,9 @@ import { FoodSecurityLevel, ICustomerDomain } from '../interfaces/customer.inter
 export class UserAccessService {
     constructor(private http: UserDataService) { }
 
+    public updatePantryRelationship(id: string, pantryId: string) {
+        return this.http.addPantryRelationship(id, { data: { type: 'employer', id: pantryId }});
+    }
     public getById(id: string): Observable<IPayloadData<IUserDTO>> {
         return this.http.getUser(id).pipe(
             map((payload) => payload.data as IPayloadData<IUserDTO>)

@@ -17,4 +17,8 @@ export class PantryRepoService {
     public async add(pantry: Pantry) {
         return this.pantryRepo.save(pantry);
     }
+
+    public async getById(id: number): Promise<Pantry> {
+        return this.pantryRepo.findOne(id);
+    }
 }
