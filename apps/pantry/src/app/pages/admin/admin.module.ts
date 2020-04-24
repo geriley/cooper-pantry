@@ -10,6 +10,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ApiServicesModule } from '@cooper/api-services';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSelectModule } from '@angular/material/select';
+import { CommunicationsComponent } from './communications/communications.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 @NgModule({
@@ -23,11 +26,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatButtonModule,
         MatInputModule,
         ApiServicesModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatSelectModule,
+        MatStepperModule
     ],
     declarations: [
         OutreachComponent,
-        PantryInfoComponent
+        PantryInfoComponent,
+        CommunicationsComponent
     ],
 })
 export class AdminModule { }

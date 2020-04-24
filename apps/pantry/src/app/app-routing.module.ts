@@ -8,6 +8,7 @@ const appRoutes: Routes = [
     { path: 'customer', loadChildren: () => import('./pages/customer/customer.module').then((m) => m.CustomerModule) },
     { path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then((m) => m.AdminModule) },
     { path: 'account', loadChildren: () => import('./pages/account-management/account-management.module').then((m) => m.AccountManagementModule) },
+    { path: 'pantry', loadChildren: () => import('./pages/pantry/pantry.module').then((m) => m.PantryModule) },
     { path: 'login', loadChildren: () => import('./pages/sign-in/sign-in.module').then((m) => m.SignInModule) },
     { path: '**', component: UnfoundPageComponent }
 ];
