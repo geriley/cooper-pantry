@@ -12,4 +12,5 @@ export interface ICustomerDomain {
         last: string;
     }
     foodSecurityLevel: FoodSecurityLevel;
+    mobilePhoneNumber: string;
 }

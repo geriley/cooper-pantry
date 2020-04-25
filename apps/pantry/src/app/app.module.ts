@@ -18,6 +18,7 @@ import { MatListModule } from '@angular/material/list';
 import { StateUserContextModule } from '@cooper/state/user-context';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { EffectsModule } from '@ngrx/effects';
     MatListModule,
     MatButtonModule,
     MatIconModule,
+    MatSnackBarModule,
     MatSidenavModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),

@@ -3,9 +3,10 @@ import { UserAccessService } from '@cooper/api-services';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { UserContextActionType, setUserContext } from './actions';
 import { IUserContext } from './state';
-import { IUserDTO, IPayloadData, UserRole, CooperResourceType } from '@cooper/api-interfaces';
+import { IUserDTO, IPayloadData, UserRole, CooperResourceType, IPayloadDataRelationship } from '@cooper/api-interfaces';
 import { switchMap, map, tap } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Injectable()
 export class UserContextEffects {
@@ -63,7 +64,10 @@ export class UserContextEffects {
             },
             address: dto?.attributes?.address,
             mobilePhone: dto?.attributes?.mobilePhone,
-            role: dto?.attributes?.userRole
+            role: dto?.attributes?.userRole,
+            associatedPantryId: dto?.relationships ?
+                (dto?.relationships['employer'] as IPayloadDataRelationship)?.id
+                : undefined
         }
     }
 }

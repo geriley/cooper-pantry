@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IPayload, IPayloadData, IUserDTO } from '@cooper/api-interfaces';
+import { IPayload, IPayloadData, IUserDTO, UserRole } from '@cooper/api-interfaces';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ISurveyScoreDTO, SurveyResultLevel } from '../../../../api-interfaces/src/lib/dto/survey-score.model';
@@ -21,7 +21,6 @@ export class UserAccessService {
     }
 
     public updateUser(data: IPayloadData<IUserDTO>): Observable<IPayload<IUserDTO>> {
-        console.log(data);
         return this.http.updateUser({
             data: [data]
         });
@@ -31,7 +30,9 @@ export class UserAccessService {
         return this.http.getUserList().pipe(
             map((payload) => {
                 const data = payload.data as IPayloadData<IUserDTO>[];
-                return data.map((d) => {
+                return data
+                    .filter((d) => d?.attributes?.userRole === UserRole.Customer)
+                    .map((d) => {
                     const foodSecuritySurveys = d?.relationships ? d.relationships[CooperResourceType.SurveyResponse] : [];
                     const mostRecentFoodSecuritySurvey = Array.isArray(foodSecuritySurveys) ? foodSecuritySurveys[0] : foodSecuritySurveys;
                     const surveyId = mostRecentFoodSecuritySurvey?.id;
@@ -42,6 +43,7 @@ export class UserAccessService {
                             first: d?.attributes?.firstName,
                             last: d?.attributes?.lastName
                         },
+                        mobilePhoneNumber: d?.attributes?.mobilePhone ? `+1${d.attributes.mobilePhone}` : undefined,
                         foodSecurityLevel: this.convertSurveyResultLevel(survey?.attributes?.surveyResultLevel),
                     };
                 });

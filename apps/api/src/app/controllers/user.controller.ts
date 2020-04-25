@@ -1,4 +1,4 @@
-import { IPayload, ISurveyScoreDTO, IUserDTO, IPayloadDataRelationship } from '@cooper/api-interfaces';
+import { IPayload, IPayloadDataRelationship, IUserDTO } from '@cooper/api-interfaces';
 import { Body, Controller, Get, NotFoundException, Param, Post, Put, Query } from '@nestjs/common';
 import { ApiBody, ApiParam, ApiQuery } from '@nestjs/swagger';
 import { UserResourceService } from '../services/resource';

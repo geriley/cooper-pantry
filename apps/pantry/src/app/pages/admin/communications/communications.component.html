@@ -7,16 +7,18 @@
                 <mat-card-subtitle>
                     <mat-form-field>
                         <mat-label>Food Security</mat-label>
-                        <mat-select>
-                            <mat-option>High</mat-option>
-                            <mat-option>Medium</mat-option>
-                            <mat-option>Low</mat-option>
+                        <mat-select [formControl]="securityLevel">
+                            <mat-option>All</mat-option>
+                            <mat-option [value]="level.High">High</mat-option>
+                            <mat-option [value]="level.Medium">Medium</mat-option>
+                            <mat-option [value]="level.Low">Low</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-                <cooper-food-security-grid [selectable]="true"></cooper-food-security-grid>
+                <cooper-food-security-grid [criteria]="criteria | async" (selectedUserIds)="selectRecipients($event)" [selectable]="true">
+                </cooper-food-security-grid>
             </mat-card-content>
             <mat-card-actions>
                 <button mat-button matStepperNext>Next</button>
@@ -25,17 +27,44 @@
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Compose Message</ng-template>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-        </div>
+
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Compose</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-form-field>
+                    <textarea matInput cdkTextareaAutosize [formControl]="message" #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="3" cdkAutosizeMaxRows="20" placeholder="SMS Message"></textarea>
+
+                    <mat-error *ngIf="message.hasError('required')">
+                        Message cannot be empty.
+                    </mat-error>
+                    <mat-error *ngIf="message.hasError('maxlength')">
+                        Message cannot be over 160 characters long.
+                    </mat-error>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </mat-card-actions>
+        </mat-card>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
+        <ng-template matStepLabel>Send</ng-template>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Confirm Submission</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                    <p>You are now done.</p>
+                    <p>Messages will be sent to selected users with valid mobile phone numbers.</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset(); submit()">Send</button>
+            </mat-card-actions>
+        </mat-card>
     </mat-step>
 </mat-horizontal-stepper>

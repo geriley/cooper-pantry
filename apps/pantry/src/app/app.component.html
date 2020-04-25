@@ -14,6 +14,10 @@
   <mat-drawer #drawer mode="side">
     <ng-container *ngIf="(loggedIn | async)">
       <mat-nav-list>
+        <mat-list-item [routerLink]="pantryLink | async" *ngIf="pantryLink | async" (click)="drawer.close()">
+          <mat-icon mat-list-icon>storefront</mat-icon>
+          Pantry Page
+        </mat-list-item>
         <mat-list-item routerLink="/admin/manage" (click)="drawer.close()">
           <mat-icon mat-list-icon>storefront</mat-icon>
           Pantry Management
@@ -29,6 +33,10 @@
         <mat-list-item routerLink="/account/contact-info" (click)="drawer.close()">
           <mat-icon mat-list-icon>settings</mat-icon>
           Settings
+        </mat-list-item>
+        <mat-list-item (click)="logout()">
+          <mat-icon mat-list-icon>exit_to_app</mat-icon>
+          Logout
         </mat-list-item>
       </mat-nav-list>
     </ng-container>

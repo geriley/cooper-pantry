@@ -9,4 +9,5 @@ export interface IUserContext {
     address?: IAddress;
     mobilePhone?: string;
     role: UserRole;
+    associatedPantryId?: string;
 }

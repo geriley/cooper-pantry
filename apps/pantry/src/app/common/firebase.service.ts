@@ -53,4 +53,8 @@ export class FirebaseService {
             })
             .catch(() => false);
     }
+
+    public logout() {
+        this.auth.signOut();
+    }
 }

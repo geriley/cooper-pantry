@@ -14,12 +14,12 @@ export class User {
     @Column({ nullable: true })
     public familyName: string;
 
-    @OneToOne(type => Address, { cascade: true })
+    @OneToOne(type => Address, { cascade: true, nullable: true })
     @JoinColumn()
-    public residentialAddress?: Address;  
+    public residentialAddress?: Address;
 
     @Column({ nullable: true })
-    public mobilePhone: string;    
+    public mobilePhone: string;
 
     @Column()
     public userRole: string;

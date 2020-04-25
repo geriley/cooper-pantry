@@ -77,11 +77,14 @@ export class UserResourceService {
 
     public async upsert(request: IPayload<IUserDTO>): Promise<IPayload<IUserDTO>> {
         const data = Array.isArray(request.data) ? request.data : [request.data];
+        console.log(data);
         const requestData = data.filter(d => d !== undefined).map((d) => this.mapPayloadToEntity(d));
         const addedEntities = await this.helper.addRequestedResources(requestData, (e) => {
             return this.userRepo.getById(e?.id).then((u) => {
                 const addressId = u?.residentialAddress?.id;
-                e.residentialAddress = { ...e.residentialAddress, id: addressId };
+                console.log(e);
+                e.residentialAddress = (e.residentialAddress) ? { ...e.residentialAddress, id: addressId } : undefined;
+                console.log(e);
                 return this.userRepo.add(e);
             });            
         });
@@ -111,14 +114,14 @@ export class UserResourceService {
             givenName: data.attributes.firstName,
             familyName: data.attributes.lastName,
             userRole: data.attributes.userRole,
-            residentialAddress: {
+            residentialAddress: (data?.attributes?.address) ? {
                 id: undefined,
                 zipcode: data?.attributes?.address?.zipcode,
                 address1: data?.attributes?.address?.address1,
                 address2: data?.attributes?.address?.address2,
                 city: data?.attributes?.address?.city,
                 state: data?.attributes?.address?.state,
-            },
+            } : undefined,
             mobilePhone: data?.attributes?.mobilePhone,
         };
     }

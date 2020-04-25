@@ -13,7 +13,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { CommunicationsComponent } from './communications/communications.component';
 import { MatStepperModule } from '@angular/material/stepper';
-
+import {TextFieldModule} from '@angular/cdk/text-field';
 
 @NgModule({
     imports: [
@@ -28,7 +28,9 @@ import { MatStepperModule } from '@angular/material/stepper';
         ApiServicesModule,
         MatSnackBarModule,
         MatSelectModule,
-        MatStepperModule
+        MatStepperModule,
+        TextFieldModule,
+        ApiServicesModule,
     ],
     declarations: [
         OutreachComponent,

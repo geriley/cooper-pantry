@@ -30,9 +30,7 @@ export class TwilioService {
         const serviceSid = process.env.TWILIO_CHAT_SERVICE_SID;
         const url = process.env.TWILIO_CHAT_AUTOPILOT_URL;
 
-        const client = new twilio.Twilio(twilioAccountSid, twilioAuthToken);
-        const channel = await client.chat.services(serviceSid)
-            .channels(req.channelSid);
+        const client = this.generateClient();
 
         client.chat.services(serviceSid)
             .channels(req.channelSid)
@@ -46,6 +44,25 @@ export class TwilioService {
                 },
                 type: 'webhook'
             });
+    }
 
+    public async sendSMS(msg: string, numbers: string[]) {
+        const client = this.generateClient();
+        const messages = numbers.filter((n) => n && n.length > 0)
+            .map((toNumber) => {
+                return client.messages
+                    .create({
+                        body: msg,
+                        from: process.env.TWILIO_FROM_PHONE,
+                        to: toNumber,
+                    });
+            });
+        await Promise.all(messages);
+    }
+
+    private generateClient() {
+        const twilioAccountSid = process.env.TWILIO_ACCOUNT_SID;
+        const twilioAuthToken = process.env.TWILIO_AUTH_TOKEN;
+        return new twilio.Twilio(twilioAccountSid, twilioAuthToken);
     }
 }

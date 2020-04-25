@@ -18,6 +18,14 @@
     flex: 1 1 auto;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
 mat-drawer {
     width: 15%;
 }
