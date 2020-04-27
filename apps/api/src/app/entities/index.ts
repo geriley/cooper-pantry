@@ -2,6 +2,7 @@ import { Pantry } from './pantry.entity';
 import { SurveyResponse } from './survey-response.entity'
 import { User } from './user.entity';
 import { Address } from './address.entity';
+import { InventoryListing } from './inventory-listing.entity';
 
 export * from './modules';
 
@@ -14,4 +15,5 @@ export const entities = [
     SurveyResponse,
     Address,
     User,
+    InventoryListing
 ];

@@ -43,6 +43,9 @@
     },
     "state-user-context": {
       "tags": []
+    },
+    "admin-inventory": {
+      "tags": []
     }
   }
 }

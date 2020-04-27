@@ -1,12 +1,16 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Query } from '@nestjs/common';
 import { PantryResourceService } from '../services/resource/pantry-resource.service';
-import { IPantryDTO, IPayload, IPayloadData } from '@cooper/api-interfaces';
+import { IPantryDTO, IPayload, IPayloadData, IInventoryListing } from '@cooper/api-interfaces';
 import { ApiBody } from '@nestjs/swagger';
+import { InventoryListingResourceService } from '../services/resource/inventory-listing-resource.service';
 
 
 @Controller('pantries')
 export class PantriesController {
-    constructor(private service: PantryResourceService) { }
+    constructor(
+        private service: PantryResourceService,
+        private inventory: InventoryListingResourceService
+    ) { }
 
     @Get(':id')
     public async getById(@Param() params: { id: string }): Promise<IPayload<IPantryDTO>> {
@@ -52,5 +56,31 @@ export class PantriesController {
                 }]
             };
         }
+    }
+
+    @Get(':id/inventory-search')
+    public async searchInventory(@Param('id') id: string, @Query('query') query: string): Promise<IPayload<IInventoryListing>> {
+        try {
+            return this.inventory.search(id, query);
+        } catch (err) {
+            return {
+                errors: [
+                    {
+                        status: '500',
+                        title: 'Failed to search pantry inventory'
+                    }
+                ]
+            };
+        }
+    }
+
+    @Post(':id/inventory')
+    public async updateInventory(@Param('id') pantryId: string, @Body() body: IPayload<IInventoryListing>) {
+        return this.inventory.upsert(pantryId, body.data as IPayloadData<IInventoryListing>);
+    }
+
+    @Get(':id/inventory')
+    public async getInventory(@Param('id') pantryId: string) {
+        return this.inventory.get(pantryId);
     }
 }

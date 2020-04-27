@@ -360,6 +360,38 @@
           "style": "scss"
         }
       }
+    },
+    "admin-inventory": {
+      "projectType": "library",
+      "root": "libs/admin/inventory",
+      "sourceRoot": "libs/admin/inventory/src",
+      "prefix": "cooper",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/admin/inventory/tsconfig.lib.json",
+              "libs/admin/inventory/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/admin/inventory/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/admin/inventory/jest.config.js",
+            "tsConfig": "libs/admin/inventory/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/admin/inventory/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -12,14 +12,18 @@
 
 <mat-drawer-container class="example-container">
   <mat-drawer #drawer mode="side">
-    <ng-container *ngIf="(loggedIn | async)">
+    <ng-container *ngIf="(loggedIn | async) && (isStaff | async)">
       <mat-nav-list>
         <mat-list-item [routerLink]="pantryLink | async" *ngIf="pantryLink | async" (click)="drawer.close()">
           <mat-icon mat-list-icon>storefront</mat-icon>
           Pantry Page
         </mat-list-item>
-        <mat-list-item routerLink="/admin/manage" (click)="drawer.close()">
+        <mat-list-item routerLink="/admin/manage-inventory" *ngIf="pantryLink | async" >
           <mat-icon mat-list-icon>storefront</mat-icon>
+          Manage Pantry Inventory
+        </mat-list-item>
+        <mat-list-item routerLink="/admin/manage" (click)="drawer.close()">
+          <mat-icon mat-list-icon>settings</mat-icon>
           Pantry Management
         </mat-list-item>
         <mat-list-item routerLink="/admin/communications" (click)="drawer.close()">
@@ -30,6 +34,15 @@
           <mat-icon mat-list-icon>bubble_chart</mat-icon>
           Reports
         </mat-list-item>
+        <mat-list-item (click)="logout()">
+          <mat-icon mat-list-icon>exit_to_app</mat-icon>
+          Logout
+        </mat-list-item>
+      </mat-nav-list>
+    </ng-container>
+
+    <ng-container *ngIf="(loggedIn | async) && !(isStaff | async)">
+      <mat-nav-list>
         <mat-list-item routerLink="/account/contact-info" (click)="drawer.close()">
           <mat-icon mat-list-icon>settings</mat-icon>
           Settings

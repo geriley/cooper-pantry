@@ -4,6 +4,7 @@ import { filter, map, shareReplay } from 'rxjs/operators';
 import { FirebaseService } from './common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserContextFacade } from '@cooper/state/user-context';
+import { UserRole } from '@cooper/api-interfaces';
 
 @Component({
 	selector: 'cooper-root',
@@ -29,6 +30,11 @@ export class AppComponent implements OnInit {
 	public pantryLink = this.userContext.user.pipe(
 		map((u) => u.associatedPantryId ? `pantry/${u.associatedPantryId}` : undefined)
 	);
+
+	public isStaff = this.userContext.user.pipe(
+		map((u) => u.role === UserRole.PantryAdmin)
+	);
+
 
 	public logout() {
 		this.fire.logout();

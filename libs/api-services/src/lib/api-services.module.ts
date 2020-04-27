@@ -5,9 +5,11 @@ import { CommunicationsDataService } from './http-services';
 import { UserAccessService } from './access-services';
 import { UserDataService } from './http-services/user-data.service';
 import { PantryDataService } from './http-services/pantry-data.service';
+import { InventoryAccessService } from './access-services/inventory-access.service';
 
 const accessServices = [
-    UserAccessService
+    UserAccessService,
+    InventoryAccessService
 ];
 
 @NgModule({

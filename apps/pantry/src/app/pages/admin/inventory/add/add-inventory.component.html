@@ -1,0 +1,11 @@
+<mat-horizontal-stepper [linear]="true" #stepper>
+    <mat-step>
+        <ng-template matStepLabel>Select Items</ng-template>
+        <cooper-inventory-search [pantryId]="pantryId | async" (results)="collectInventory($event)"
+            (selectedIds)="setSelections($event)" (next)="stepper.next()"></cooper-inventory-search>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Adjust Quantities</ng-template>
+        <cooper-inventory-quantity [inventory]="selectedInventory | async" (save)="save($event); stepper.reset()"></cooper-inventory-quantity>
+    </mat-step>
+</mat-horizontal-stepper>

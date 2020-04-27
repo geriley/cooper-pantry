@@ -14,6 +14,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { CommunicationsComponent } from './communications/communications.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import {TextFieldModule} from '@angular/cdk/text-field';
+import { ManageInventoryComponent } from './inventory/add/add-inventory.component';
+import { AdminInventoryModule } from '@cooper/admin/inventory';
 
 @NgModule({
     imports: [
@@ -31,11 +33,14 @@ import {TextFieldModule} from '@angular/cdk/text-field';
         MatStepperModule,
         TextFieldModule,
         ApiServicesModule,
+        AdminInventoryModule,
+        MatSnackBarModule
     ],
     declarations: [
         OutreachComponent,
         PantryInfoComponent,
-        CommunicationsComponent
+        CommunicationsComponent,
+        ManageInventoryComponent
     ],
 })
 export class AdminModule { }

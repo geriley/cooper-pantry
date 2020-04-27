@@ -20,6 +20,9 @@
       ],
       "@cooper/state/user-context": [
         "libs/state/user-context/src/index.ts"
+      ],
+      "@cooper/admin/inventory": [
+        "libs/admin/inventory/src/index.ts"
       ]
     }
   },

@@ -1,6 +1,6 @@
 <div class="page">
     <div class="banner">
-        <div class="header-text">{{pantry | async }}</div>
+        <div class="header-text">{{ pantryName | async }}</div>
         <div class="sub-header-text">Address 1</div>
         <div class="sub-header-text">Address 2</div>
         <div class="sub-header-text">City, State</div>
@@ -10,13 +10,13 @@
     <div class="inventory">
         <h1>Inventory</h1>
         <div class="inventory__grid ">
-            <mat-card *ngFor="let i of items">
-                <mat-card-title>Item: {{i}}</mat-card-title>
+            <mat-card *ngFor="let i of inventory | async">
+                <mat-card-title>{{i.description}}</mat-card-title>
                 <mat-card-content>
-                    <div>Delicious and Nutritious</div>
+                    <div>Quantity in stock: {{i.quantity}}</div>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-button>See More</button>
+                    <button mat-button (click)="open(i.fdcId)">See Nutritional Facts</button>
                 </mat-card-actions>
             </mat-card>
         </div>

@@ -3,3 +3,4 @@ export * from './pantry.model';
 export * from './user.model';
 export * from './survey-score.model';
 export * from './address.model';
+export * from './inventory-search.model';
