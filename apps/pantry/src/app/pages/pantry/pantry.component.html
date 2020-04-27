@@ -9,7 +9,7 @@
     <mat-divider></mat-divider>
     <div class="inventory">
         <h1>Inventory</h1>
-        <div class="inventory__grid ">
+        <div class="inventory__grid">
             <mat-card *ngFor="let i of inventory | async">
                 <mat-card-title>{{i.description}}</mat-card-title>
                 <mat-card-content>
@@ -19,6 +19,9 @@
                     <button mat-button (click)="open(i.fdcId)">See Nutritional Facts</button>
                 </mat-card-actions>
             </mat-card>
+        </div>
+        <div *ngIf="(inventory | async)?.length == 0">
+            No items found.
         </div>
     </div>
 </div>
