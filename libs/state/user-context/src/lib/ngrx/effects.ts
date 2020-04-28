@@ -35,7 +35,7 @@ export class UserContextEffects {
                 return this.user.updateUser(this.mapToDTO(action.user))
             }),
             map((dto) => {
-                this.snack.open('Successfully updated account.');
+                this.snack.open('Successfully updated account.', undefined, { duration: 2000 });
                 return setUserContext({ user: this.mapFromDTO(dto.data as IPayloadData<IUserDTO>) });
             })
         );

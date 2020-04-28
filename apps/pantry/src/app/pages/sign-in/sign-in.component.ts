@@ -1,15 +1,13 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FirebaseService } from '../../common';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { BehaviorSubject } from 'rxjs';
-import { UserContextFacade } from '@cooper/state/user-context';
-import { UserRole } from '@cooper/api-interfaces';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserRole } from '@cooper/api-interfaces';
+import { BehaviorSubject } from 'rxjs';
+import { FirebaseService } from '../../common';
 
 @Component({
     selector: 'cooper-sign-in',
     templateUrl: './sign-in.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignInComponent {
     constructor(

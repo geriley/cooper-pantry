@@ -50,8 +50,8 @@ export class ManageInventoryComponent {
                 .toPromise();
         });
         Promise.all(promises)
-            .then(() => this.snack.open('Successfully updated all inventory quantities'))
-            .catch(() => this.snack.open('Failed to update some inventory quantities'));
+            .then(() => this.snack.open('Successfully updated all inventory quantities', undefined, { duration: 2000 }))
+            .catch(() => this.snack.open('Failed to update some inventory quantities', undefined, { duration: 2000 }));
     }
 
 }

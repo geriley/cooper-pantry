@@ -32,9 +32,9 @@ export class CommunicationsComponent {
                 messageContent: this.message.value
             }).toPromise();
         }).then(() => {
-            this.snack.open('Successfully delivered SMS to all recipients');
+            this.snack.open('Successfully delivered SMS to all recipients', undefined, { duration: 2000 });
         }).catch(() => {
-            this.snack.open('Failed to send SMS to some users');
+            this.snack.open('Failed to send SMS to some users', undefined, { duration: 2000 });
         });
     }
 

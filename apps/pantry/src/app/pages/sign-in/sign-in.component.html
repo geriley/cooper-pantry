@@ -17,11 +17,11 @@
             *ngIf="formGroup.get('password').hasError('required') || formGroup.get('password').hasError('minlength')">
             Password must be at least 8 characters long.
         </mat-error>
-        <mat-error *ngIf="error | async">
-            {{ error | async }}
-        </mat-error>
     </mat-form-field>
-    <div>
+    <mat-error style="margin-top:2rem" *ngIf="error | async">
+        {{ error | async }}
+    </mat-error>
+    <div style="margin-top: 1rem">
         <button mat-flat-button (click)="signIn()">
             Sign In
         </button>

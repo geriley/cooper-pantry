@@ -8,3 +8,15 @@ nb-chat {
         width: 100vw;
     }
 } 
+
+.columns {
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}

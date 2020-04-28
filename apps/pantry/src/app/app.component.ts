@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
 
 	public logout() {
 		this.fire.logout();
-		this.snack.open('Logged out');
+		this.snack.open('Logged out', undefined, { duration: 2000 });
 	}
 
 	public ngOnInit(): void {
