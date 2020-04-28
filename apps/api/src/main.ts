@@ -21,7 +21,6 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
-  console.log(process.env.NODE_ENV);
   if (process.env.NODE_ENV !== 'production') {
     env.config();
   }  

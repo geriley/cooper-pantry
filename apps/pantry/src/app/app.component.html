@@ -45,7 +45,7 @@
       <mat-nav-list>
         <mat-list-item routerLink="/pantry-list" (click)="drawer.close()">
           <mat-icon mat-list-icon>storefront</mat-icon>
-          Pantry Page
+          Browse Pantries
         </mat-list-item>
         <mat-list-item routerLink="/customer/bot" (click)="drawer.close()">
           <mat-icon mat-list-icon>contact_support</mat-icon>
@@ -55,7 +55,7 @@
           <mat-icon mat-list-icon>settings</mat-icon>
           Settings
         </mat-list-item>
-        <mat-list-item (click)="logout()">
+        <mat-list-item routerLink="/home" (click)="logout()">
           <mat-icon mat-list-icon>exit_to_app</mat-icon>
           Logout
         </mat-list-item>

@@ -10,7 +10,6 @@ export class SurveyResponsesController {
     @Post()
     @ApiBody({})
     public async post(@Body() response: { Memory: string }): Promise<{ actions: any[] }> {
-        console.log(response);
         this.service.addBotSurveyResponse(response.Memory);
         return Promise.resolve({
             actions: [

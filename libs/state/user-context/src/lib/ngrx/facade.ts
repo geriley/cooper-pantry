@@ -23,11 +23,17 @@ export class UserContextFacade {
 
     public patchUser(user: Partial<IUserContext>) {
         this.user.pipe(first()).toPromise().then((u) => {
-            this.store.dispatch(upsertUser({ user: { ...u,  ...user }}));
+            this.store.dispatch(upsertUser({ user: { ...u, ...user } }));
         });
     }
 
     public setUserId(id: string) {
         this.store.dispatch(setUserIdContext({ id }));
+    }
+
+    public refresh() {
+        this.user.pipe(first()).toPromise().then((u) => {
+            this.store.dispatch(setUserIdContext({ id: u.id }))
+        });
     }
 }

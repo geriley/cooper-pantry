@@ -41,6 +41,7 @@ export class FirebaseService {
         return this.auth.createUserWithEmailAndPassword(email, password)
             .then((user) => {
                 this.userContext.upsertUser({ id: user.user.uid, role });
+                this.userContext.setUserId(user.user.uid);
                 return true;
             })
             .catch(() => false);

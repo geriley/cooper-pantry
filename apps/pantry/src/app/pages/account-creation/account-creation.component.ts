@@ -25,7 +25,6 @@ export class AccountCreationComponent {
     constructor(private _formBuilder: FormBuilder) { }
 
     public submit() {
-        console.log(this.name.value);
-        console.log(this.address.value);
+
     }
 }

@@ -36,7 +36,7 @@ export class UserContextEffects {
             }),
             map((dto) => {
                 this.snack.open('Successfully updated account.', undefined, { duration: 2000 });
-                return setUserContext({ user: this.mapFromDTO(dto.data as IPayloadData<IUserDTO>) });
+                return setUserContext({ user: this.mapFromDTO(dto.data[0] as IPayloadData<IUserDTO>) });
             })
         );
     });

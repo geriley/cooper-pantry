@@ -58,7 +58,6 @@ export class UserController {
     @ApiBody({})
     public async post(@Body() pantry: IPayload<IUserDTO>): Promise<IPayload<IUserDTO>> {
         try {
-            console.log(pantry);
             return this.service.upsert(pantry);
         } catch (err) {
             return {

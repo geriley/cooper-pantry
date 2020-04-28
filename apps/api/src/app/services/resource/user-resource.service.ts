@@ -25,7 +25,6 @@ export class UserResourceService {
             this.resourceType,
             { entity: user, attributeMapper: (e) => this.mapEntityToResource(e) }
         );
-        console.log(dto);
         return {
             data: {
                 ...dto.data as any,
@@ -77,14 +76,11 @@ export class UserResourceService {
 
     public async upsert(request: IPayload<IUserDTO>): Promise<IPayload<IUserDTO>> {
         const data = Array.isArray(request.data) ? request.data : [request.data];
-        console.log(data);
         const requestData = data.filter(d => d !== undefined).map((d) => this.mapPayloadToEntity(d));
         const addedEntities = await this.helper.addRequestedResources(requestData, (e) => {
             return this.userRepo.getById(e?.id).then((u) => {
                 const addressId = u?.residentialAddress?.id;
-                console.log(e);
                 e.residentialAddress = (e.residentialAddress) ? { ...e.residentialAddress, id: addressId } : undefined;
-                console.log(e);
                 return this.userRepo.add(e);
             });            
         });

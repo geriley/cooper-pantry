@@ -19,7 +19,6 @@ export class ContactInfoComponent implements OnInit {
             filter((u) => u.id !== undefined),
             first()
         ).toPromise().then((u) => {
-            console.log(u);
             this.contact = this._formBuilder.group({
                 firstName: [u?.name?.first ?? '', Validators.required],
                 lastName: [u?.name?.last ?? '', Validators.required],
@@ -30,7 +29,6 @@ export class ContactInfoComponent implements OnInit {
                 state: [u?.address?.state ?? '', Validators.required],
                 zipcode: [u?.address?.zipcode ?? '', Validators.required],
             });
-            console.log(this.contact.value);
         });
     }
 

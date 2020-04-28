@@ -20,7 +20,6 @@ export class PantryInfoComponent implements OnInit {
 
     public ngOnInit() {
         this.context.user.pipe(
-            tap((u) => console.log(u)),
             filter((u) => u.id !== undefined),
             map((u) => u.id),
             first()
@@ -54,6 +53,7 @@ export class PantryInfoComponent implements OnInit {
             return this.userService.updatePantryRelationship(this.userId, (res.data as IPayloadData<IPantryDTO>).id).toPromise();
         }).then(() => {
             this.snackBar.open('Saved pantry summary', undefined, { duration: 2000 });
+            this.context.refresh();
         });
     }
 

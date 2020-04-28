@@ -16,7 +16,6 @@ export class CommunicationsComponent {
     public message = new FormControl('', [Validators.required, Validators.maxLength(160)]);
     public securityLevel = new FormControl('');
     public criteria = this.securityLevel.valueChanges.pipe(
-        tap((security) => console.log(security)),
         map((security: FoodSecurityLevel) => ({ foodSecurityLevel: security })),
         startWith(() => ({ foodSecurityLevel: undefined }))
     );
