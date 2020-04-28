@@ -1,4 +1,4 @@
-# Cooper
+# Cooper Pantry
 
 Cooper Pantry is an open source pantry inventory management and community outreach platform.
 
